@@ -31,7 +31,8 @@ const previewItems = [
 
 export function HeroSection() {
   return (
-    <section className="relative mx-auto grid max-w-7xl items-start gap-8 px-5 pt-6 pb-6 sm:px-8 sm:pt-10 sm:pb-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14 lg:px-12 xl:px-16 min-[1024px]:max-[1440px]:max-w-[1040px] min-[1024px]:max-[1440px]:gap-8 min-[1024px]:max-[1440px]:px-14">
+    <section className="relative mx-auto grid max-w-7xl items-start gap-8 px-5 pt-6 pb-6 sm:px-8 sm:pt-10 sm:pb-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14 lg:px-12 xl:px-16 min-[1024px]:max-[1440px]:max-w-[1040px] min-[1024px]:max-[1440px]:gap-8 min-[1024px]:max-[1440px]:px-14"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -12,7 +12,8 @@ const benefits = [
 
 export function TechSection() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-7 sm:px-8 sm:py-10 lg:px-12 lg:py-12 min-[1024px]:max-[1440px]:max-w-[1040px] min-[1024px]:max-[1440px]:px-12">
+    <section className="mx-auto px-5 py-7 sm:px-8 sm:py-10 lg:px-12 lg:py-12 xl:px-16 xl:py-14 2xl:px-20 2xl:py-16 max-w-5xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-[1320px]"
+    >
       <SectionTitle
         eyebrow="Technology"
         title="Технологии и подход к проекту"
