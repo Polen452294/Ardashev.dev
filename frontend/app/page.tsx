@@ -5,7 +5,6 @@ import { PortfolioSection } from "@/components/sections/portfolio-section";
 import { ProcessSection } from "@/components/sections/process-section";
 import { RequestSection } from "@/components/sections/request-section";
 import { ServicesSection } from "@/components/sections/services-section";
-import { TechSection } from "@/components/sections/tech-section";
 import { TrustSection } from "@/components/sections/trust-section";
 import { GlowButton } from "@/components/ui/glow-button";
 
@@ -49,7 +48,6 @@ export default function Page() {
           <PortfolioSection />
           <ProcessSection />
           <ExtraSection />
-          <TechSection />
           <RequestSection />
         </main>
       </div>
