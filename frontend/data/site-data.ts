@@ -20,9 +20,9 @@ export const contactLinks = [
     href: "https://t.me/ArdashevAD",
   },
   {
-    title: "GitHub",
-    label: "GitHub",
-    href: "https://github.com/Polen452294",
+    title: "Max",
+    label: "Max",
+    href: "https://max.ru/YOUR_PROFILE",
   },
   {
     title: "Email",

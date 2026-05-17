@@ -49,7 +49,7 @@ export function HeroSection() {
         </p>
 
         <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
-          <GlowButton href="#contact">Обсудить проект</GlowButton>
+          <GlowButton href="#contact">Создать заказ</GlowButton>
           <GlowButton href="#portfolio" secondary>
             Посмотреть портфолио
           </GlowButton>
