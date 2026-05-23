@@ -1,14 +1,13 @@
 import FloatingShapes from "@/components/background/floating-shapes";
 import { ExtraSection } from "@/components/sections/extra-section";
-import { HeroSection } from "@/components/sections/hero-section";
-import { PortfolioSection } from "@/components/sections/portfolio-section";
 import { ProcessSection } from "@/components/sections/process-section";
-import { RequestSection } from "@/components/sections/request-section";
-import { ServicesSection } from "@/components/sections/services-section";
-import { TrustSection } from "@/components/sections/trust-section";
-import { GlowButton } from "@/components/ui/glow-button";
-import { ContactButtons } from "@/components/contact-buttons";
 import { contactLinks } from "@/data/site-data";
+import { ContactSection } from "@/components/sections/contact-section";
+import { HeroSection } from "@/components/sections/hero-section";
+import { TrustSection } from "@/components/sections/trust-section";
+import { ServicesSection } from "@/components/sections/services-section";
+import { PortfolioSection } from "@/components/sections/portfolio-section";
+import { BotUseCasesSection } from "@/components/sections/bot-use-cases-section";
 
 export default function Page() {
   return (
@@ -53,12 +52,13 @@ export default function Page() {
 
         <main id="top">
           <HeroSection />
+          <BotUseCasesSection />
           <TrustSection />
           <ServicesSection />
           <PortfolioSection />
           <ProcessSection />
           <ExtraSection />
-          <RequestSection />
+          <ContactSection />
         </main>
       </div>
     </div>

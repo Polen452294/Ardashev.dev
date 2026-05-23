@@ -40,7 +40,7 @@ export function HeroSection() {
         className="relative z-10"
       >
         <h1 className="max-w-[820px] text-[34px] font-semibold leading-[1.03] tracking-tight text-white sm:text-[52px] md:text-6xl lg:text-[78px] min-[1024px]:max-[1440px]:max-w-[720px] min-[1024px]:max-[1440px]:text-[48px]">
-          Разработка чат-ботов, CRM, парсеров и AI-решения
+          Разработка ботов в Telegram / Max, CRM и парсеров
         </h1>
 
         <p className="mt-4 max-w-[720px] text-sm leading-7 text-slate-300 sm:mt-6 sm:text-base sm:leading-8 md:text-lg min-[1024px]:max-[1440px]:max-w-[640px]">

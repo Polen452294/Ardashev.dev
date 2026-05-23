@@ -27,7 +27,7 @@ export const contactLinks = [
   {
     title: "Email",
     label: "Email",
-    href: "mailto:ardashevdev@gmail.com",
+    href: "mailto:aardashevdev@gmail.com",
   },
 ];
 
