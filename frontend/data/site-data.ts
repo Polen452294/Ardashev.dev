@@ -16,18 +16,18 @@ import {
 export const contactLinks = [
   {
     title: "Telegram",
-    label: "Написать",
-    href: "https://t.me/ArdashevAD",
+    label: "@likeaatea",
+    href: "https://t.me/likeaatea",
   },
   {
     title: "Max",
     label: "Max",
-    href: "https://max.ru/YOUR_PROFILE",
+    href: "https://max.ru/u/f9LHodD0cOLjnaroqIXC9x50AYUTb-v1MgisAQs3JGzrycVAMO3inOzXILw",
   },
   {
     title: "Email",
-    label: "Email",
-    href: "mailto:aardashevdev@gmail.com",
+    label: "aardashev.dev@gmail.com",
+    href: "mailto:aardashev.dev@gmail.com",
   },
 ];
 

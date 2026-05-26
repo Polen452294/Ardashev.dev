@@ -1,60 +1,69 @@
 "use client";
 
-const contacts = [
+import { useState } from "react";
+import { contactLinks } from "@/data/site-data";
+import { Phone } from "lucide-react";
+
+const contactItems = [
   {
-    label: "Telegram",
-    href: "https://t.me/YOUR_USERNAME",
-    copy: null,
-  },
-  {
-    label: "WhatsApp",
-    href: "https://wa.me/79680757896",
-    copy: null,
-  },
-  {
-    label: "Email",
-    href: null,
-    copy: "your@email.com",
-  },
-  {
-    label: "+7 968 075 78 96",
-    href: null,
-    copy: "+79680757896",
+  title: "Телефон",
+  href: "tel:+79680757896",
+  icon: Phone,
+  text: "Быстрый способ связаться напрямую.",
   },
 ];
 
 const buttonClass =
-  "rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-300/40 hover:bg-white/[0.08]";
+  "rounded-full border border-emerald-300/30 bg-white/[0.04] px-4 py-2 text-[14px] font-semibold leading-none text-white shadow-[0_0_35px_rgba(52,211,153,0.22)] transition hover:border-emerald-200/60 hover:bg-white/[0.08] hover:text-emerald-100 hover:shadow-[0_0_55px_rgba(52,211,153,0.35)]";
 
 export function ContactButtons() {
-  const copyToClipboard = async (value: string) => {
-    await navigator.clipboard.writeText(value);
+  const [copied, setCopied] = useState<string | null>(null);
+
+  const copyToClipboard = async (value: string, title: string) => {
+    try {
+      await navigator.clipboard.writeText(value);
+
+      setCopied(title);
+
+      setTimeout(() => {
+        setCopied((current) => (current === title ? null : current));
+      }, 1800);
+    } catch {}
   };
 
   return (
     <div className="hidden items-center gap-2 sm:flex">
-      {contacts.map((item) =>
-        item.href ? (
+      {contactLinks.map((contact) => {
+        const isCopyable =
+          contact.title === "Email" || contact.title === "Телефон";
+
+        if (isCopyable) {
+          return (
+            <button
+              key={contact.title}
+              type="button"
+              onClick={() =>
+                copyToClipboard(contact.label, contact.title)
+              }
+              className={buttonClass}
+            >
+              {copied === contact.title ? "Скопировано" : contact.title}
+            </button>
+          );
+        }
+
+        return (
           <a
-            key={item.label}
-            href={item.href}
+            key={contact.title}
+            href={contact.href}
             target="_blank"
             rel="noreferrer"
             className={buttonClass}
           >
-            {item.label}
+            {contact.title}
           </a>
-        ) : (
-          <button
-            key={item.label}
-            type="button"
-            onClick={() => copyToClipboard(item.copy!)}
-            className={buttonClass}
-          >
-            {item.label}
-          </button>
-        )
-      )}
+        );
+      })}
     </div>
   );
 }

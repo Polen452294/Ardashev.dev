@@ -1,13 +1,14 @@
 import FloatingShapes from "@/components/background/floating-shapes";
+import { ContactButtons } from "@/components/contact-buttons";
 import { ExtraSection } from "@/components/sections/extra-section";
 import { ProcessSection } from "@/components/sections/process-section";
-import { contactLinks } from "@/data/site-data";
 import { ContactSection } from "@/components/sections/contact-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { TrustSection } from "@/components/sections/trust-section";
 import { ServicesSection } from "@/components/sections/services-section";
 import { PortfolioSection } from "@/components/sections/portfolio-section";
 import { BotUseCasesSection } from "@/components/sections/bot-use-cases-section";
+import { FooterSection } from "@/components/sections/footer-section";
 
 export default function Page() {
   return (
@@ -32,19 +33,7 @@ export default function Page() {
       +7 968 075-78-96
     </a>
 
-    <div className="flex items-center gap-2">
-      {contactLinks.map((contact) => (
-        <a
-          key={contact.title}
-          href={contact.href}
-          target={contact.href.startsWith("http") ? "_blank" : undefined}
-          rel={contact.href.startsWith("http") ? "noreferrer" : undefined}
-          className="rounded-full border border-emerald-300/30 bg-white/[0.04] px-4 py-2 text-[14px] font-semibold leading-none text-white shadow-[0_0_35px_rgba(52,211,153,0.22)] transition hover:border-emerald-200/60 hover:bg-white/[0.08] hover:text-emerald-100 hover:shadow-[0_0_55px_rgba(52,211,153,0.35)]"
-        >
-          {contact.title}
-        </a>
-      ))}
-    </div>
+    <ContactButtons />
   </div>
 </div>
 
@@ -59,6 +48,7 @@ export default function Page() {
           <ProcessSection />
           <ExtraSection />
           <ContactSection />
+          <FooterSection />
         </main>
       </div>
     </div>

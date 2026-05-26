@@ -1,38 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Bot, Database, Layers3, Sparkles } from "lucide-react";
-import { metrics } from "@/data/site-data";
-import { Card } from "@/components/ui/card";
 import { GlowButton } from "@/components/ui/glow-button";
-
-const previewItems = [
-  {
-    title: "Telegram / Max bot",
-    text: "Автоматизация общения, уведомлений и бизнес-сценариев",
-    icon: Bot,
-  },
-  {
-    title: "Контактный сценарий",
-    text: "Удобный старт обсуждения проекта без перегруженной формы",
-    icon: Database,
-  },
-  {
-    title: "Интеграции и backend",
-    text: "CRM, API, внутренние сервисы и логика",
-    icon: Layers3,
-  },
-  {
-    title: "AI-функции",
-    text: "Обработка данных, ассистенты и генерация контента",
-    icon: Sparkles,
-  },
-];
 
 export function HeroSection() {
   return (
-    <section className="relative mx-auto grid max-w-7xl items-center gap-8 px-5 pt-12 pb-6 sm:px-8 sm:pt-20 sm:pb-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14 lg:px-12 xl:px-16 min-[1024px]:max-[1440px]:max-w-[1040px] min-[1024px]:max-[1440px]:gap-8 min-[1024px]:max-[1440px]:px-14"
-    >
+    <section className="relative mx-auto grid max-w-7xl items-center gap-8 px-5 pt-8 pb-4 sm:px-8 sm:pt-14 sm:pb-7 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14 lg:px-12 xl:px-16 min-[1024px]:max-[1440px]:max-w-[1040px] min-[1024px]:max-[1440px]:gap-8 min-[1024px]:max-[1440px]:px-14"
+>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -42,6 +16,10 @@ export function HeroSection() {
         <h1 className="max-w-[820px] text-[34px] font-semibold leading-[1.03] tracking-tight text-white sm:text-[52px] md:text-6xl lg:text-[78px] min-[1024px]:max-[1440px]:max-w-[720px] min-[1024px]:max-[1440px]:text-[48px]">
           Разработка ботов в Telegram / Max, CRM и парсеров
         </h1>
+
+        <div className="mt-4 text-base font-medium tracking-wide text-emerald-300 sm:text-lg">
+          От 1500₽
+        </div>
 
         <p className="mt-4 max-w-[720px] text-sm leading-7 text-slate-300 sm:mt-6 sm:text-base sm:leading-8 md:text-lg min-[1024px]:max-[1440px]:max-w-[640px]">
           Создаю проекты, которые уменьшают ручную рутину, ускоряют процессы,
@@ -62,9 +40,9 @@ export function HeroSection() {
         transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
         className="relative mx-auto flex w-full max-w-xl items-start justify-center lg:mt-0 lg:justify-end min-[1024px]:max-[1440px]:max-w-[400px]"
       >
-        <div className="absolute -inset-2 rounded-[28px] bg-emerald-400/10 blur-3xl sm:-inset-4 sm:rounded-[42px]" />
+        <div className="pointer-events-none absolute -inset-6 z-0 translate-x-20 rounded-[42px] bg-emerald-400/10 blur-3xl" />
 
-        <div className="relative flex h-[600px] w-full max-w-[300px] flex-col rounded-[24px] border border-white/10 bg-[#081122]/80 p-3 shadow-[0_0_60px_rgba(52,211,153,0.08)] sm:h-[640px] sm:max-w-[330px] sm:rounded-[40px] sm:p-4 min-[1024px]:max-[1440px]:h-[560px] min-[1024px]:max-[1440px]:max-w-[315px]">
+        <div className="relative z-10 flex h-[600px] w-full max-w-[300px] flex-col rounded-[24px] border border-white/10 bg-[#081122]/80 p-3 shadow-[0_0_140px_rgba(52,211,153,0.16)] sm:h-[640px] sm:max-w-[330px] sm:rounded-[40px] sm:p-4 min-[1024px]:max-[1440px]:h-[560px] min-[1024px]:max-[1440px]:max-w-[315px]">
           <div className="flex h-full flex-col rounded-[20px] border border-white/5 bg-[#020617] p-3 sm:rounded-[32px] sm:p-4">
             <div className="mb-4 flex items-center justify-between">
                 <div>
@@ -73,7 +51,7 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                <div className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-2 py-1 text-[10px] text-emerald-300 sm:text-[11px]">
+                <div className="rounded-full border border-emerald-400/20 z-10 bg-emerald-400/10 px-2 py-1 text-[10px] text-emerald-300 sm:text-[11px]">
                   Active
                 </div>
               </div>
