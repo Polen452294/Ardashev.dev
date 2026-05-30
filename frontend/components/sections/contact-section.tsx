@@ -7,19 +7,19 @@ import { motion } from "framer-motion";
 const contactItems = [
   {
     title: "Telegram",
-    href: "https://t.me/YOUR_USERNAME",
+    href: "https://t.me/likeaatea",
     icon: MessageCircle,
     text: "Быстрый способ обсудить проект.",
   },
   {
     title: "Max",
-    href: "https://max.ru/YOUR_PROFILE",
+    href: "https://max.ru/u/f9LHodD0cOLBuQru9TuIcrq9TtQ-rk93xm-oFACo-BCvcrba4KdlG37ts_M",
     icon: MessageCircle,
     text: "Связь через Max, если так удобнее.",
   },
   {
     title: "Email",
-    href: "#",
+    href: "mailto:aardashev8@gmail.com",
     icon: Mail,
     text: "Для подробного описания задачи.",
   },
@@ -43,18 +43,18 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="mx-auto px-5 py-5 sm:px-8 sm:py-7 lg:px-12 lg:py-9 xl:px-16 xl:py-10 2xl:px-20 2xl:py-12 max-w-5xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-[1320px]"
+      className="mx-auto px-10 py-5 sm:px-8 sm:py-7 lg:px-12 lg:py-9 xl:px-16 xl:py-10 2xl:px-20 2xl:py-12 max-w-5xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-[1320px]"
     >
       <div className="max-w-3xl">
         <div className="text-[11px] font-medium uppercase tracking-[0.24em] text-emerald-300 sm:text-xs">
           Contact
         </div>
 
-        <h2 className="mt-4 text-[34px] font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl">
+        <h2 className="mt-3 text-[34px] font-semibold leading-[1.05] tracking-tight text-white sm:mt-4 sm:text-5xl">
           Создать заказ
         </h2>
 
-        <p className="mt-5 max-w-2xl text-[15px] leading-8 text-slate-300 sm:text-lg">
+        <p className="mt-3 max-w-2xl text-[15px] leading-8 text-slate-300 sm:mt-5 sm:text-lg">
           Выберите удобный способ связи и коротко опишите задачу.
           Напишите: что нужно сделать, какой срок и какой результат
           вы хотите получить.
@@ -66,24 +66,24 @@ export function ContactSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative mt-10 overflow-hidden rounded-[32px] border border-white/10 bg-[#081122]/70 p-5 shadow-[0_0_60px_rgba(52,211,153,0.08)] backdrop-blur-xl sm:p-7"
+        className="relative mt-6 overflow-hidden rounded-[32px] border border-white/10 bg-[#081122]/70 p-4 shadow-[0_0_60px_rgba(52,211,153,0.08)] backdrop-blur-xl sm:mt-10 sm:p-7"
       >
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-400/10 blur-[110px]" />
 
-        <div className="relative grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div className="relative grid gap-5 sm:gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <h3 className="text-[26px] font-semibold leading-tight text-white sm:text-[32px]">
               Напишите в удобном формате
             </h3>
 
-            <p className="mt-4 text-[15px] leading-8 text-slate-300 sm:text-base">
+            <p className="mt-3 text-[15px] leading-8 text-slate-300 sm:mt-4 sm:text-base">
               Даже если пока нет точного ТЗ — можно просто описать идею.
               Вместе определим подходящий формат реализации, функционал
               и следующий шаг разработки.
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-2.5 sm:space-y-4">
             {contactItems.map((item) => {
               const Icon = item.icon;
               const isEmail = item.title === "Email";
@@ -125,7 +125,7 @@ export function ContactSection() {
                       item.title
                     )
                   }
-                  className="group flex w-full items-center gap-3 rounded-[20px] border border-white/10 bg-white/[0.04] px-4 py-4 text-left transition hover:border-emerald-300/30 hover:bg-white/[0.07]"
+                  className="group flex w-full items-center gap-3 rounded-[20px] border border-white/10 bg-white/[0.04] px-3.5 py-3 text-left transition hover:border-emerald-300/30 hover:bg-white/[0.07] sm:px-4 sm:py-4"
                 >
                   {content}
                 </button>
@@ -135,7 +135,7 @@ export function ContactSection() {
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center gap-3 rounded-[20px] border border-white/10 bg-white/[0.04] px-4 py-4 transition hover:border-emerald-300/30 hover:bg-white/[0.07]"
+                  className="group flex items-center gap-3 rounded-[20px] border border-white/10 bg-white/[0.04] px-3.5 py-3 transition hover:border-emerald-300/30 hover:bg-white/[0.07] sm:px-4 sm:py-4"
                 >
                   {content}
                 </a>

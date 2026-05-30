@@ -44,7 +44,7 @@ const extraItems = [
 
 export function ExtraSection() {
   return (
-    <section className="mx-auto px-5 py-5 sm:px-8 sm:py-7 lg:px-12 lg:py-9 xl:px-16 xl:py-10 2xl:px-20 2xl:py-12 max-w-5xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-[1320px]"
+    <section className="mx-auto px-10 py-5 sm:px-8 sm:py-7 lg:px-12 lg:py-9 xl:px-16 xl:py-10 2xl:px-20 2xl:py-12 max-w-5xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-[1320px]"
     >
       <SectionTitle
         eyebrow="Extra Value"
@@ -52,13 +52,13 @@ export function ExtraSection() {
         text="Не просто код, а инструмент, который помогает упрощать процессы и готовить проект к дальнейшему росту."
       />
 
-      <div className="grid grid-cols-2 gap-3 sm:gap-5 xl:grid-cols-3">
+      <div className="grid grid-cols-2 gap-2.5 sm:gap-5 xl:grid-cols-3">
         {extraItems.map((item) => {
           const Icon = item.icon;
 
           return (
-            <Card key={item.title} className="h-full p-4 sm:p-6">
-              <div className="mb-3 inline-flex rounded-[18px] border border-emerald-400/20 bg-emerald-400/10 p-2.5 text-emerald-300 sm:mb-4 sm:rounded-2xl sm:p-3">
+            <Card key={item.title} className="h-full p-3.5 sm:p-6">
+              <div className="mb-2.5 inline-flex rounded-[18px] border border-emerald-400/20 bg-emerald-400/10 p-2.5 text-emerald-300 sm:mb-4 sm:rounded-2xl sm:p-3">
                 <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
               </div>
 
@@ -66,7 +66,7 @@ export function ExtraSection() {
                 {item.title}
               </h3>
 
-              <p className="mt-2.5 text-[13px] leading-5 text-slate-300 sm:mt-3 sm:text-sm sm:leading-7">
+              <p className="mt-2 text-[13px] leading-5 text-slate-300 sm:mt-3 sm:text-sm sm:leading-7">
                 {item.text}
               </p>
             </Card>

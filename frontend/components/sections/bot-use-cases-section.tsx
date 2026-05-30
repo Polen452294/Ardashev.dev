@@ -41,7 +41,7 @@ export function BotUseCasesSection() {
   return (
     <section
       id="bot-use-cases"
-      className="mx-auto px-5 py-5 sm:px-8 sm:py-7 lg:px-12 lg:py-9 xl:px-16 xl:py-10 2xl:px-20 2xl:py-12 max-w-5xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-[1320px]"
+      className="mx-auto px-10 py-5 sm:px-10 sm:py-7 lg:px-10 lg:py-9 xl:px-16 xl:py-10 2xl:px-20 2xl:py-12 max-w-5xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-[1320px]"
     >
       <SectionTitle
         eyebrow="Use Cases"
@@ -49,8 +49,8 @@ export function BotUseCasesSection() {
         text="Чат-бот — это не просто кнопки в мессенджере. Это удобный способ принимать заявки, общаться с клиентами и связывать разные сервисы в одну понятную систему."
       />
 
-      <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
-        <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+      <div className="grid gap-2.5 sm:gap-4 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
+        <div className="grid gap-2.5 sm:gap-4 sm:grid-cols-3 lg:grid-cols-1">
           {audienceItems.map((item) => {
             const Icon = item.icon;
 
@@ -72,11 +72,11 @@ export function BotUseCasesSection() {
           })}
         </div>
 
-        <Card className="relative overflow-hidden p-5 sm:p-7 lg:p-8">
+        <Card className="relative overflow-hidden p-4 sm:p-7 lg:p-8">
           <div className="pointer-events-none absolute right-0 top-0 h-56 w-56 rounded-full bg-emerald-400/10 blur-3xl" />
 
           <div className="relative">
-            <div className="mb-4 inline-flex rounded-2xl border border-emerald-400/20 bg-emerald-400/10 p-3 text-emerald-300">
+            <div className="mb-3 sm:mb-4 inline-flex rounded-2xl border border-emerald-400/20 bg-emerald-400/10 p-3 text-emerald-300">
               <MessageCircle className="h-5 w-5" />
             </div>
 
@@ -90,11 +90,11 @@ export function BotUseCasesSection() {
               интеграциями.
             </p>
 
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="mt-4 grid gap-2.5 sm:mt-6 sm:gap-3 sm:grid-cols-2">
               {featureItems.map((item) => (
                 <div
                   key={item}
-                  className="flex items-start gap-3 rounded-[20px] border border-white/10 bg-white/[0.04] px-4 py-3.5"
+                  className="flex items-start gap-2.5 rounded-[20px] border border-white/10 bg-white/[0.04] px-3.5 py-3 sm:gap-3 sm:px-4 sm:py-3.5"
                 >
                   <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-emerald-300 shadow-[0_0_18px_rgba(52,211,153,0.55)]" />
 
@@ -105,7 +105,7 @@ export function BotUseCasesSection() {
               ))}
             </div>
 
-            <div className="mt-6 rounded-[22px] border border-emerald-300/15 bg-emerald-400/[0.06] px-5 py-4">
+            <div className="mt-4 rounded-[22px] border border-emerald-300/15 bg-emerald-400/[0.06] px-4 py-3.5 sm:mt-6 sm:px-5 sm:py-4">
               <div className="text-[13px] leading-6 text-slate-200 sm:text-sm sm:leading-7">
                 Такой бот можно запустить как простой MVP, а затем расширять:
                 добавить CRM, админ-панель, аналитику, AI-функции или поддержку
