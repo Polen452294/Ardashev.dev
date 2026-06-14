@@ -19,7 +19,7 @@ const contactItems = [
   },
   {
     title: "Email",
-    href: "mailto:aardashev8@gmail.com",
+    href: "mailto:aardashevdev@gmail.com",
     icon: Mail,
     text: "Для подробного описания задачи.",
   },
@@ -43,7 +43,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="mx-auto px-10 py-5 sm:px-8 sm:py-7 lg:px-12 lg:py-9 xl:px-16 xl:py-10 2xl:px-20 2xl:py-12 max-w-5xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-[1320px]"
+      className="mx-auto max-w-5xl px-6 py-5 sm:px-8 sm:py-7 lg:max-w-6xl lg:px-12 lg:py-9 xl:max-w-7xl xl:px-16 xl:py-10 2xl:max-w-[1320px] 2xl:px-20 2xl:py-12"
     >
       <div className="max-w-3xl">
         <div className="text-[11px] font-medium uppercase tracking-[0.24em] text-emerald-300 sm:text-xs">

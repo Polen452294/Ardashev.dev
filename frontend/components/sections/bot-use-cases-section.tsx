@@ -41,7 +41,7 @@ export function BotUseCasesSection() {
   return (
     <section
       id="bot-use-cases"
-      className="mx-auto px-10 py-5 sm:px-10 sm:py-7 lg:px-10 lg:py-9 xl:px-16 xl:py-10 2xl:px-20 2xl:py-12 max-w-5xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-[1320px]"
+      className="mx-auto max-w-5xl px-6 py-5 sm:px-10 sm:py-7 lg:max-w-6xl lg:px-10 lg:py-9 xl:max-w-7xl xl:px-16 xl:py-10 2xl:max-w-[1320px] 2xl:px-20 2xl:py-12"
     >
       <SectionTitle
         eyebrow="Use Cases"
@@ -55,8 +55,8 @@ export function BotUseCasesSection() {
             const Icon = item.icon;
 
             return (
-              <Card key={item.title} className="h-full p-4 sm:p-5">
-                <div className="mb-3 inline-flex rounded-[18px] border border-emerald-400/20 bg-emerald-400/10 p-2.5 text-emerald-300">
+              <Card key={item.title} className="h-full p-3.5 sm:p-5">
+                <div className="mb-2.5 inline-flex rounded-[16px] border border-emerald-400/20 bg-emerald-400/10 p-2 text-emerald-300 sm:mb-3 sm:p-2.5">
                   <Icon className="h-4 w-4" />
                 </div>
 
@@ -64,7 +64,7 @@ export function BotUseCasesSection() {
                   {item.title}
                 </h3>
 
-                <p className="mt-2.5 text-[13px] leading-5 text-slate-300 sm:text-sm sm:leading-7">
+                <p className="mt-2 text-[13px] leading-5 text-slate-300 sm:mt-2.5 sm:text-sm sm:leading-7">
                   {item.text}
                 </p>
               </Card>
@@ -72,7 +72,7 @@ export function BotUseCasesSection() {
           })}
         </div>
 
-        <Card className="relative overflow-hidden p-4 sm:p-7 lg:p-8">
+        <Card className="relative overflow-hidden p-3.5 sm:p-7 lg:p-8">
           <div className="pointer-events-none absolute right-0 top-0 h-56 w-56 rounded-full bg-emerald-400/10 blur-3xl" />
 
           <div className="relative">
@@ -94,7 +94,7 @@ export function BotUseCasesSection() {
               {featureItems.map((item) => (
                 <div
                   key={item}
-                  className="flex items-start gap-2.5 rounded-[20px] border border-white/10 bg-white/[0.04] px-3.5 py-3 sm:gap-3 sm:px-4 sm:py-3.5"
+                  className="flex items-start gap-2.5 rounded-[16px] border border-white/10 bg-white/[0.04] px-3 py-2.5 sm:gap-3 sm:rounded-[20px] sm:px-4 sm:py-3.5"
                 >
                   <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-emerald-300 shadow-[0_0_18px_rgba(52,211,153,0.55)]" />
 
@@ -105,7 +105,7 @@ export function BotUseCasesSection() {
               ))}
             </div>
 
-            <div className="mt-4 rounded-[22px] border border-emerald-300/15 bg-emerald-400/[0.06] px-4 py-3.5 sm:mt-6 sm:px-5 sm:py-4">
+            <div className="mt-4 rounded-[18px] border border-emerald-300/15 bg-emerald-400/[0.06] px-3.5 py-3 sm:mt-6 sm:rounded-[22px] sm:px-5 sm:py-4">
               <div className="text-[13px] leading-6 text-slate-200 sm:text-sm sm:leading-7">
                 Такой бот можно запустить как простой MVP, а затем расширять:
                 добавить CRM, админ-панель, аналитику, AI-функции или поддержку
