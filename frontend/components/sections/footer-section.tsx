@@ -1,8 +1,24 @@
-import { Github, Mail, MessageCircle, Phone } from "lucide-react";
+"use client";
+
+import { useState } from "react";
 
 import { contactLinks } from "@/data/site-data";
 
 export function FooterSection() {
+  const [copied, setCopied] = useState<string | null>(null);
+
+  const copyToClipboard = async (value: string, title: string) => {
+    try {
+      await navigator.clipboard.writeText(value);
+
+      setCopied(title);
+
+      setTimeout(() => {
+        setCopied((current) => (current === title ? null : current));
+      }, 1800);
+    } catch {}
+  };
+
   return (
     <footer className="mt-12 border-t border-white/5">
       <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:px-12 xl:px-16">
@@ -22,31 +38,50 @@ export function FooterSection() {
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              {contactLinks.map((contact) => (
-                <a
-                  key={contact.title}
-                  href={contact.href}
-                  target={
-                    contact.href.startsWith("http")
-                      ? "_blank"
-                      : undefined
-                  }
-                  rel={
-                    contact.href.startsWith("http")
-                      ? "noreferrer"
-                      : undefined
-                  }
-                  className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-300/40 hover:bg-white/[0.06] hover:text-white"
-                >
-                  {contact.title}
-                </a>
-              ))}
+              {contactLinks.map((contact) => {
+                const isEmail = contact.title === "Email";
+                const isCopied = copied === contact.title;
+
+                return isEmail ? (
+                  <button
+                    key={contact.title}
+                    type="button"
+                    onClick={() =>
+                      copyToClipboard(
+                        "aardashev8@gmail.com",
+                        contact.title
+                      )
+                    }
+                    className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-300/40 hover:bg-white/[0.06] hover:text-white"
+                  >
+                    {isCopied ? "Скопировано" : contact.title}
+                  </button>
+                ) : (
+                  <a
+                    key={contact.title}
+                    href={contact.href}
+                    target={
+                      contact.href.startsWith("http")
+                        ? "_blank"
+                        : undefined
+                    }
+                    rel={
+                      contact.href.startsWith("http")
+                        ? "noreferrer"
+                        : undefined
+                    }
+                    className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-300/40 hover:bg-white/[0.06] hover:text-white"
+                  >
+                    {contact.title}
+                  </a>
+                );
+              })}
 
               <a
-                href="tel:+79680757896"
+                href="tel:+79168626404"
                 className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-300/40 hover:bg-white/[0.06] hover:text-white"
               >
-                +7 968 075-78-96
+                +7 916 862-64-04
               </a>
             </div>
           </div>

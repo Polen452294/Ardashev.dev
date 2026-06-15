@@ -27,10 +27,10 @@ export default function Page() {
 
             <div className="hidden items-center gap-6 sm:flex">
               <a
-                href="tel:+7(968)075-78-96"
+                href="tel:+7(916)862-64-04"
                 className="text-[18px] font-semibold leading-none text-white transition hover:text-emerald-300"
               >
-                +7 968 075-78-96
+                +7 916 862-64-04
               </a>
 
               <ContactButtons />
