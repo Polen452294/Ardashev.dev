@@ -16,8 +16,8 @@ import {
 export const contactLinks = [
   {
     title: "Telegram",
-    label: "@likeaatea",
-    href: "https://t.me/likeaatea",
+    label: "@aardashevdev",
+    href: "https://t.me/aardashevdev",
   },
   {
     title: "Max",
