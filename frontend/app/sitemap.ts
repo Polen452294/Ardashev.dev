@@ -4,6 +4,13 @@ const siteUrl = "https://ardashev.dev";
 
 const routes = [
   "",
+  "/telegram-bots",
+  "/max-bots",
+  "/parsers",
+  "/crm-integrations",
+  "/cases/usdt-exchange-bot",
+  "/cases/max-request-bot",
+  "/cases/profi-parser-bot",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -13,6 +20,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${siteUrl}${route}`,
     lastModified: currentDate,
     changeFrequency: "weekly",
-    priority: route === "" ? 1 : 0.8,
+    priority: route === "" ? 1 : route.startsWith("/cases") ? 0.75 : 0.9,
   }));
 }

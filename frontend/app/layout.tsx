@@ -1,17 +1,19 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Разработка ботов, автоматизации и AI-решений",
+  title:
+    "Разработка Telegram-ботов, Max-ботов, парсеров и CRM-интеграций — ardashev.dev",
   description:
-    "Разработка Telegram-ботов, ботов в Max, парсеров, систем приема заявок, CRM-интеграций и AI-автоматизации для бизнеса.",
+    "Разработка Telegram-ботов, Max-ботов, парсеров сайтов и Telegram, CRM/API-интеграций, систем приема заявок и автоматизации бизнес-процессов.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="ru">

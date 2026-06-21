@@ -5,33 +5,42 @@ import { GlowButton } from "@/components/ui/glow-button";
 
 export function HeroSection() {
   return (
-    <section className="relative mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_145px] items-start gap-3 px-5 pb-4 pt-5 sm:grid-cols-[1.05fr_0.95fr] sm:items-center sm:gap-2 sm:px-8 sm:pb-7 sm:pt-14 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14 lg:px-12 xl:px-16 min-[390px]:grid-cols-[minmax(0,1fr)_158px] min-[1024px]:max-[1440px]:max-w-[1040px] min-[1024px]:max-[1440px]:gap-8 min-[1024px]:max-[1440px]:px-14">
+    <section
+      id="hero"
+      className="relative mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_145px] items-start gap-3 px-5 pb-4 pt-5 sm:grid-cols-[1.05fr_0.95fr] sm:items-center sm:gap-2 sm:px-8 sm:pb-7 sm:pt-14 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14 lg:px-12 xl:px-16 min-[390px]:grid-cols-[minmax(0,1fr)_158px] min-[1024px]:max-[1440px]:max-w-[1040px] min-[1024px]:max-[1440px]:gap-8 min-[1024px]:max-[1440px]:px-14"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="contents lg:relative lg:z-10 lg:block"
       >
-        <div className="order-1 max-w-[175px] min-[390px]:max-w-[190px] sm:hidden">
-          <h1 className="text-[31px] font-semibold leading-[1.06] tracking-tight text-white min-[390px]:text-[34px]">
-            Разработка
-            <br />
-            ботов в
-            <br />
-            Telegram /
-            <br />
-            Max,
-            <br />
-            CRM и
-            <br />
-            парсеров
+        <div className="order-1 max-w-[175px] min-[390px]:max-w-[190px] sm:contents">
+          <h1 className="text-[31px] font-semibold leading-[1.06] tracking-tight text-white min-[390px]:text-[34px] sm:max-w-[820px] sm:text-[52px] sm:leading-[1.03] md:text-6xl lg:text-[74px] min-[1024px]:max-[1440px]:max-w-[720px] min-[1024px]:max-[1440px]:text-[48px]">
+            <span className="sm:hidden">
+              Разработка
+              <br />
+              ботов в
+              <br />
+              Telegram /
+              <br />
+              Max,
+              <br />
+              CRM и
+              <br />
+              парсеров
+            </span>
+
+            <span className="hidden sm:block">
+              Разработка ботов в Telegram / Max, CRM и парсеров
+            </span>
           </h1>
 
-          <div className="mt-4 text-base font-medium tracking-wide text-emerald-300">
+          <div className="mt-4 text-base font-medium tracking-wide text-emerald-300 sm:hidden">
             От 1500₽
           </div>
 
-          <div className="mt-4 flex w-fit flex-col gap-2.5">
+          <div className="mt-4 flex w-fit flex-col gap-2.5 sm:hidden">
             <a
               href="#contact"
               className="inline-flex h-9 items-center justify-center gap-2 rounded-full bg-emerald-400 px-4 text-[12px] font-medium text-slate-950 shadow-[0_0_32px_rgba(52,211,153,0.25)] transition hover:bg-emerald-300"
@@ -50,18 +59,15 @@ export function HeroSection() {
           </div>
         </div>
 
-        <h1 className="hidden max-w-[820px] font-semibold leading-[1.03] tracking-tight text-white sm:block sm:text-[52px] md:text-6xl lg:text-[78px] min-[1024px]:max-[1440px]:max-w-[720px] min-[1024px]:max-[1440px]:text-[48px]">
-          Разработка ботов в Telegram / Max, CRM и парсеров
-        </h1>
-
         <div className="order-3 col-span-2 lg:col-span-1">
           <div className="mt-4 hidden text-base font-medium tracking-wide text-emerald-300 sm:block sm:text-lg">
             От 1500₽
           </div>
 
           <p className="mt-6 max-w-[720px] text-sm leading-7 text-slate-300 sm:mt-6 sm:text-base sm:leading-8 md:text-lg min-[1024px]:max-[1440px]:max-w-[640px]">
-            Создаю проекты, которые уменьшают ручную рутину, ускоряют процессы,
-            объединяют сервисы через API и превращают задачи в работающую систему.
+            Создаю Telegram-ботов, Max-ботов, парсеры и CRM/API-интеграции,
+            которые помогают бизнесу принимать заявки, собирать данные,
+            уведомлять менеджеров и уменьшать ручную рутину.
           </p>
 
           <div className="mt-6 hidden flex-col gap-3 sm:mt-8 sm:flex sm:flex-row">
