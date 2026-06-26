@@ -176,7 +176,7 @@ export default function TelegramBotsPage() {
         />
 
         <TagGridSection
-          eyebrow="Примеры"
+          eyebrow="Examples of use"
           title="Примеры Telegram ботов"
           text="Самые частые сценарии, с которых обычно начинается разработка бота для бизнеса."
           items={examples}
