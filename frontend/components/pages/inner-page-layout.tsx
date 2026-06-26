@@ -9,6 +9,17 @@ import { GlowButton } from "@/components/ui/glow-button";
 import { Card } from "@/components/ui/card";
 import { FooterSection } from "@/components/sections/footer-section";
 import { SiteHeader } from "@/components/site-header";
+import {
+  BellRing,
+  Bot,
+  CalendarDays,
+  CreditCard,
+  Database,
+  Headphones,
+  MessageCircleQuestion,
+  Settings2,
+  SlidersHorizontal,
+} from "lucide-react";
 
 type InnerPageLayoutProps = {
   eyebrow: string;
@@ -210,20 +221,140 @@ export function TagGridSection({
   text: string;
   items: string[];
 }) {
+  const normalizedEyebrow = eyebrow.toLowerCase();
+
+  const isExamples =
+    normalizedEyebrow.includes("examples of use") ||
+    normalizedEyebrow.includes("example") ||
+    normalizedEyebrow.includes("use");
+
+  const getExampleDescription = (item: string) => {
+    const normalized = item.toLowerCase();
+
+    if (normalized.includes("приема заяв")) {
+      return "Позволяет автоматически собирать заявки от клиентов, уточнять нужные данные и передавать их менеджеру, в таблицу или CRM.";
+    }
+
+    if (normalized.includes("запис")) {
+      return "Позволяет автоматически собирать записи клиентов и выстраивать расписание с учетом свободного времени, услуг и занятости.";
+    }
+
+    if (normalized.includes("консульт")) {
+      return "Помогает принять обращение, задать уточняющие вопросы и передать менеджеру уже понятную заявку без лишней переписки.";
+    }
+
+    if (normalized.includes("оплат")) {
+      return "Ведет клиента по сценарию до оплаты, фиксирует статус заявки и помогает не терять обращения на этапе покупки.";
+    }
+
+    if (normalized.includes("crm")) {
+      return "Автоматически передает заявки, контакты, комментарии и статусы в CRM, таблицу или внутреннюю систему компании.";
+    }
+
+    if (normalized.includes("админ")) {
+      return "Позволяет управлять заявками, статусами, пользователями и данными проекта без ручного редактирования файлов.";
+    }
+
+    if (normalized.includes("поддерж")) {
+      return "Помогает принимать обращения клиентов, распределять вопросы и быстрее передавать их ответственным людям.";
+    }
+
+    if (normalized.includes("уведом")) {
+      return "Отправляет менеджерам и сотрудникам важные уведомления о новых заявках, изменениях статуса или событиях.";
+    }
+
+    if (normalized.includes("перенос")) {
+      return "Позволяет адаптировать уже готовую логику Telegram бота под Max или другой канал общения с клиентами.";
+    }
+
+    return "Сценарий можно адаптировать под конкретный бизнес-процесс, чтобы убрать ручную рутину и ускорить обработку заявок.";
+  };
+
+  if (isExamples) {
+    return (
+      <InnerPageSection>
+        <InnerPageTitle eyebrow={eyebrow} title={title} text={text} />
+
+        <div className="grid gap-3 sm:gap-4 lg:grid-cols-3">
+          {items.map((item) => (
+            <Card
+              key={item}
+              className="group relative min-h-[170px] overflow-hidden bg-[#081122]/72 p-5 sm:min-h-[185px] sm:p-6"
+            >
+              <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-emerald-400/10 blur-3xl transition duration-300 group-hover:bg-emerald-400/15" />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/25 to-transparent opacity-60" />
+
+              <div className="relative flex h-full flex-col">
+                <h3 className="text-[19px] font-semibold leading-7 tracking-tight text-white transition group-hover:text-emerald-100 sm:text-xl">
+                  {item}
+                </h3>
+
+                <p className="mt-4 text-sm leading-7 text-slate-300">
+                  {getExampleDescription(item)}
+                </p>
+
+                <div className="mt-auto pt-5">
+                  <div className="h-px w-full bg-white/10" />
+                  <div className="mt-3 text-[13px] font-medium text-emerald-300">
+                    Можно адаптировать под вашу задачу
+                  </div>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </InnerPageSection>
+    );
+  }
+
+  const getLabel = () => {
+    const normalized = eyebrow.toLowerCase();
+
+    if (normalized.includes("функц")) return "Функция";
+    if (normalized.includes("stack")) return "Стек";
+    if (normalized.includes("возмож")) return "Опция";
+
+    return "Пункт";
+  };
+
+  const label = getLabel();
+
   return (
     <InnerPageSection>
       <InnerPageTitle eyebrow={eyebrow} title={title} text={text} />
 
-      <div className="grid gap-2.5 sm:gap-5 lg:grid-cols-3">
+      <div className="grid gap-2.5 sm:gap-4 lg:grid-cols-3">
         {items.map((item, index) => (
-          <Card key={item} className="h-full">
-            <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-2xl border border-emerald-400/20 bg-emerald-400/10 text-sm font-semibold text-emerald-300">
-              {index + 1}
-            </div>
+          <Card
+            key={item}
+            className="group relative min-h-[132px] overflow-hidden bg-[#081122]/72 p-4 sm:min-h-[150px] sm:p-5"
+          >
+            <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-emerald-400/10 blur-3xl transition group-hover:bg-emerald-400/15" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent opacity-60" />
 
-            <h3 className="text-base font-semibold leading-6 text-white">
-              {item}
-            </h3>
+            <div className="relative flex h-full flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between gap-3">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium text-slate-300">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-300 shadow-[0_0_14px_rgba(52,211,153,0.8)]" />
+                    {label}
+                  </div>
+
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl border border-emerald-400/20 bg-emerald-400/10 text-sm font-semibold text-emerald-300 transition group-hover:border-emerald-300/40 group-hover:bg-emerald-400/15">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
+                </div>
+
+                <h3 className="mt-5 max-w-[280px] text-[17px] font-semibold leading-6 text-white transition group-hover:text-emerald-100 sm:text-lg">
+                  {item}
+                </h3>
+              </div>
+
+              <div className="mt-5 flex items-center gap-2 text-[13px] font-medium text-emerald-300/90">
+                <span className="h-px w-8 bg-emerald-300/40 transition group-hover:w-12" />
+                Подходит для бизнеса
+              </div>
+            </div>
           </Card>
         ))}
       </div>
@@ -301,7 +432,7 @@ export function CaseLinksSection({
               </p>
 
               <div className="mt-5 text-sm font-medium text-emerald-300">
-                Читать кейс →
+                Ознакомиться →
               </div>
             </Card>
           </Link>
