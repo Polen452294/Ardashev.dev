@@ -11,6 +11,7 @@ import { PortfolioSection } from "@/components/sections/portfolio-section";
 import { BotUseCasesSection } from "@/components/sections/bot-use-cases-section";
 import { FooterSection } from "@/components/sections/footer-section";
 import { SiteHeader } from "@/components/site-header";
+import { AboutSection } from "@/components/sections/about-section";
 
 const siteUrl = "https://ardashev.dev";
 
@@ -205,6 +206,7 @@ export default function Page() {
 
         <main id="top">
           <HeroSection />
+          <AboutSection />
           <BotUseCasesSection />
           <TrustSection />
           <ServicesSection />

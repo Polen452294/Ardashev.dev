@@ -45,7 +45,7 @@ const functions = [
 
 const technologies = [
   "Python",
-  "aiogram",
+  "Aiogram",
   "VK API",
   "PostgreSQL",
   "SQLAlchemy",

@@ -28,13 +28,26 @@ const trustItems = [
 
 export function TrustSection() {
   return (
-    <section className="mx-auto max-w-5xl px-6 py-5 sm:px-8 sm:py-7 lg:max-w-6xl lg:px-12 lg:py-9 xl:max-w-7xl xl:px-16 xl:py-10 2xl:max-w-[1320px] 2xl:px-20 2xl:py-12"
+    <section
+      data-no-dots
+      className="relative mx-auto max-w-5xl px-6 py-5 sm:px-8 sm:py-7 lg:max-w-6xl lg:px-12 lg:py-9 xl:max-w-7xl xl:px-16 xl:py-10 2xl:max-w-[1320px] 2xl:px-20 2xl:py-12"
     >
-      <SectionTitle
-        eyebrow="Reviews & Reputation"
-        title="Гарантии качества и отзывы"
-        text="До начала работы можно заранее ознакомиться с отзывами, посмотреть профиль на Profi.ru и убедиться, что личность подтверждена платформой."
-      />
+    <div
+      id="trust"
+      aria-hidden="true"
+      className="absolute top-[70px] sm:top-[80px] lg:top-[90px]"
+    />
+
+      <div
+        id="trust"
+        className="scroll-mt-[96px] sm:scroll-mt-[112px] lg:scroll-mt-[118px]"
+      >
+        <SectionTitle
+          eyebrow="Reviews & Reputation"
+          title="Гарантии качества и отзывы"
+          text="До начала работы можно заранее ознакомиться с отзывами, посмотреть профиль на Profi.ru и убедиться, что личность подтверждена платформой."
+        />
+      </div>
 
       <div className="grid gap-2.5 sm:gap-6 lg:grid-cols-[1.05fr_0.95fr]">
         <Card className="h-full p-3.5 sm:p-6">
@@ -76,14 +89,18 @@ export function TrustSection() {
             </h3>
 
             <p className="mt-3 text-sm leading-6 text-slate-300 sm:mt-4 sm:leading-7">
-              Можно перейти на профиль Profi.ru, посмотреть отзывы, ознакомиться с
-              аккаунтом и увидеть подтвержденную платформой личность. Такой формат
-              делает старт сотрудничества спокойнее и прозрачнее.
+              Можно перейти на профиль Profi.ru, посмотреть отзывы,
+              ознакомиться с аккаунтом и увидеть подтвержденную платформой
+              личность. Такой формат делает старт сотрудничества спокойнее и
+              прозрачнее.
             </p>
           </div>
 
           <div className="mt-4 flex flex-col gap-2.5 sm:mt-6 sm:gap-3">
-            <GlowButton href="https://profi.ru/profile/ArdashevAD/#reviews-tab">Отзывы на Profi.ru</GlowButton>
+            <GlowButton href="https://profi.ru/profile/ArdashevAD/#reviews-tab">
+              Отзывы на Profi.ru
+            </GlowButton>
+
             <GlowButton href="https://profi.ru/profile/ArdashevAD/" secondary>
               Профиль на Profi.ru
             </GlowButton>

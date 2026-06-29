@@ -3,20 +3,20 @@ import { ContactButtons } from "@/components/contact-buttons";
 
 const navLinks = [
   {
+    title: "Кто я такой",
+    href: "/#about",
+  },
+  {
     title: "Что я создаю",
     href: "/#services",
   },
   {
-    title: "Примеры выполнения",
-    href: "/#portfolio",
+    title: "Гарантии качества",
+    href: "/#trust",
   },
   {
     title: "Что входит в заказ",
     href: "/#process",
-  },
-  {
-    title: "Связь со мной",
-    href: "/#contact",
   },
 ];
 
