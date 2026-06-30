@@ -4,27 +4,11 @@ import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { SectionTitle } from "@/components/ui/section-title";
 
-const aboutText = (
-  <>
-  <p>
-    Я — разработчик систем автоматизации с практическим опытом создания и
-    запуска проектов под ключ, главный разработчик в сервисе Ardashev.dev.
-  </p>
-  <p>
-    Учусь в одном из лучших вузов страны, НИТУ МИСиС, на специальности "Программная инженерия". Специализируюсь на решениях для
-    бизнеса: приём и обработка заказов, админ-панели, автоматизация общения с
-    клиентами, интеграции с API, базами данных и платёжными системами.
-  </p>
-  <p>
-    Работаю с CRM, нейросетями, aiogram, Docker, асинхронной архитектурой, базами данных и
-    серверным деплоем. 
-  </p>
-  <p>
-    Моя задача — превратить идею в стабильное и удобное
-    решение, которое экономит время и приносит пользу.
-  </p>
-  </>
-);
+const aboutParagraphs = [
+  "Я — разработчик систем автоматизации с практическим опытом создания и запуска проектов под ключ, главный разработчик в сервисе Ardashev.dev. Учусь в одном из лучших вузов страны.",
+  "Специализируюсь на решениях для бизнеса: приём и обработка заказов, админ-панели, автоматизация общения с клиентами, интеграции с API, базами данных и платёжными системами.",
+  "Работаю с CRM, нейросетями, aiogram, Docker, асинхронной архитектурой, базами данных и серверным деплоем. Моя задача — превратить идею в стабильное и удобное решение, которое экономит время и приносит пользу.",
+];
 
 export function AboutSection() {
   return (
@@ -40,7 +24,7 @@ export function AboutSection() {
       />
 
       <div className="hidden gap-2.5 sm:gap-5 lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:items-stretch lg:gap-4 xl:grid-cols-[300px_minmax(0,1fr)]">
-        <Card className="relative flex h-full overflow-hidden bg-[#081122]/72 !p-3 sm:!p-4">
+        <Card className="relative flex h-full items-center justify-center overflow-hidden bg-[#081122]/72 !p-3 sm:!p-4">
           <div className="pointer-events-none absolute -left-16 -top-16 h-56 w-56 rounded-full bg-emerald-400/10 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-20 right-6 h-56 w-56 rounded-full bg-cyan-400/5 blur-3xl" />
 
@@ -65,10 +49,10 @@ export function AboutSection() {
           <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-emerald-400/10 blur-3xl" />
           <div className="pointer-events-none absolute left-10 top-0 h-px w-1/3 bg-gradient-to-r from-transparent via-emerald-300/35 to-transparent" />
 
-          <div className="relative">
-            <p className="text-sm leading-7 text-slate-300 sm:text-base sm:leading-8 xl:text-[17px] xl:leading-8">
-              {aboutText}
-            </p>
+          <div className="space-y-4 text-sm leading-7 text-slate-300 sm:text-base sm:leading-8 xl:text-[17px] xl:leading-8">
+            {aboutParagraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
         </Card>
       </div>
@@ -97,7 +81,11 @@ export function AboutSection() {
             </div>
           </div>
 
-          <p>{aboutText}</p>
+          <div className="space-y-4">
+            {aboutParagraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
         </div>
       </Card>
     </section>
