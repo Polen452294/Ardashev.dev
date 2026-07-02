@@ -13,7 +13,7 @@ const pageUrl = `${siteUrl}/cases/usdt-exchange-bot`;
 export const metadata: Metadata = {
   title: "Кейс: Telegram бот для обмена USDT — ardashev.dev",
   description:
-    "Кейс разработки Telegram/VK бота для обменного сервиса: прием заявок на обмен USDT, сбор данных, CRM-логика и автоматические напоминания клиентам.",
+  "Кейс разработки Telegram бота для обменного сервиса: прием заявок на обмен USDT, сбор данных, CRM-логика и автоматические напоминания клиентам.",
   alternates: {
     canonical: pageUrl,
   },
@@ -75,27 +75,74 @@ const relatedServices = [
 const articleJsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
+  "@id": `${pageUrl}#article`,
   headline: "Кейс: Telegram бот для обмена USDT",
   description:
-    "Разработка Telegram/VK бота для обменного сервиса: оформление заявок, передача данных в обработку и автоматические напоминания клиентам.",
+    "Разработка Telegram бота для обменного сервиса: оформление заявок, передача данных в обработку и автоматические напоминания клиентам.",
   url: pageUrl,
+  inLanguage: "ru-RU",
   author: {
     "@type": "Person",
+    "@id": `${siteUrl}/#person`,
     name: "Александр Ардашев",
     url: siteUrl,
   },
   publisher: {
     "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
     name: "ardashev.dev",
     url: siteUrl,
   },
-  mainEntityOfPage: pageUrl,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": pageUrl,
+  },
   about: [
     "разработка Telegram ботов",
+    "Telegram бот для заявок",
     "CRM-интеграции",
     "автоматизация заявок",
     "бот для обмена USDT",
   ],
+  mentions: relatedServices.map((service) => ({
+    "@type": "Service",
+    name: service.title,
+    url: `${siteUrl}${service.href}`,
+  })),
+};
+
+const softwareApplicationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": `${pageUrl}#software`,
+  name: "Telegram бот для обмена USDT",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Telegram",
+  url: pageUrl,
+  description:
+    "Telegram бот для обменного сервиса: пошаговое оформление заявки, сбор контактных данных, передача обращения в обработку, хранение статусов и автоматические напоминания.",
+  creator: {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person`,
+    name: "Александр Ардашев",
+    url: siteUrl,
+  },
+  provider: {
+    "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
+    name: "ardashev.dev",
+    url: siteUrl,
+  },
+  featureList: functions,
+  programmingLanguage: ["Python"],
+  softwareRequirements: technologies,
+  offers: {
+    "@type": "Offer",
+    url: `${siteUrl}/telegram-bots`,
+    availability: "https://schema.org/InStock",
+    priceCurrency: "RUB",
+    category: "Разработка Telegram ботов",
+  },
 };
 
 const breadcrumbJsonLd = {
@@ -129,6 +176,10 @@ export default function UsdtExchangeBotCasePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationJsonLd) }}
       />
       <script
         type="application/ld+json"

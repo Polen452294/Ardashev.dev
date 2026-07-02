@@ -73,27 +73,74 @@ const relatedServices = [
 const articleJsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
+  "@id": `${pageUrl}#article`,
   headline: "Кейс: Max бот для приема заявок",
   description:
     "Разработка Max бота для приема консультационных заявок, сбора контактов и передачи обращений в обработку.",
   url: pageUrl,
+  inLanguage: "ru-RU",
   author: {
     "@type": "Person",
+    "@id": `${siteUrl}/#person`,
     name: "Александр Ардашев",
     url: siteUrl,
   },
   publisher: {
     "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
     name: "ardashev.dev",
     url: siteUrl,
   },
-  mainEntityOfPage: pageUrl,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": pageUrl,
+  },
   about: [
     "разработка Max ботов",
-    "бот для заявок",
+    "Max бот для заявок",
     "автоматизация обращений",
     "бот для консультаций",
+    "CRM-интеграции",
   ],
+  mentions: relatedServices.map((service) => ({
+    "@type": "Service",
+    name: service.title,
+    url: `${siteUrl}${service.href}`,
+  })),
+};
+
+const softwareApplicationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": `${pageUrl}#software`,
+  name: "Max бот для приема заявок",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Max",
+  url: pageUrl,
+  description:
+    "Max бот для первичного общения с клиентом: сбор контактных данных, уточнение запроса по шагам, кнопки навигации и подготовка обращения для передачи менеджеру или в CRM/API.",
+  creator: {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person`,
+    name: "Александр Ардашев",
+    url: siteUrl,
+  },
+  provider: {
+    "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
+    name: "ardashev.dev",
+    url: siteUrl,
+  },
+  featureList: functions,
+  programmingLanguage: ["Python"],
+  softwareRequirements: technologies,
+  offers: {
+    "@type": "Offer",
+    url: `${siteUrl}/max-bots`,
+    availability: "https://schema.org/InStock",
+    priceCurrency: "RUB",
+    category: "Разработка Max ботов",
+  },
 };
 
 const breadcrumbJsonLd = {
@@ -127,6 +174,12 @@ export default function MaxRequestBotCasePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(softwareApplicationJsonLd),
+        }}
       />
       <script
         type="application/ld+json"

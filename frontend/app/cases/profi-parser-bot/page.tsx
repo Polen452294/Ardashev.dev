@@ -73,27 +73,75 @@ const relatedServices = [
 const articleJsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
+  "@id": `${pageUrl}#article`,
   headline: "Кейс: парсер заказов с Profi.ru",
   description:
-    "Разработка парсера для мониторинга заказов, фильтрации подходящих заявок и отправки уведомлений.",
+    "Разработка парсера заказов с Profi.ru: сбор подходящих заявок, фильтрация, обработка данных и уведомления в Telegram.",
   url: pageUrl,
+  inLanguage: "ru-RU",
   author: {
     "@type": "Person",
+    "@id": `${siteUrl}/#person`,
     name: "Александр Ардашев",
     url: siteUrl,
   },
   publisher: {
     "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
     name: "ardashev.dev",
     url: siteUrl,
   },
-  mainEntityOfPage: pageUrl,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": pageUrl,
+  },
   about: [
     "разработка парсеров",
     "парсер заказов",
+    "парсинг Profi.ru",
+    "Telegram уведомления",
     "автоматизация поиска заявок",
-    "уведомления о новых заказах",
+    "CRM-интеграции",
   ],
+  mentions: relatedServices.map((service) => ({
+    "@type": "Service",
+    name: service.title,
+    url: `${siteUrl}${service.href}`,
+  })),
+};
+
+const softwareApplicationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": `${pageUrl}#software`,
+  name: "Парсер заказов с Profi.ru",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  url: pageUrl,
+  description:
+    "Парсер заказов с Profi.ru для автоматического поиска подходящих заявок, фильтрации по условиям, обработки данных и отправки уведомлений в Telegram.",
+  creator: {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person`,
+    name: "Александр Ардашев",
+    url: siteUrl,
+  },
+  provider: {
+    "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
+    name: "ardashev.dev",
+    url: siteUrl,
+  },
+  featureList: functions,
+  programmingLanguage: ["Python"],
+  softwareRequirements: technologies,
+  offers: {
+    "@type": "Offer",
+    url: `${siteUrl}/parsers`,
+    availability: "https://schema.org/InStock",
+    priceCurrency: "RUB",
+    category: "Разработка парсеров",
+  },
 };
 
 const breadcrumbJsonLd = {
@@ -127,6 +175,12 @@ export default function ProfiParserBotCasePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(softwareApplicationJsonLd),
+        }}
       />
       <script
         type="application/ld+json"

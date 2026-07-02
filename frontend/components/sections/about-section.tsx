@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { SectionTitle } from "@/components/ui/section-title";
 
 const aboutParagraphs = [
-  "Я — разработчик систем автоматизации с практическим опытом создания и запуска проектов под ключ, главный разработчик в сервисе Ardashev.dev. Учусь в одном из лучших вузов страны.",
+  "Я — разработчик систем автоматизации с опытом создания и запуска проектов под ключ, главный разработчик в сервисе Ardashev.dev. Учусь в одном из лучших вузов страны, НИТУ МИСиС.",
   "Специализируюсь на решениях для бизнеса: приём и обработка заказов, админ-панели, автоматизация общения с клиентами, интеграции с API, базами данных и платёжными системами.",
   "Работаю с CRM, нейросетями, aiogram, Docker, асинхронной архитектурой, базами данных и серверным деплоем. Моя задача — превратить идею в стабильное и удобное решение, которое экономит время и приносит пользу.",
 ];
@@ -63,7 +63,7 @@ export function AboutSection() {
         <div className="pointer-events-none absolute left-10 top-0 h-px w-1/3 bg-gradient-to-r from-transparent via-emerald-300/35 to-transparent" />
 
         <div className="relative text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
-          <div className="float-left mb-3 mr-4 w-[132px] min-[390px]:w-[150px] sm:mb-4 sm:mr-5 sm:w-[190px]">
+          <div className="float-left mb-3 mr-4 w-[150px] min-[390px]:w-[170px] sm:mb-4 sm:mr-5 sm:w-[210px]">
             <div className="overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.04] p-2 shadow-[0_0_60px_rgba(52,211,153,0.08)]">
               <div className="relative overflow-hidden rounded-[18px] bg-[#020817] sm:rounded-[20px]">
                 <Image

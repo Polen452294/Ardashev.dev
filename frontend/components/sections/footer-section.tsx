@@ -4,6 +4,25 @@ import { useState } from "react";
 import Link from "next/link";
 import { contactLinks } from "@/data/site-data";
 
+const navigationLinks = [
+  {
+    title: "Главная",
+    href: "/#hero",
+  },
+  {
+    title: "О разработчике",
+    href: "/about",
+  },
+  {
+    title: "Контакты",
+    href: "/contacts",
+  },
+  {
+    title: "Карта сайта",
+    href: "/sitemap",
+  },
+];
+
 const serviceLinks = [
   {
     title: "Telegram-боты",
@@ -58,12 +77,12 @@ export function FooterSection() {
       <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:px-12 xl:px-16">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <a
-              href="#hero"
+            <Link
+              href="/#hero"
               className="text-[30px] font-semibold tracking-tight text-white transition hover:text-emerald-300"
             >
               Ardashev<span className="text-emerald-300">.</span>dev
-            </a>
+            </Link>
 
             <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-400 sm:text-[15px]">
               Разработка Telegram-ботов, Max-ботов, парсеров сайтов и Telegram,
@@ -90,8 +109,14 @@ export function FooterSection() {
                   <a
                     key={contact.title}
                     href={contact.href}
-                    target={contact.href.startsWith("http") ? "_blank" : undefined}
-                    rel={contact.href.startsWith("http") ? "noreferrer" : undefined}
+                    target={
+                      contact.href.startsWith("http") ? "_blank" : undefined
+                    }
+                    rel={
+                      contact.href.startsWith("http")
+                        ? "noreferrer"
+                        : undefined
+                    }
                     className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-300/40 hover:bg-white/[0.06] hover:text-white"
                   >
                     {contact.title}
@@ -109,7 +134,25 @@ export function FooterSection() {
             </div>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:justify-self-end">
+          <div className="grid gap-8 sm:grid-cols-3 lg:justify-self-end">
+            <nav aria-label="Навигация">
+              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">
+                Навигация
+              </div>
+
+              <div className="mt-4 grid gap-3">
+                {navigationLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-sm text-slate-400 transition hover:text-emerald-300"
+                  >
+                    {link.title}
+                  </Link>
+                ))}
+              </div>
+            </nav>
+
             <nav aria-label="Услуги">
               <div className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">
                 Услуги

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import FloatingShapes from "@/components/background/floating-shapes";
-import { ContactButtons } from "@/components/contact-buttons";
 import { ExtraSection } from "@/components/sections/extra-section";
 import { ProcessSection } from "@/components/sections/process-section";
 import { ContactSection } from "@/components/sections/contact-section";
@@ -12,6 +11,8 @@ import { BotUseCasesSection } from "@/components/sections/bot-use-cases-section"
 import { FooterSection } from "@/components/sections/footer-section";
 import { SiteHeader } from "@/components/site-header";
 import { AboutSection } from "@/components/sections/about-section";
+import { HomeFaqSection } from "@/components/sections/home-faq-section";
+import { homeFaqJsonLd } from "@/data/home-faq";
 
 const siteUrl = "https://ardashev.dev";
 
@@ -28,14 +29,20 @@ export const metadata: Metadata = {
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${siteUrl}/#person`,
   name: "Александр Ардашев",
   url: siteUrl,
   jobTitle: "Разработчик Telegram-ботов, Max-ботов, парсеров и CRM-интеграций",
   email: "mailto:aardashev.dev@gmail.com",
   telephone: "+7 916 862-64-04",
+  worksFor: {
+    "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
+  },
   sameAs: [
     "https://github.com/Polen452294",
     "https://t.me/aardashevdev",
+    "https://profi.ru/profile/ArdashevAD/",
     "https://max.ru/u/f9LHodD0cOLjnaroqIXC9x50AYUTb-v1MgisAQs3JGzrycVAMO3inOzXILw",
   ],
   knowsAbout: [
@@ -44,6 +51,7 @@ const personJsonLd = {
     "Парсинг данных",
     "CRM-интеграции",
     "API-интеграции",
+    "Автоматизация заявок",
     "Python",
     "FastAPI",
     "PostgreSQL",
@@ -54,17 +62,20 @@ const personJsonLd = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "ardashev.dev",
+  "@id": `${siteUrl}/#organization`,
+  name: "Ardashev.dev",
   url: siteUrl,
   email: "mailto:aardashev.dev@gmail.com",
   telephone: "+7 916 862-64-04",
   founder: {
     "@type": "Person",
+    "@id": `${siteUrl}/#person`,
     name: "Александр Ардашев",
   },
   sameAs: [
     "https://github.com/Polen452294",
     "https://t.me/aardashevdev",
+    "https://profi.ru/profile/ArdashevAD/",
     "https://max.ru/u/f9LHodD0cOLjnaroqIXC9x50AYUTb-v1MgisAQs3JGzrycVAMO3inOzXILw",
   ],
 };
@@ -72,64 +83,89 @@ const organizationJsonLd = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "ardashev.dev",
+  "@id": `${siteUrl}/#website`,
+  name: "Ardashev.dev",
   url: siteUrl,
   inLanguage: "ru-RU",
   description:
     "Сайт разработчика Telegram-ботов, Max-ботов, парсеров и CRM/API-интеграций.",
   publisher: {
     "@type": "Organization",
-    name: "ardashev.dev",
-    url: siteUrl,
+    "@id": `${siteUrl}/#organization`,
   },
 };
 
 const navigationJsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Основные страницы ardashev.dev",
+  "@id": `${siteUrl}/#navigation`,
+  name: "Основные страницы Ardashev.dev",
   itemListElement: [
     {
       "@type": "SiteNavigationElement",
       position: 1,
+      name: "Главная",
+      url: siteUrl,
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 2,
+      name: "О разработчике",
+      url: `${siteUrl}/about`,
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 3,
+      name: "Контакты",
+      url: `${siteUrl}/contacts`,
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 4,
       name: "Разработка Telegram-ботов",
       url: `${siteUrl}/telegram-bots`,
     },
     {
       "@type": "SiteNavigationElement",
-      position: 2,
+      position: 5,
       name: "Разработка Max-ботов",
       url: `${siteUrl}/max-bots`,
     },
     {
       "@type": "SiteNavigationElement",
-      position: 3,
+      position: 6,
       name: "Разработка парсеров",
       url: `${siteUrl}/parsers`,
     },
     {
       "@type": "SiteNavigationElement",
-      position: 4,
+      position: 7,
       name: "CRM и API-интеграции",
       url: `${siteUrl}/crm-integrations`,
     },
     {
       "@type": "SiteNavigationElement",
-      position: 5,
+      position: 8,
       name: "Кейс: Telegram-бот для обмена USDT",
       url: `${siteUrl}/cases/usdt-exchange-bot`,
     },
     {
       "@type": "SiteNavigationElement",
-      position: 6,
+      position: 9,
       name: "Кейс: Max-бот для приема заявок",
       url: `${siteUrl}/cases/max-request-bot`,
     },
     {
       "@type": "SiteNavigationElement",
-      position: 7,
+      position: 10,
       name: "Кейс: парсер заказов с Profi.ru",
       url: `${siteUrl}/cases/profi-parser-bot`,
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 11,
+      name: "Карта сайта",
+      url: `${siteUrl}/sitemap`,
     },
   ],
 };
@@ -137,13 +173,19 @@ const navigationJsonLd = {
 const offerCatalogJsonLd = {
   "@context": "https://schema.org",
   "@type": "OfferCatalog",
-  name: "Услуги ardashev.dev",
+  "@id": `${siteUrl}/#offer-catalog`,
+  name: "Услуги Ardashev.dev",
   url: siteUrl,
+  provider: {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person`,
+  },
   itemListElement: [
     {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
+        "@id": `${siteUrl}/telegram-bots#service`,
         name: "Разработка Telegram-ботов",
         url: `${siteUrl}/telegram-bots`,
       },
@@ -152,6 +194,7 @@ const offerCatalogJsonLd = {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
+        "@id": `${siteUrl}/max-bots#service`,
         name: "Разработка Max-ботов",
         url: `${siteUrl}/max-bots`,
       },
@@ -160,6 +203,7 @@ const offerCatalogJsonLd = {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
+        "@id": `${siteUrl}/parsers#service`,
         name: "Разработка парсеров",
         url: `${siteUrl}/parsers`,
       },
@@ -168,6 +212,7 @@ const offerCatalogJsonLd = {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
+        "@id": `${siteUrl}/crm-integrations#service`,
         name: "CRM и API-интеграции",
         url: `${siteUrl}/crm-integrations`,
       },
@@ -198,6 +243,10 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(offerCatalogJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqJsonLd) }}
+      />
 
       <div className="relative isolate overflow-hidden">
         <FloatingShapes />
@@ -214,6 +263,7 @@ export default function Page() {
           <ProcessSection />
           <ExtraSection />
           <ContactSection />
+          <HomeFaqSection />
           <FooterSection />
         </main>
       </div>

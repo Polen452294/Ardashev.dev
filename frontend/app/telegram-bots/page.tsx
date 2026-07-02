@@ -100,17 +100,62 @@ const faq = [
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": `${pageUrl}#service`,
   name: "Разработка Telegram ботов на заказ",
+  alternateName: [
+    "Создание Telegram ботов",
+    "Telegram бот для бизнеса",
+    "Telegram бот для заявок",
+    "Telegram бот с CRM",
+  ],
   description:
     "Разработка Telegram ботов для бизнеса: прием заявок, CRM-интеграции, уведомления, админ-панели, оплата, базы данных и запуск на сервере.",
   url: pageUrl,
   provider: {
     "@type": "Person",
+    "@id": `${siteUrl}/#person`,
     name: "Александр Ардашев",
     url: siteUrl,
   },
-  areaServed: "Россия",
+  areaServed: {
+    "@type": "Country",
+    name: "Россия",
+  },
+  audience: {
+    "@type": "BusinessAudience",
+    audienceType: "Бизнес",
+  },
   serviceType: "Разработка Telegram ботов",
+  category: "Боты, автоматизация заявок и CRM-интеграции",
+  offers: {
+    "@type": "Offer",
+    url: `${siteUrl}/contacts`,
+    availability: "https://schema.org/InStock",
+    priceCurrency: "RUB",
+    category: "Разработка Telegram ботов",
+    itemOffered: {
+      "@type": "Service",
+      name: "Разработка Telegram бота под задачу бизнеса",
+      url: pageUrl,
+    },
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Что входит в разработку Telegram бота",
+    itemListElement: includes.map((item) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: item,
+      },
+    })),
+  },
+  subjectOf: caseStudies.map((item) => ({
+    "@type": "Article",
+    name: item.title,
+    description: item.text,
+    url: `${siteUrl}${item.href}`,
+  })),
 };
 
 const faqJsonLd = {
@@ -129,6 +174,7 @@ const faqJsonLd = {
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
   itemListElement: [
     {
       "@type": "ListItem",

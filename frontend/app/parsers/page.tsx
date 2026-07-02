@@ -100,17 +100,62 @@ const faq = [
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": `${pageUrl}#service`,
   name: "Разработка парсеров на заказ",
+  alternateName: [
+    "Создание парсеров",
+    "Парсер сайтов",
+    "Парсер Telegram",
+    "Парсер данных для бизнеса",
+  ],
   description:
     "Разработка парсеров для сайтов, каталогов, маркетплейсов, Telegram-каналов и открытых источников с выгрузкой в Excel, Google Sheets, базу данных, CRM или Telegram бота.",
   url: pageUrl,
   provider: {
     "@type": "Person",
+    "@id": `${siteUrl}/#person`,
     name: "Александр Ардашев",
     url: siteUrl,
   },
-  areaServed: "Россия",
+  areaServed: {
+    "@type": "Country",
+    name: "Россия",
+  },
+  audience: {
+    "@type": "BusinessAudience",
+    audienceType: "Бизнес",
+  },
   serviceType: "Разработка парсеров",
+  category: "Парсинг данных, автоматизация сбора данных и интеграции",
+  offers: {
+    "@type": "Offer",
+    url: `${siteUrl}/contacts`,
+    availability: "https://schema.org/InStock",
+    priceCurrency: "RUB",
+    category: "Разработка парсеров",
+    itemOffered: {
+      "@type": "Service",
+      name: "Разработка парсера под источник данных",
+      url: pageUrl,
+    },
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Что может входить в разработку парсера",
+    itemListElement: outputs.map((item) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: item,
+      },
+    })),
+  },
+  subjectOf: caseStudies.map((item) => ({
+    "@type": "Article",
+    name: item.title,
+    description: item.text,
+    url: `${siteUrl}${item.href}`,
+  })),
 };
 
 const faqJsonLd = {
@@ -129,6 +174,7 @@ const faqJsonLd = {
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
   itemListElement: [
     {
       "@type": "ListItem",
