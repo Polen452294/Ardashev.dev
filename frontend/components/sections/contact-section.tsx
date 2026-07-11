@@ -3,27 +3,7 @@
 import { useState } from "react";
 import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
-
-const contactItems = [
-  {
-    title: "Telegram",
-    href: "https://t.me/likeaatea",
-    icon: MessageCircle,
-    text: "Быстрый способ обсудить проект.",
-  },
-  {
-    title: "Max",
-    href: "https://max.ru/u/f9LHodD0cOLBuQru9TuIcrq9TtQ-rk93xm-oFACo-BCvcrba4KdlG37ts_M",
-    icon: MessageCircle,
-    text: "Связь через Max, если так удобнее.",
-  },
-  {
-    title: "Email",
-    href: "mailto:aardashevdev@gmail.com",
-    icon: Mail,
-    text: "Для подробного описания задачи.",
-  },
-];
+import { contactLinks } from "@/data/site-data";
 
 export function ContactSection() {
   const [copied, setCopied] = useState<string | null>(null);
@@ -84,8 +64,8 @@ export function ContactSection() {
           </div>
 
           <div className="space-y-2.5 sm:space-y-4">
-            {contactItems.map((item) => {
-              const Icon = item.icon;
+            {contactLinks.map((item) => {
+              const Icon = item.title === "Email" ? Mail : MessageCircle;
               const isEmail = item.title === "Email";
               const isCopied = copied === item.title;
 
@@ -115,26 +95,17 @@ export function ContactSection() {
                 </>
               );
 
-              return isEmail ? (
-                <button
-                  key={item.title}
-                  type="button"
-                  onClick={() =>
-                    copyToClipboard(
-                      "aardashev8@gmail.com",
-                      item.title
-                    )
-                  }
-                  className="group flex w-full items-center gap-3 rounded-[20px] border border-white/10 bg-white/[0.04] px-3.5 py-3 text-left transition hover:border-emerald-300/30 hover:bg-white/[0.07] sm:px-4 sm:py-4"
-                >
-                  {content}
-                </button>
-              ) : (
+              return (
                 <a
                   key={item.title}
                   href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                  onClick={
+                    isEmail
+                      ? () => copyToClipboard(item.label, item.title)
+                      : undefined
+                  }
                   className="group flex items-center gap-3 rounded-[20px] border border-white/10 bg-white/[0.04] px-3.5 py-3 transition hover:border-emerald-300/30 hover:bg-white/[0.07] sm:px-4 sm:py-4"
                 >
                   {content}

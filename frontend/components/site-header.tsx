@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ContactButtons } from "@/components/contact-buttons";
+import { siteContact } from "@/data/site-data";
 
 const navLinks = [
   {
@@ -7,12 +8,12 @@ const navLinks = [
     href: "/#about",
   },
   {
-    title: "Что я создаю",
-    href: "/#services",
+    title: "Услуги",
+    href: "/services",
   },
   {
-    title: "Гарантии качества",
-    href: "/#trust",
+    title: "Кейсы",
+    href: "/cases",
   },
   {
     title: "Что входит в заказ",
@@ -53,10 +54,10 @@ export function SiteHeader() {
 
           <div className="ml-auto flex shrink-0 items-center justify-end gap-2 sm:gap-3">
             <a
-              href="tel:+79168626404"
+              href={siteContact.phone.href}
               className="hidden rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[14px] font-semibold leading-none text-white transition hover:border-emerald-300/40 hover:bg-white/[0.06] hover:text-emerald-300 sm:inline-flex"
             >
-              +7 916 862-64-04
+              {siteContact.phone.label}
             </a>
 
             <ContactButtons />

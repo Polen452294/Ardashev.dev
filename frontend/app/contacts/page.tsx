@@ -10,6 +10,7 @@ import {
 } from "@/components/pages/inner-page-layout";
 import { Card } from "@/components/ui/card";
 import { GlowButton } from "@/components/ui/glow-button";
+import { allContactLinks, externalProfiles, siteContact } from "@/data/site-data";
 
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/contacts`;
@@ -22,37 +23,6 @@ export const metadata: Metadata = {
     canonical: pageUrl,
   },
 };
-
-const contactItems = [
-  {
-    title: "Telegram",
-    value: "@aardashevdev",
-    href: "https://t.me/aardashevdev",
-    text: "Самый быстрый способ обсудить задачу и уточнить детали проекта.",
-    icon: MessageCircle,
-  },
-  {
-    title: "Max",
-    value: "Написать в Max",
-    href: "https://max.ru/u/f9LHodD0cOLjnaroqIXC9x50AYUTb-v1MgisAQs3JGzrycVAMO3inOzXILw",
-    text: "Удобный вариант связи, если вы используете Max для рабочих сообщений.",
-    icon: MessageCircle,
-  },
-  {
-    title: "Email",
-    value: "aardashev.dev@gmail.com",
-    href: "mailto:aardashev.dev@gmail.com",
-    text: "Подходит для подробного описания задачи, ссылок, файлов и технического задания.",
-    icon: Mail,
-  },
-  {
-    title: "Телефон",
-    value: "+7 916 862-64-04",
-    href: "tel:+79168626404",
-    text: "Можно использовать как дополнительный способ связи по проекту.",
-    icon: Phone,
-  },
-];
 
 const faq = [
   {
@@ -85,21 +55,17 @@ const contactPageJsonLd = {
     "@id": `${siteUrl}/#person`,
     name: "Александр Ардашев",
     url: siteUrl,
-    email: "mailto:aardashev.dev@gmail.com",
-    telephone: "+79168626404",
+    email: siteContact.email.href,
+    telephone: siteContact.phone.href.replace("tel:", ""),
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      email: "aardashev.dev@gmail.com",
-      telephone: "+79168626404",
+      email: siteContact.email.label,
+      telephone: siteContact.phone.href.replace("tel:", ""),
       areaServed: "RU",
       availableLanguage: ["ru"],
     },
-    sameAs: [
-      "https://github.com/Polen452294",
-      "https://t.me/aardashevdev",
-      "https://profi.ru/profile/ArdashevAD/",
-    ],
+    sameAs: externalProfiles,
   },
 };
 
@@ -156,7 +122,7 @@ export default function ContactsPage() {
         title="Контакты для заказа разработки"
         description="Напишите удобным способом, если нужен Telegram бот, Max бот, парсер, CRM/API-интеграция или автоматизация бизнес-процесса."
         primaryText="Написать в Telegram"
-        primaryHref="https://t.me/aardashevdev"
+        primaryHref={siteContact.telegram.href}
         secondaryText="Посмотреть услуги"
         secondaryHref="/#services"
       >
@@ -168,8 +134,13 @@ export default function ContactsPage() {
           />
 
           <div className="grid gap-3 sm:gap-4 lg:grid-cols-2">
-            {contactItems.map((item) => {
-              const Icon = item.icon;
+            {allContactLinks.map((item) => {
+              const Icon =
+                item.title === "Email"
+                  ? Mail
+                  : item.title === "Телефон"
+                    ? Phone
+                    : MessageCircle;
 
               return (
                 <Card
@@ -205,7 +176,7 @@ export default function ContactsPage() {
                       }
                       className="inline-flex w-fit items-center rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-semibold text-white transition hover:border-emerald-300/40 hover:bg-white/[0.06] hover:text-emerald-300"
                     >
-                      {item.value}
+                      {item.label}
                     </Link>
                   </div>
                 </Card>

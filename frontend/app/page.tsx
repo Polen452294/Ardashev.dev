@@ -13,6 +13,7 @@ import { SiteHeader } from "@/components/site-header";
 import { AboutSection } from "@/components/sections/about-section";
 import { HomeFaqSection } from "@/components/sections/home-faq-section";
 import { homeFaqJsonLd } from "@/data/home-faq";
+import { externalProfiles, siteContact } from "@/data/site-data";
 
 const siteUrl = "https://ardashev.dev";
 
@@ -33,18 +34,13 @@ const personJsonLd = {
   name: "Александр Ардашев",
   url: siteUrl,
   jobTitle: "Разработчик Telegram-ботов, Max-ботов, парсеров и CRM-интеграций",
-  email: "mailto:aardashev.dev@gmail.com",
-  telephone: "+7 916 862-64-04",
+  email: siteContact.email.href,
+  telephone: siteContact.phone.label,
   worksFor: {
     "@type": "Organization",
     "@id": `${siteUrl}/#organization`,
   },
-  sameAs: [
-    "https://github.com/Polen452294",
-    "https://t.me/aardashevdev",
-    "https://profi.ru/profile/ArdashevAD/",
-    "https://max.ru/u/f9LHodD0cOLjnaroqIXC9x50AYUTb-v1MgisAQs3JGzrycVAMO3inOzXILw",
-  ],
+  sameAs: externalProfiles,
   knowsAbout: [
     "Разработка Telegram-ботов",
     "Разработка Max-ботов",
@@ -65,19 +61,14 @@ const organizationJsonLd = {
   "@id": `${siteUrl}/#organization`,
   name: "Ardashev.dev",
   url: siteUrl,
-  email: "mailto:aardashev.dev@gmail.com",
-  telephone: "+7 916 862-64-04",
+  email: siteContact.email.href,
+  telephone: siteContact.phone.label,
   founder: {
     "@type": "Person",
     "@id": `${siteUrl}/#person`,
     name: "Александр Ардашев",
   },
-  sameAs: [
-    "https://github.com/Polen452294",
-    "https://t.me/aardashevdev",
-    "https://profi.ru/profile/ArdashevAD/",
-    "https://max.ru/u/f9LHodD0cOLjnaroqIXC9x50AYUTb-v1MgisAQs3JGzrycVAMO3inOzXILw",
-  ],
+  sameAs: externalProfiles,
 };
 
 const websiteJsonLd = {

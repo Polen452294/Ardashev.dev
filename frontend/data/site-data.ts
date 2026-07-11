@@ -9,23 +9,47 @@ import {
   Wrench,
 } from "lucide-react";
 
-export const contactLinks = [
-  {
+export const siteContact = {
+  telegram: {
     title: "Telegram",
     label: "@aardashevdev",
     href: "https://t.me/aardashevdev",
+    text: "Быстрый способ обсудить задачу и уточнить детали проекта.",
   },
-  {
+  max: {
     title: "Max",
-    label: "Max",
+    label: "Написать в Max",
     href: "https://max.ru/u/f9LHodD0cOLjnaroqIXC9x50AYUTb-v1MgisAQs3JGzrycVAMO3inOzXILw",
+    text: "Удобный вариант связи через Max для рабочих сообщений.",
   },
-  {
+  email: {
     title: "Email",
     label: "aardashev.dev@gmail.com",
     href: "mailto:aardashev.dev@gmail.com",
+    text: "Для подробного описания задачи, ссылок, файлов и технического задания.",
   },
-];
+  phone: {
+    title: "Телефон",
+    label: "+7 916 862-64-04",
+    href: "tel:+79168626404",
+    text: "Дополнительный способ связи по проекту.",
+  },
+} as const;
+
+export const contactLinks = [
+  siteContact.telegram,
+  siteContact.max,
+  siteContact.email,
+] as const;
+
+export const allContactLinks = [...contactLinks, siteContact.phone] as const;
+
+export const externalProfiles = [
+  "https://github.com/Polen452294",
+  siteContact.telegram.href,
+  "https://profi.ru/profile/ArdashevAD/",
+  siteContact.max.href,
+] as const;
 
 export const services = [
   {

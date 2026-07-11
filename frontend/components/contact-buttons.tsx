@@ -24,28 +24,20 @@ export function ContactButtons() {
   return (
     <div className="hidden items-center gap-2 sm:flex">
       {contactLinks.map((contact) => {
-        if (contact.title === "Email") {
-          return (
-            <button
-              key={contact.title}
-              type="button"
-              onClick={() => copyToClipboard(contact.label, contact.title)}
-              className={buttonClass}
-            >
-              {copied === contact.title ? "Скопировано" : contact.title}
-            </button>
-          );
-        }
-
         return (
           <a
             key={contact.title}
             href={contact.href}
-            target="_blank"
-            rel="noreferrer"
+            target={contact.href.startsWith("http") ? "_blank" : undefined}
+            rel={contact.href.startsWith("http") ? "noreferrer" : undefined}
+            onClick={
+              contact.title === "Email"
+                ? () => copyToClipboard(contact.label, contact.title)
+                : undefined
+            }
             className={buttonClass}
           >
-            {contact.title}
+            {copied === contact.title ? "Скопировано" : contact.title}
           </a>
         );
       })}

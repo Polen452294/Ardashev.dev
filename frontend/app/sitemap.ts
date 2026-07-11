@@ -6,6 +6,8 @@ const routes = [
   { path: "", priority: 1 },
   { path: "/about", priority: 0.85 },
   { path: "/contacts", priority: 0.85 },
+  { path: "/services", priority: 0.95 },
+  { path: "/cases", priority: 0.9 },
   { path: "/sitemap", priority: 0.7 },
   { path: "/telegram-bots", priority: 0.9 },
   { path: "/max-bots", priority: 0.9 },
@@ -19,7 +21,7 @@ const routes = [
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({
     url: `${siteUrl}${route.path}`,
-    lastModified: new Date("2026-07-02"),
+    lastModified: new Date("2026-07-11"),
     changeFrequency: "weekly",
     priority: route.priority,
   }));

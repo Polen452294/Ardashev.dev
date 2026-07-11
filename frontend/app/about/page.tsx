@@ -9,6 +9,7 @@ import {
   TextGridSection,
   TwoColumnTextSection,
 } from "@/components/pages/inner-page-layout";
+import { externalProfiles } from "@/data/site-data";
 
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/about`;
@@ -124,11 +125,7 @@ const personJsonLd = {
   jobTitle: "Разработчик ботов, парсеров и CRM-интеграций",
   description:
     "Разработчик систем автоматизации, Telegram ботов, Max ботов, парсеров сайтов и Telegram, CRM/API-интеграций.",
-  sameAs: [
-    "https://github.com/Polen452294",
-    "https://t.me/aardashevdev",
-    "https://profi.ru/profile/ArdashevAD/",
-  ],
+  sameAs: externalProfiles,
   knowsAbout: [
     "Telegram bots",
     "Max bots",

@@ -79,7 +79,7 @@ export function InnerPageLayout({
   primaryText = "Создать заказ",
   primaryHref = "/#contact",
   secondaryText = "Смотреть кейсы",
-  secondaryHref = "#portfolio",
+  secondaryHref = "/cases",
   children,
 }: InnerPageLayoutProps) {
   return (

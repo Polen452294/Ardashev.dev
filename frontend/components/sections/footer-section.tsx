@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { contactLinks } from "@/data/site-data";
+import { allContactLinks } from "@/data/site-data";
 
 const navigationLinks = [
   {
@@ -25,6 +25,10 @@ const navigationLinks = [
 
 const serviceLinks = [
   {
+    title: "Все услуги",
+    href: "/services",
+  },
+  {
     title: "Telegram-боты",
     href: "/telegram-bots",
   },
@@ -43,6 +47,10 @@ const serviceLinks = [
 ];
 
 const caseLinks = [
+  {
+    title: "Все кейсы",
+    href: "/cases",
+  },
   {
     title: "USDT Exchange Bot",
     href: "/cases/usdt-exchange-bot",
@@ -90,22 +98,11 @@ export function FooterSection() {
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              {contactLinks.map((contact) => {
+              {allContactLinks.map((contact) => {
                 const isEmail = contact.title === "Email";
                 const isCopied = copied === contact.title;
 
-                return isEmail ? (
-                  <button
-                    key={contact.title}
-                    type="button"
-                    onClick={() =>
-                      copyToClipboard(contact.label, contact.title)
-                    }
-                    className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-300/40 hover:bg-white/[0.06] hover:text-white"
-                  >
-                    {isCopied ? "Скопировано" : contact.title}
-                  </button>
-                ) : (
+                return (
                   <a
                     key={contact.title}
                     href={contact.href}
@@ -117,20 +114,17 @@ export function FooterSection() {
                         ? "noreferrer"
                         : undefined
                     }
+                    onClick={
+                      isEmail
+                        ? () => copyToClipboard(contact.label, contact.title)
+                        : undefined
+                    }
                     className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-300/40 hover:bg-white/[0.06] hover:text-white"
                   >
-                    {contact.title}
+                    {isCopied ? "Скопировано" : contact.title}
                   </a>
                 );
               })}
-
-              <button
-                type="button"
-                onClick={() => copyToClipboard("+7 916 862-64-04", "Телефон")}
-                className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-300/40 hover:bg-white/[0.06] hover:text-white"
-              >
-                {copied === "Телефон" ? "Скопировано" : "+7 916 862-64-04"}
-              </button>
             </div>
           </div>
 
