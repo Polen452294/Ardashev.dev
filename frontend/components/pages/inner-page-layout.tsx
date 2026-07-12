@@ -1,8 +1,5 @@
-"use client";
-
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import FloatingShapes from "@/components/background/floating-shapes";
 import { ContactButtons } from "@/components/contact-buttons";
 import { GlowButton } from "@/components/ui/glow-button";
@@ -98,12 +95,9 @@ export function InnerPageLayout({
         <SiteHeader />
 
         <main className="relative z-10">
-          <motion.section
+          <section
             data-no-dots
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, ease: "easeOut" }}
-            className="mx-auto max-w-5xl px-6 pb-3 pt-7 sm:px-8 sm:pb-5 sm:pt-12 lg:max-w-6xl lg:px-12 lg:pb-6 lg:pt-14 xl:max-w-7xl xl:px-16 xl:pb-7 xl:pt-16 2xl:max-w-[1320px] 2xl:px-20"
+            className="page-reveal mx-auto max-w-5xl px-6 pb-3 pt-7 sm:px-8 sm:pb-5 sm:pt-12 lg:max-w-6xl lg:px-12 lg:pb-6 lg:pt-14 xl:max-w-7xl xl:px-16 xl:pb-7 xl:pt-16 2xl:max-w-[1320px] 2xl:px-20"
             >
             <div className="max-w-4xl">
               <nav aria-label="Хлебные крошки" className="mb-4 text-xs text-slate-400 sm:text-sm">
@@ -142,7 +136,7 @@ export function InnerPageLayout({
                 </GlowButton>
               </div>
             </div>
-          </motion.section>
+          </section>
 
           {children}
         </main>
@@ -160,20 +154,16 @@ export function InnerPageSection({
   className = "",
 }: InnerPageSectionProps) {
   return (
-    <motion.section
+    <section
         id={id}
         data-no-dots
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.18 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
       className={[
         "mx-auto max-w-5xl px-6 py-2.5 sm:px-8 sm:py-4 lg:max-w-6xl lg:px-12 lg:py-5 xl:max-w-7xl xl:px-16 xl:py-6 2xl:max-w-[1320px] 2xl:px-20 2xl:py-7",
         className,
       ].join(" ")}
     >
       {children}
-    </motion.section>
+    </section>
   );
 }
 

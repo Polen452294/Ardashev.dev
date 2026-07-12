@@ -1,9 +1,38 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GlowButton } from "@/components/ui/glow-button";
 
 export function HeroSection() {
+  const previewRef = useRef<HTMLDivElement>(null);
+  const [canLoadVideo, setCanLoadVideo] = useState(false);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const connection = (navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+    const slowConnection = connection?.saveData || ["slow-2g", "2g"].includes(connection?.effectiveType ?? "");
+
+    if (reducedMotion || slowConnection || !previewRef.current) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCanLoadVideo(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    observer.observe(previewRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       id="hero"
@@ -99,15 +128,24 @@ export function HeroSection() {
               </div>
             </div>
 
-            <div className="mt-1 overflow-hidden rounded-[14px] bg-[#020617] sm:rounded-[28px]">
+            <div ref={previewRef} className="mt-1 overflow-hidden rounded-[14px] bg-[#020617] sm:rounded-[28px]">
               <video
-                src="/demo/bot-preview.mp4"
-                autoPlay
+                autoPlay={canLoadVideo}
                 muted
                 loop
                 playsInline
+                preload="none"
+                poster="/demo/bot-preview-poster-v2.webp"
+                aria-label="Пример работы Telegram-бота"
                 className="block h-auto w-full rounded-[14px] sm:rounded-[28px]"
-              />
+              >
+                {canLoadVideo ? (
+                  <>
+                    <source src="/demo/bot-preview-v2.webm" type="video/webm" />
+                    <source src="/demo/bot-preview-v2.mp4" type="video/mp4" />
+                  </>
+                ) : null}
+              </video>
             </div>
           </div>
         </div>
