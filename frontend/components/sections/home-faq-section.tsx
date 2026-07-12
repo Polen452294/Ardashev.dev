@@ -32,7 +32,7 @@ export function HomeFaqSection() {
       <SectionTitle
         eyebrow="Вопросы и ответы"
         title="Частые вопросы"
-        text="Короткие ответы на вопросы, которые чаще всего появляются перед заказом Telegram-бота, MAX-бота, парсера или CRM-интеграции."
+        text="Короткие ответы на вопросы, которые чаще всего появляются перед заказом Telegram-бота, Max-бота, парсера или CRM-интеграции."
       />
 
       <Card className="relative overflow-hidden bg-[#081122]/72">

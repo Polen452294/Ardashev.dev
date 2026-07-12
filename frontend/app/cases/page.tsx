@@ -16,11 +16,11 @@ const pageUrl = `${siteUrl}/cases`;
 export const metadata: Metadata = {
   title: "Кейсы ботов, парсеров и интеграций",
   description:
-    "Примеры разработки Telegram и MAX-ботов, парсеров и систем автоматизации: задача, стек, реализация и результат.",
+    "Примеры разработки Telegram и Max-ботов, парсеров и систем автоматизации: задача, стек, реализация и результат.",
   alternates: { canonical: pageUrl },
 };
 
-const caseCategories = ["Боты", "MAX", "Парсеры", "CRM и интеграции"];
+const caseCategories = ["Боты", "Max", "Парсеры", "CRM и интеграции"];
 
 const itemListJsonLd = {
   "@context": "https://schema.org",

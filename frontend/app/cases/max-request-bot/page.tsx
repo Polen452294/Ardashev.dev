@@ -10,30 +10,30 @@ const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/cases/max-request-bot`;
 
 export const metadata: Metadata = {
-  title: "Кейс: разработка MAX-бота на Python",
+  title: "Кейс: разработка Max-бота на Python",
   description:
-    "Демонстрационный проект MAX-бота на Python: асинхронная архитектура, API-клиент, обработчики, сервисный слой и основа для MVP.",
+    "Демонстрационный проект Max-бота на Python: асинхронная архитектура, API-клиент, обработчики, сервисный слой и основа для MVP.",
   alternates: {
     canonical: pageUrl,
   },
 };
 
 const facts = [
-  { title: "Тип проекта", text: "Демонстрационный асинхронный MAX-бот и стартовая база для MVP, а не завершённый клиентский проект." },
-  { title: "Назначение", text: "Проверить структуру приложения, получение событий MAX API, обработчики и возможность дальнейшего подключения бизнес-логики." },
+  { title: "Тип проекта", text: "Демонстрационный асинхронный Max-бот и стартовая база для MVP, а не завершённый клиентский проект." },
+  { title: "Назначение", text: "Проверить структуру приложения, получение событий Max API, обработчики и возможность дальнейшего подключения бизнес-логики." },
   { title: "Роль Александра", text: "Архитектура проекта, API-клиент, обработчики, конфигурация окружения, mock CRM и документация запуска." },
 ];
 
 const context = [
   { title: "Исходная проблема", text: "Для нового мессенджера требовалась понятная Python-основа, которую можно быстро развернуть и расширять без смешивания API-кода и бизнес-логики." },
-  { title: "Почему не копия Telegram-бота", text: "MAX использует собственные методы, события и структуры данных, поэтому прямой перенос обработчиков дал бы хрупкую архитектуру." },
+  { title: "Почему не копия Telegram-бота", text: "Max использует собственные методы, события и структуры данных, поэтому прямой перенос обработчиков дал бы хрупкую архитектуру." },
   { title: "Ограничения", text: "Проект демонстрационный: в нём нет подтверждённого клиентского трафика, коммерческой CRM и статистики эксплуатации." },
   { title: "Статус", text: "Репозиторий обозначает проект как WIP и основу для дальнейшего развития." },
 ];
 
 const architecture = [
   { title: "Core", text: "Загружает настройки и переменные окружения без хранения токенов в исходном коде." },
-  { title: "API", text: "Изолирует HTTP-взаимодействие с платформой MAX." },
+  { title: "API", text: "Изолирует HTTP-взаимодействие с платформой Max." },
   { title: "Handlers", text: "Получают команды и события и выбирают нужное действие." },
   { title: "Services", text: "Место для сценариев, заявок и внешних интеграций без зависимости от транспорта." },
   { title: "Mock CRM", text: "Позволяет отрабатывать передачу данных до подключения реальной CRM." },
@@ -49,20 +49,20 @@ const functionDetails = [
 ];
 
 const outcomes = [
-  { title: "До", text: "Не было оформленной базы проекта MAX с разделением платформенного кода и будущей бизнес-логики." },
+  { title: "До", text: "Не было оформленной базы проекта Max с разделением платформенного кода и будущей бизнес-логики." },
   { title: "После", text: "Есть запускаемый Python-проект с модулями API, handlers, services, core и документацией окружения." },
   { title: "Измеримые показатели", text: "Проект демонстрационный, поэтому клиентские показатели и экономический эффект отсутствуют. Результат оценивался функционально." },
 ];
 
 const retrospective = [
   { title: "После запуска", text: "Боевой запуск у клиента не заявлен; отдельного журнала эксплуатационных исправлений нет." },
-  { title: "Что улучшить сейчас", text: "Зафиксировать версии API, добавить контрактные тесты клиента MAX и автоматическую проверку обработчиков." },
+  { title: "Что улучшить сейчас", text: "Зафиксировать версии API, добавить контрактные тесты клиента Max и автоматическую проверку обработчиков." },
   { title: "Следующий этап", text: "Подключить реальный сценарий заявок, постоянное хранилище, журнал ошибок и метрики обработки событий." },
 ];
 
 const functions = [
   "Асинхронная обработка событий",
-  "HTTP-клиент MAX API",
+  "HTTP-клиент Max API",
   "Модульные обработчики",
   "Сервисный слой",
   "Конфигурация через .env",
@@ -71,7 +71,7 @@ const functions = [
 
 const technologies = [
   "Python",
-  "MAX API",
+  "Max API",
   "Сценарии с кнопками",
   "Обработка заявок",
   "Интеграции",
@@ -80,13 +80,13 @@ const technologies = [
 
 const relatedServices = [
   {
-    title: "Разработка MAX-ботов",
-    text: "Если нужно принимать заявки, консультации и обращения внутри MAX.",
+    title: "Разработка Max-ботов",
+    text: "Если нужно принимать заявки, консультации и обращения внутри Max.",
     href: "/max-bots",
   },
   {
     title: "CRM и API-интеграции",
-    text: "Если заявки из MAX нужно автоматически передавать в CRM, таблицу или внутренний сервис.",
+    text: "Если заявки из Max нужно автоматически передавать в CRM, таблицу или внутренний сервис.",
     href: "/crm-integrations",
   },
   {
@@ -100,12 +100,12 @@ const articleJsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
   "@id": `${pageUrl}#article`,
-  headline: "Кейс: разработка MAX-бота на Python",
+  headline: "Кейс: разработка Max-бота на Python",
   image: `${siteUrl}/opengraph-image`,
   datePublished: "2026-07-11",
   dateModified: "2026-07-12",
   description:
-    "Демонстрационный асинхронный MAX-бот на Python с модульной архитектурой и основой для дальнейшего MVP.",
+    "Демонстрационный асинхронный Max-бот на Python с модульной архитектурой и основой для дальнейшего MVP.",
   url: pageUrl,
   inLanguage: "ru-RU",
   author: {
@@ -125,8 +125,8 @@ const articleJsonLd = {
     "@id": pageUrl,
   },
   about: [
-    "разработка MAX-ботов",
-    "MAX-бот для заявок",
+    "разработка Max-ботов",
+    "Max-бот для заявок",
     "автоматизация обращений",
     "бот для консультаций",
     "CRM-интеграции",
@@ -142,11 +142,11 @@ const projectJsonLd = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
   "@id": `${pageUrl}#project`,
-  name: "MAX Python Bot",
+  name: "Max Python Bot",
   url: pageUrl,
   image: `${siteUrl}/opengraph-image`,
   description:
-    "Демонстрационный MAX-бот на Python с API-клиентом, обработчиками, сервисным слоем, конфигурацией окружения и mock CRM.",
+    "Демонстрационный Max-бот на Python с API-клиентом, обработчиками, сервисным слоем, конфигурацией окружения и mock CRM.",
   creator: {
     "@type": "Person",
     "@id": `${siteUrl}/#person`,
@@ -159,7 +159,7 @@ const projectJsonLd = {
     name: "ardashev.dev",
     url: siteUrl,
   },
-  keywords: ["MAX", "Python", ...technologies, ...functions],
+  keywords: ["Max", "Python", ...technologies, ...functions],
 };
 
 const breadcrumbJsonLd = {
@@ -181,7 +181,7 @@ const breadcrumbJsonLd = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "MAX Python Bot",
+      name: "Max Python Bot",
       item: pageUrl,
     },
   ],
@@ -209,11 +209,11 @@ export default function MaxRequestBotCasePage() {
         breadcrumbs={[
           { label: "Главная", href: "/" },
           { label: "Кейсы", href: "/cases" },
-          { label: "MAX Python Bot" },
+          { label: "Max Python Bot" },
         ]}
         eyebrow="Кейс"
-        title="MAX Python Bot: стартовая база для MVP"
-        description="Демонстрационный проект на Python, созданный для проверки MAX Bot API и модульной архитектуры. Это не клиентский кейс с коммерческими показателями, а открытая основа для будущих сценариев и интеграций."
+        title="Max Python Bot: стартовая база для MVP"
+        description="Демонстрационный проект на Python, созданный для проверки Max Bot API и модульной архитектуры. Это не клиентский кейс с коммерческими показателями, а открытая основа для будущих сценариев и интеграций."
         primaryText="Создать заказ"
         secondaryText="Открыть GitHub"
         secondaryHref="https://github.com/Polen452294/Max-Python-Bot"
@@ -227,14 +227,14 @@ export default function MaxRequestBotCasePage() {
           retrospective={retrospective}
           githubUrl="https://github.com/Polen452294/Max-Python-Bot"
           mediaUrl="https://raw.githubusercontent.com/Polen452294/Max-Python-Bot/main/docs/demo.gif"
-          mediaAlt="Демонстрация работы MAX Python Bot"
+          mediaAlt="Демонстрация работы Max Python Bot"
           evidenceNote="Демонстрация и весь исходный код опубликованы в GitHub. Кейс обозначен как демонстрационный, поэтому не приписывает проекту клиентские показатели."
         />
 
         <RelatedLinksSection items={relatedServices} />
 
         <CtaSection
-          title="Нужен похожий MAX-бот?"
+          title="Нужен похожий Max-бот?"
           text="Опишите, какие заявки или обращения должен принимать бот. Я помогу выбрать сценарий, структуру и способ передачи данных."
           buttonText="Создать заказ"
         />

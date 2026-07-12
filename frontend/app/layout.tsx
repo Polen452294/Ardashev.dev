@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     template: "%s | Ardashev.dev",
   },
   description:
-    "Разработка Telegram-ботов, MAX-ботов, парсеров сайтов и Telegram, CRM/API-интеграций, систем приема заявок и автоматизации бизнес-процессов.",
+    "Разработка Telegram-ботов, Max-ботов, парсеров сайтов и Telegram, CRM/API-интеграций, систем приема заявок и автоматизации бизнес-процессов.",
   openGraph: {
     type: "website",
     locale: "ru_RU",
     siteName: "Ardashev.dev",
     title: "Разработка ботов, парсеров и CRM-интеграций",
     description:
-      "Telegram-боты, MAX-боты, парсеры, CRM-системы и API-интеграции для бизнеса.",
+      "Telegram-боты, Max-боты, парсеры, CRM-системы и API-интеграции для бизнеса.",
     url: "https://ardashev.dev",
     images: [
       {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Разработка ботов, парсеров и CRM-интеграций",
     description:
-      "Telegram-боты, MAX-боты, парсеры, CRM-системы и API-интеграции для бизнеса.",
+      "Telegram-боты, Max-боты, парсеры, CRM-системы и API-интеграции для бизнеса.",
     images: ["/opengraph-image"],
   },
 };

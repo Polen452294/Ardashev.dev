@@ -110,8 +110,8 @@ const relatedServices = [
     href: "/crm-integrations",
   },
   {
-    title: "Разработка MAX-ботов",
-    text: "Если нужно сделать похожий сценарий приема заявок не только в Telegram, но и в MAX.",
+    title: "Разработка Max-ботов",
+    text: "Если нужно сделать похожий сценарий приема заявок не только в Telegram, но и в Max.",
     href: "/max-bots",
   },
   {

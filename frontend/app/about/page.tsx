@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
+  CaseLinksSection,
   CtaSection,
   FaqSection,
   InnerPageLayout,
@@ -9,6 +11,7 @@ import {
   TextGridSection,
   TwoColumnTextSection,
 } from "@/components/pages/inner-page-layout";
+import { Card } from "@/components/ui/card";
 
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/about`;
@@ -16,7 +19,7 @@ const pageUrl = `${siteUrl}/about`;
 export const metadata: Metadata = {
   title: "Александр Ардашев — разработчик ботов и парсеров",
   description:
-    "О разработчике Ardashev.dev: Telegram-боты, MAX-боты, парсеры, CRM/API-интеграции, автоматизация заявок и бизнес-процессов.",
+    "О разработчике Ardashev.dev: Telegram-боты, Max-боты, парсеры, CRM/API-интеграции, автоматизация заявок и бизнес-процессов.",
   alternates: {
     canonical: pageUrl,
   },
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
 
 const workAreas = [
   "Разработка Telegram-ботов для приема заявок, консультаций, уведомлений и автоматизации общения с клиентами",
-  "Разработка MAX-ботов для бизнеса и переноса логики из Telegram в MAX",
+  "Разработка Max-ботов для бизнеса и переноса логики из Telegram в Max",
   "Создание парсеров сайтов, площадок, Telegram каналов и открытых источников",
   "CRM и API-интеграции для автоматической передачи заявок, контактов, статусов и уведомлений",
   "Запуск проектов на сервере, настройка базы данных, Docker и базовой инфраструктуры",
@@ -35,6 +38,43 @@ const approach = [
   "Проектирую сценарий, структуру данных и логику до начала активной разработки",
   "Делаю рабочее решение, которое можно проверить в деле, а не просто посмотреть на макет",
   "После запуска помогаю проверить работу, исправить замечания и подготовить проект к использованию",
+];
+
+const cooperationItems = [
+  {
+    title: "Обсуждение задачи",
+    text: "Можно прийти без готового технического задания. Сначала разбираем текущий процесс, ограничения и результат, который нужен бизнесу.",
+  },
+  {
+    title: "Состав и оценка работ",
+    text: "До начала разработки фиксируем функции первой версии, сроки и стоимость. Расходы на серверы и сторонние сервисы обсуждаются отдельно.",
+  },
+  {
+    title: "Проверка результата",
+    text: "Рабочую версию можно проверить по согласованным сценариям. После оплаты передаю код и файлы проекта.",
+  },
+  {
+    title: "Запуск и поддержка",
+    text: "Помогаю развернуть проект, проверить основные сценарии и исправить замечания, найденные после запуска.",
+  },
+];
+
+const caseLinks = [
+  {
+    title: "Telegram-бот для обмена USDT",
+    text: "Бот принимает заявки, сохраняет статусы и отправляет напоминания. Архитектура и код описаны в отдельном кейсе.",
+    href: "/cases/usdt-exchange-bot",
+  },
+  {
+    title: "Max-бот на Python",
+    text: "Открытый демонстрационный проект с API-клиентом, обработчиками и сервисным слоем.",
+    href: "/cases/max-request-bot",
+  },
+  {
+    title: "Парсер заказов с Profi.ru",
+    text: "Парсер отслеживает новые заказы, применяет фильтры и отправляет подходящие варианты в Telegram.",
+    href: "/cases/profi-parser-bot",
+  },
 ];
 
 const trustItems = [
@@ -65,7 +105,7 @@ const stack = [
   "Docker",
   "Next.js",
   "Telegram API",
-  "MAX API",
+  "Max API",
   "CRM API",
 ];
 
@@ -76,8 +116,8 @@ const relatedLinks = [
     href: "/telegram-bots",
   },
   {
-    title: "Разработка MAX-ботов",
-    text: "Боты для MAX: заявки, консультации, уведомления и бизнес-сценарии.",
+    title: "Разработка Max-ботов",
+    text: "Боты для Max: заявки, консультации, уведомления и бизнес-сценарии.",
     href: "/max-bots",
   },
   {
@@ -96,7 +136,7 @@ const faq = [
   {
     question: "Чем занимается Ardashev.dev?",
     answer:
-      "Ardashev.dev — это разработка Telegram-ботов, MAX-ботов, парсеров, CRM/API-интеграций и систем автоматизации для бизнеса.",
+      "Ardashev.dev — это разработка Telegram-ботов, Max-ботов, парсеров, CRM/API-интеграций и систем автоматизации для бизнеса.",
   },
   {
     question: "Можно ли обратиться без готового технического задания?",
@@ -111,7 +151,7 @@ const faq = [
   {
     question: "Какие проекты можно заказать?",
     answer:
-      "Можно заказать Telegram-бота, MAX-бота, парсер, интеграцию с CRM, связку с таблицами, автоматическую передачу заявок, уведомления и серверный запуск проекта.",
+      "Можно заказать Telegram-бота, Max-бота, парсер, интеграцию с CRM, связку с таблицами, автоматическую передачу заявок, уведомления и серверный запуск проекта.",
   },
 ];
 
@@ -123,7 +163,7 @@ const profilePageJsonLd = {
   name: "О разработчике — Александр Ардашев",
   description:
     "Страница о разработчике Ardashev.dev: опыт, стек, услуги, подход к разработке и автоматизации.",
-  dateModified: "2026-07-12",
+  dateModified: "2026-07-13",
   primaryImageOfPage: `${siteUrl}/about-photo.jpg`,
   mainEntity: {
     "@id": `${siteUrl}/#person`,
@@ -181,12 +221,55 @@ export default function AboutPage() {
       <InnerPageLayout
         eyebrow="О разработчике"
         title="О разработчике Ardashev.dev"
-        description="Я разрабатываю Telegram-ботов, MAX-ботов, парсеры, CRM/API-интеграции и системы автоматизации, которые помогают бизнесу быстрее принимать заявки, обрабатывать данные и убирать ручную рутину."
+        description="Я разрабатываю Telegram-ботов, Max-ботов, парсеры, CRM/API-интеграции и системы автоматизации, которые помогают бизнесу быстрее принимать заявки, обрабатывать данные и убирать ручную рутину."
         primaryText="Создать заказ"
         primaryHref="/#contact"
         secondaryText="Посмотреть услуги"
         secondaryHref="/#services"
       >
+        <InnerPageSection>
+          <div className="grid gap-3 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-5 xl:grid-cols-[310px_minmax(0,1fr)]">
+            <Card className="flex items-center justify-center overflow-hidden bg-[#081122]/72 p-3 sm:p-4">
+              <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-[#020817]">
+                <Image
+                  src="/about-photo.jpg"
+                  alt="Александр Ардашев, разработчик Telegram-ботов, Max-ботов и парсеров"
+                  width={1519}
+                  height={2048}
+                  sizes="(max-width: 1023px) 280px, 310px"
+                  className="h-auto max-h-[420px] w-auto"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#020817]/80 to-transparent" />
+              </div>
+            </Card>
+
+            <Card className="bg-[#081122]/72 sm:p-7">
+              <div className="text-xs font-medium uppercase tracking-[0.2em] text-emerald-300 sm:text-sm">
+                Александр Ардашев
+              </div>
+              <h2 className="mt-3 text-2xl font-semibold text-white sm:text-3xl">
+                Разработчик и автор проектов Ardashev.dev
+              </h2>
+              <div className="mt-4 space-y-3 text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
+                <p>Разрабатываю Telegram-ботов, Max-ботов, парсеры, CRM-системы и API-интеграции.</p>
+                <p>Учусь в НИТУ МИСИС. Технические решения и открытые примеры кода публикую на GitHub.</p>
+                <p>Отзывы о выполненных заказах и подтверждённый профиль исполнителя доступны на Profi.ru.</p>
+              </div>
+              <div className="mt-5 flex flex-wrap gap-2.5">
+                <a href="https://github.com/Polen452294" target="_blank" rel="noreferrer" className="rounded-full border border-emerald-300/30 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-400/15">
+                  GitHub
+                </a>
+                <a href="https://profi.ru/profile/ArdashevAD/" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-white transition hover:border-emerald-300/30">
+                  Профиль на Profi.ru
+                </a>
+                <a href="https://t.me/aardashevdev" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-white transition hover:border-emerald-300/30">
+                  Telegram
+                </a>
+              </div>
+            </Card>
+          </div>
+        </InnerPageSection>
+
         <InnerPageSection>
           <TwoColumnTextSection
             leftTitle="Что я разрабатываю"
@@ -208,6 +291,19 @@ export default function AboutPage() {
           title="Техническая основа проектов"
           text="Использую стек, который подходит для ботов, парсеров, интеграций, баз данных и серверного запуска."
           items={stack}
+        />
+
+        <TextGridSection
+          eyebrow="Сотрудничество"
+          title="Как проходит работа"
+          text="Условия зависят от задачи, но порядок работы остаётся понятным: сначала состав проекта и оценка, затем разработка и проверка."
+          items={cooperationItems}
+        />
+
+        <CaseLinksSection
+          title="Проекты с описанием реализации"
+          text="В кейсах указаны задача, архитектура, ограничения и подтверждённый результат проекта."
+          items={caseLinks}
         />
 
         <RelatedLinksSection items={relatedLinks} />

@@ -109,7 +109,7 @@ export function BotUseCasesSection() {
               <div className="text-[13px] leading-6 text-slate-200 sm:text-sm sm:leading-7">
                 Такой бот можно запустить как простой MVP, а затем расширять:
                 добавить CRM, админ-панель, аналитику, AI-функции или поддержку
-                нескольких площадок — Telegram, MAX и VK.
+                нескольких площадок — Telegram, Max и VK.
               </div>
             </div>
           </div>

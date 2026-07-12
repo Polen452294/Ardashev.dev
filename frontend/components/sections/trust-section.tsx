@@ -1,11 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import {
   BadgeCheck,
-  ChevronLeft,
-  ChevronRight,
   FileCheck2,
   ShieldCheck,
   Star,
@@ -37,55 +34,79 @@ const trustItems = [
   },
 ];
 
-const reviewScreenshots = [
+const reviews = [
   {
-    src: "/reviews/review-1.png",
-    alt: "Скриншот отзыва клиента 1 на Profi.ru",
+    name: "Анастасия",
+    date: "30 марта 2026",
+    service: "Разработка Telegram-бота",
+    quote: "Работа выполнена быстро, качественно, в сроки.",
+    cost: "5000 ₽",
   },
   {
-    src: "/reviews/review-2.png",
-    alt: "Скриншот отзыва клиента 2 на Profi.ru",
+    name: "Александр",
+    date: "21 февраля 2026",
+    service: "Разработка парсера и Telegram-бота",
+    quote: "Отличный специалист в ботах. Парсер сделал идеально и быстро.",
+    cost: "4000 ₽",
   },
   {
-    src: "/reviews/review-3.png",
-    alt: "Скриншот отзыва клиента 3 на Profi.ru",
+    name: "Дмитрий",
+    date: "11 февраля 2026",
+    service: "Разработка Telegram-бота",
+    quote: "Работа выполнена вовремя, результат порадовал.",
+    cost: "6000 ₽",
   },
   {
-    src: "/reviews/review-4.png",
-    alt: "Скриншот отзыва клиента 4 на Profi.ru",
+    name: "Андрей",
+    date: "11 февраля 2026",
+    service: "Разработка Telegram-бота",
+    quote: "Заказ выполнен прекрасно.",
+    cost: "5000 ₽",
   },
   {
-    src: "/reviews/review-5.png",
-    alt: "Скриншот отзыва клиента 5 на Profi.ru",
+    name: "Антон",
+    date: "10 февраля 2026",
+    service: "Разработка Telegram-бота",
+    quote: "Все сделано быстро и хорошо. Бот работает. Буду обращаться еще.",
+    cost: undefined,
   },
   {
-    src: "/reviews/review-6.png",
-    alt: "Скриншот отзыва клиента 6 на Profi.ru",
+    name: "Ольга",
+    date: "10 февраля 2026",
+    service: "Разработка Telegram-бота",
+    quote: "Бот работает хорошо, специалист очень качественно выполнил работу.",
+    cost: "5000 ₽",
   },
   {
-    src: "/reviews/review-7.png",
-    alt: "Скриншот отзыва клиента 7 на Profi.ru",
+    name: "Ирина",
+    date: "5 февраля 2026",
+    service: "Разработка Telegram-бота",
+    quote: "Все хорошо, бот сделан быстро и качественно.",
+    cost: "20000 ₽",
   },
   {
-    src: "/reviews/review-8.png",
-    alt: "Скриншот отзыва клиента 8 на Profi.ru",
+    name: "Елена",
+    date: "13 января 2026",
+    service: "Разработка Telegram-бота и админ-панели",
+    quote: "Работа выполнена в срок. Александр предложил более удобный для клиентов вариант бота и сделал админ-панель.",
+    cost: undefined,
   },
 ];
 
 export function TrustSection() {
   const [activeReview, setActiveReview] = useState(0);
 
-  const currentReview = reviewScreenshots[activeReview];
+  const currentReview = reviews[activeReview];
 
   const showPreviousReview = () => {
     setActiveReview((current) =>
-      current === 0 ? reviewScreenshots.length - 1 : current - 1,
+      current === 0 ? reviews.length - 1 : current - 1,
     );
   };
 
   const showNextReview = () => {
     setActiveReview((current) =>
-      current === reviewScreenshots.length - 1 ? 0 : current + 1,
+      current === reviews.length - 1 ? 0 : current + 1,
     );
   };
 
@@ -102,8 +123,8 @@ export function TrustSection() {
 
       <SectionTitle
         eyebrow="Отзывы и репутация"
-        title="Гарантии качества и отзывы"
-        text="До начала работы можно заранее ознакомиться с отзывами, посмотреть профиль на Profi.ru и убедиться, что личность подтверждена платформой."
+        title="Отзывы и открытые профили"
+        text="Отзывы опубликованы на Profi.ru. Там же можно проверить даты, формулировки клиентов и подтверждение личности исполнителя."
       />
 
       <div className="grid gap-2.5 sm:gap-6 lg:grid-cols-[1.05fr_0.95fr]">
@@ -142,51 +163,41 @@ export function TrustSection() {
             </div>
 
             <h3 className="mt-3 text-xl font-semibold text-white sm:mt-4 sm:text-2xl">
-              Проверяемая репутация и открытая информация
+              Отзывы, которые можно проверить
             </h3>
 
             <p className="mt-3 text-sm leading-6 text-slate-300 sm:mt-4 sm:leading-7">
-              Можно перейти на профиль Profi.ru, посмотреть отзывы, ознакомиться
-              с аккаунтом и увидеть подтвержденную платформой личность. Такой
-              формат делает старт сотрудничества спокойнее и прозрачнее.
+              Здесь указаны имя клиента, дата, услуга и текст отзыва. Оригиналы
+              доступны в открытом профиле Profi.ru.
             </p>
 
-            <div className="mt-3 rounded-[22px] border border-white/10 bg-white/[0.03] p-2 sm:mt-4">
-              <div className="group relative overflow-hidden rounded-[18px] bg-[#020817]">
-                <div className="relative h-[95px] w-full sm:h-[120px] lg:h-[135px] xl:h-[145px]">
-                  <Image
-                    src={currentReview.src}
-                    alt={currentReview.alt}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 520px"
-                    className="object-contain"
-                  />
-                </div>
+            <div className="mt-3 rounded-[22px] border border-white/10 bg-[#020817]/60 p-4 sm:mt-4 sm:p-5">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-400">
+                <span className="font-medium text-white">{currentReview.name}</span>
+                <span>{currentReview.date}</span>
+                {currentReview.cost ? <span>Стоимость: {currentReview.cost}</span> : null}
+              </div>
+              <div className="mt-2 text-xs font-medium text-emerald-300 sm:text-sm">
+                {currentReview.service}
+              </div>
+              <blockquote className="mt-2 text-sm leading-6 text-slate-200 sm:leading-7">
+                &quot;{currentReview.quote}&quot;
+              </blockquote>
 
+              <div className="mt-5 flex items-center justify-between gap-3 border-t border-white/10 pt-4">
                 <button
                   type="button"
                   onClick={showPreviousReview}
                   aria-label="Предыдущий отзыв"
-                  className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#020817]/75 text-white opacity-100 backdrop-blur-md transition duration-200 hover:border-emerald-300/40 hover:text-emerald-300 focus-visible:pointer-events-auto focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/40 sm:pointer-events-none sm:opacity-0 sm:group-hover:pointer-events-auto sm:group-hover:opacity-100"
+                  className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-white transition hover:border-emerald-300/40 hover:text-emerald-300"
                 >
-                  <ChevronLeft className="h-5 w-5" />
+                  ← Назад
                 </button>
 
-                <button
-                  type="button"
-                  onClick={showNextReview}
-                  aria-label="Следующий отзыв"
-                  className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#020817]/75 text-white opacity-100 backdrop-blur-md transition duration-200 hover:border-emerald-300/40 hover:text-emerald-300 focus-visible:pointer-events-auto focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/40 sm:pointer-events-none sm:opacity-0 sm:group-hover:pointer-events-auto sm:group-hover:opacity-100"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
-              </div>
-
-              <div className="mt-4 flex flex-col gap-2.5 sm:mt-6 sm:gap-3">
-                <div className="flex gap-1.5">
-                  {reviewScreenshots.map((review, index) => (
+                <div className="flex items-center gap-1.5">
+                  {reviews.map((review, index) => (
                     <button
-                      key={review.src}
+                      key={`${review.name}-${review.date}`}
                       type="button"
                       onClick={() => setActiveReview(index)}
                       aria-label={`Открыть отзыв ${index + 1}`}
@@ -199,9 +210,18 @@ export function TrustSection() {
                   ))}
                 </div>
 
-                <span className="text-xs font-medium text-slate-400">
-                  {activeReview + 1}/{reviewScreenshots.length}
-                </span>
+                <button
+                  type="button"
+                  onClick={showNextReview}
+                  aria-label="Следующий отзыв"
+                  className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-white transition hover:border-emerald-300/40 hover:text-emerald-300"
+                >
+                  Далее →
+                </button>
+              </div>
+
+              <div className="mt-3 text-center text-xs font-medium text-slate-400">
+                {activeReview + 1}/{reviews.length}
               </div>
             </div>
           </div>

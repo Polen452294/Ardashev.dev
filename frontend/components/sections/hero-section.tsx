@@ -49,7 +49,7 @@ export function HeroSection() {
             <span className="block sm:inline">Разработка</span>{" "}
             <span className="block sm:inline">ботов в</span>{" "}
             <span className="block sm:inline">Telegram /</span>{" "}
-            <span className="block sm:inline">MAX,</span>{" "}
+            <span className="block sm:inline">Max,</span>{" "}
             <span className="block sm:inline">CRM и</span>{" "}
             <span className="block sm:inline">парсеров</span>
           </h1>
@@ -83,7 +83,7 @@ export function HeroSection() {
           </div>
 
           <p className="mt-6 max-w-[720px] text-sm leading-7 text-slate-300 sm:mt-6 sm:text-base sm:leading-8 md:text-lg min-[1024px]:max-[1440px]:max-w-[640px]">
-            Создаю Telegram-ботов, MAX-ботов, парсеры и CRM/API-интеграции,
+            Создаю Telegram-ботов, Max-ботов, парсеры и CRM/API-интеграции,
             которые помогают бизнесу принимать заявки, собирать данные,
             уведомлять менеджеров и уменьшать ручную рутину.
           </p>

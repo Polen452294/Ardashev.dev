@@ -27,7 +27,7 @@ export function ContactSection() {
     >
       <div className="max-w-3xl">
         <div className="text-[11px] font-medium uppercase tracking-[0.24em] text-emerald-300 sm:text-xs">
-          Contact
+          Контакты
         </div>
 
         <h2 className="mt-3 text-[34px] font-semibold leading-[1.05] tracking-tight text-white sm:mt-4 sm:text-5xl">

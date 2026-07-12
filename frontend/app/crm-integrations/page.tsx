@@ -16,7 +16,7 @@ const pageUrl = `${siteUrl}/crm-integrations`;
 export const metadata: Metadata = {
   title: "Интеграция CRM и API для ботов и сайтов",
   description:
-    "Интеграция Telegram-ботов, MAX-ботов, сайтов и парсеров с CRM, API, Google Sheets, Excel, PostgreSQL и внутренними сервисами.",
+    "Интеграция Telegram-ботов, Max-ботов, сайтов и парсеров с CRM, API, Google Sheets, Excel, PostgreSQL и внутренними сервисами.",
   alternates: {
     canonical: pageUrl,
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 const scenarios = [
   "Telegram-бот передает заявку в CRM",
-  "MAX-бот отправляет обращение менеджеру и в таблицу",
+  "Max-бот отправляет обращение менеджеру и в таблицу",
   "Парсер сохраняет найденные данные в базу или CRM",
   "Сайт отправляет форму в Telegram, CRM или Google Sheets",
   "Менеджеры получают уведомления о новых заявках",
@@ -37,7 +37,7 @@ const integrations = [
   "Excel",
   "PostgreSQL",
   "Telegram API",
-  "MAX API",
+  "Max API",
   "Webhook",
   "Внутренние сервисы",
 ];
@@ -84,7 +84,7 @@ const deliverables = [
 ];
 
 const integrationExamples = [
-  "Telegram и MAX-боты с CRM или внутренней системой",
+  "Telegram и Max-боты с CRM или внутренней системой",
   "Формы сайта с amoCRM, Битрикс24 или другой CRM через API",
   "Google Sheets, Excel, PostgreSQL и REST API",
   "Webhooks, очереди задач и служебные уведомления",
@@ -117,8 +117,8 @@ const relatedServices = [
     href: "/telegram-bots",
   },
   {
-    title: "Разработка MAX-ботов",
-    text: "Если заявки из MAX-бота нужно автоматически передавать в CRM, таблицу или внутренний сервис.",
+    title: "Разработка Max-ботов",
+    text: "Если заявки из Max-бота нужно автоматически передавать в CRM, таблицу или внутренний сервис.",
     href: "/max-bots",
   },
   {
@@ -157,7 +157,7 @@ const serviceJsonLd = {
   "@id": `${pageUrl}#service`,
   name: "CRM и API-интеграции для ботов, сайтов и парсеров",
   description:
-    "Интеграция Telegram-ботов, MAX-ботов, сайтов и парсеров с CRM, API, Google Sheets, Excel, PostgreSQL и внутренними сервисами.",
+    "Интеграция Telegram-ботов, Max-ботов, сайтов и парсеров с CRM, API, Google Sheets, Excel, PostgreSQL и внутренними сервисами.",
   url: pageUrl,
   provider: {
     "@id": `${siteUrl}/#person`,
@@ -217,7 +217,7 @@ export default function CrmIntegrationsPage() {
       <InnerPageLayout
         eyebrow="CRM и API"
         title="CRM и API-интеграции для ботов, сайтов и парсеров"
-        description="Интегрирую Telegram-ботов, MAX-ботов, сайты и парсеры с CRM, API, Google Sheets, Excel, PostgreSQL и внутренними сервисами, чтобы заявки и данные передавались автоматически."
+        description="Интегрирую Telegram-ботов, Max-ботов, сайты и парсеры с CRM, API, Google Sheets, Excel, PostgreSQL и внутренними сервисами, чтобы заявки и данные передавались автоматически."
         primaryText="Создать заказ"
         secondaryText="Посмотреть кейсы"
       >

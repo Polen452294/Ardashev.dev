@@ -291,7 +291,7 @@ export function TagGridSection({
     }
 
     if (normalized.includes("перенос")) {
-      return "Позволяет адаптировать уже готовую логику Telegram под MAX или другой канал общения с клиентами.";
+      return "Позволяет адаптировать уже готовую логику Telegram под Max или другой канал общения с клиентами.";
     }
 
     if (normalized.includes("мониторинг") || normalized.includes("цен")) {
@@ -335,7 +335,7 @@ export function TagGridSection({
     }
 
     if (normalized.includes("бота и crm")) {
-      return "Связывает Telegram или MAX с CRM, чтобы заявки и контакты автоматически попадали к менеджерам.";
+      return "Связывает Telegram или Max с CRM, чтобы заявки и контакты автоматически попадали к менеджерам.";
     }
 
     if (normalized.includes("парсера и crm")) {
@@ -566,7 +566,7 @@ const getStackDescription = (item: string) => {
   }
 
   if (normalized.includes("max api")) {
-    return "API для работы с ботами и сценариями внутри MAX.";
+    return "API для работы с ботами и сценариями внутри Max.";
   }
 
   if (normalized.includes("vk api")) {

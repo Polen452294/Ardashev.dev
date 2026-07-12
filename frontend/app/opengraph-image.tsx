@@ -64,7 +64,7 @@ export default function OpenGraphImage() {
             marginTop: 30,
           }}
         >
-          Telegram · MAX · Python · API-интеграции
+          Telegram · Max · Python · API-интеграции
         </div>
         <div
           style={{

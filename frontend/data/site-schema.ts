@@ -11,7 +11,7 @@ export const siteIdentityJsonLd = {
       name: "Александр Ардашев",
       url: siteUrl,
       image: `${siteUrl}/about-photo.jpg`,
-      jobTitle: "Разработчик Telegram-ботов, MAX-ботов, парсеров и CRM-интеграций",
+      jobTitle: "Разработчик Telegram-ботов, Max-ботов, парсеров и CRM-интеграций",
       email: siteContact.email.href,
       telephone: siteContact.phone.label,
       contactPoint: {
@@ -26,7 +26,7 @@ export const siteIdentityJsonLd = {
       sameAs: externalProfiles,
       knowsAbout: [
         "Разработка Telegram-ботов",
-        "Разработка MAX-ботов",
+        "Разработка Max-ботов",
         "Парсинг данных",
         "CRM-интеграции",
         "API-интеграции",
@@ -51,7 +51,7 @@ export const siteIdentityJsonLd = {
       name: "Ardashev.dev",
       url: siteUrl,
       inLanguage: "ru-RU",
-      description: "Сайт разработчика Telegram-ботов, MAX-ботов, парсеров и CRM/API-интеграций.",
+      description: "Сайт разработчика Telegram-ботов, Max-ботов, парсеров и CRM/API-интеграций.",
       publisher: { "@id": `${siteUrl}/#organization` },
     },
   ],

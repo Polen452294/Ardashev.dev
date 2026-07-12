@@ -32,7 +32,7 @@ const sitemapSections = [
         title: "Главная",
         href: "/",
         description:
-          "Разработка Telegram-ботов, MAX-ботов, парсеров и CRM/API-интеграций.",
+          "Разработка Telegram-ботов, Max-ботов, парсеров и CRM/API-интеграций.",
       },
       {
         title: "О разработчике",
@@ -77,10 +77,10 @@ const sitemapSections = [
           "Telegram-боты для заявок, записи, консультаций, уведомлений, CRM и оплаты.",
       },
       {
-        title: "Разработка MAX-ботов",
+        title: "Разработка Max-ботов",
         href: "/max-bots",
         description:
-          "MAX-боты для заявок, консультаций, поддержки и переноса логики из Telegram.",
+          "Max-боты для заявок, консультаций, поддержки и переноса логики из Telegram.",
       },
       {
         title: "Парсеры сайтов и Telegram",
@@ -107,10 +107,10 @@ const sitemapSections = [
           "Все опубликованные проекты с задачами, стеком и результатом.",
       },
       {
-        title: "Перенос Telegram-бота в MAX",
+        title: "Перенос Telegram-бота в Max",
         href: "/max-bots/migration-from-telegram",
         description:
-          "Аудит и адаптация сценариев, кнопок, файлов и интеграций под MAX Bot API.",
+          "Аудит и адаптация сценариев, кнопок, файлов и интеграций под Max Bot API.",
       },
       {
         title: "USDT Exchange Bot",
@@ -119,10 +119,10 @@ const sitemapSections = [
           "Telegram-бот для обменных заявок, статусов, уведомлений и обработки обращений.",
       },
       {
-        title: "MAX Request Bot",
+        title: "Max Request Bot",
         href: "/cases/max-request-bot",
         description:
-          "MAX-бот для приема заявок, уведомлений и автоматизации первичной обработки.",
+          "Max-бот для приема заявок, уведомлений и автоматизации первичной обработки.",
       },
       {
         title: "Profi Parser Bot",
