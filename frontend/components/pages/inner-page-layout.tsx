@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/card";
 import { FooterSection } from "@/components/sections/footer-section";
 import { SiteHeader } from "@/components/site-header";
 import {
+  ArrowUpRight,
   BellRing,
   Bot,
   Braces,
@@ -883,5 +884,286 @@ export function CtaSection({
         </div>
       </Card>
     </InnerPageSection>
+  );
+}
+
+export function ServiceCommercialDetails({
+  audience,
+  problems,
+  requirements,
+  process,
+  deliverables,
+  timeline,
+  pricing,
+  integrations,
+  risks,
+  support,
+}: {
+  audience: TextItem[];
+  problems: TextItem[];
+  requirements: string[];
+  process: TextItem[];
+  deliverables: string[];
+  timeline: string;
+  pricing: string;
+  integrations: string[];
+  risks: string[];
+  support: string;
+}) {
+  return (
+    <>
+      <TextGridSection
+        eyebrow="For business"
+        title="Кому подходит и какие проблемы решает"
+        text="Сначала определяем не набор функций, а процесс, который нужно упростить или автоматизировать."
+        items={[...audience, ...problems]}
+      />
+
+      <InnerPageSection>
+        <InnerPageTitle
+          eyebrow="Scope"
+          title="Что нужно для старта и что будет в результате"
+          text="До начала разработки фиксируем входные данные и состав готового решения."
+        />
+        <div className="grid gap-3 sm:gap-4 lg:grid-cols-2">
+          <Card className="bg-[#081122]/72">
+            <h2 className="text-xl font-semibold text-white">
+              Что понадобится от заказчика
+            </h2>
+            <div className="mt-4 grid gap-2.5">
+              {requirements.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm leading-6 text-slate-300"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </Card>
+          <Card className="bg-[#081122]/72">
+            <h2 className="text-xl font-semibold text-white">
+              Что входит в готовый результат
+            </h2>
+            <div className="mt-4 grid gap-2.5">
+              {deliverables.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm leading-6 text-slate-300"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </Card>
+        </div>
+      </InnerPageSection>
+
+      <InnerPageSection>
+        <InnerPageTitle
+          eyebrow="Process"
+          title="Как проходит разработка"
+          text="Работа разбивается на проверяемые этапы, чтобы замечания появлялись до запуска, а не после него."
+        />
+        <div className="grid gap-3 sm:gap-4 lg:grid-cols-3">
+          {process.map((item, index) => (
+            <Card key={item.title} className="bg-[#081122]/72">
+              <div className="text-xs font-semibold text-emerald-300">
+                Этап {index + 1}
+              </div>
+              <h2 className="mt-3 text-lg font-semibold text-white">
+                {item.title}
+              </h2>
+              <p className="mt-3 text-sm leading-7 text-slate-300">
+                {item.text}
+              </p>
+            </Card>
+          ))}
+        </div>
+      </InnerPageSection>
+
+      <InnerPageSection>
+        <InnerPageTitle
+          eyebrow="Terms"
+          title="Срок, стоимость и поддержка"
+          text="Предварительная оценка уточняется после короткого разбора задачи и обязательных функций."
+        />
+        <div className="grid gap-3 sm:gap-4 lg:grid-cols-3">
+          {[
+            { title: "Срок", text: timeline },
+            { title: "Стоимость", text: pricing },
+            { title: "После запуска", text: support },
+          ].map((item) => (
+            <Card key={item.title} className="bg-[#081122]/72">
+              <h2 className="text-lg font-semibold text-white">
+                {item.title}
+              </h2>
+              <p className="mt-3 text-sm leading-7 text-slate-300">
+                {item.text}
+              </p>
+            </Card>
+          ))}
+        </div>
+      </InnerPageSection>
+
+      <InnerPageSection>
+        <InnerPageTitle
+          eyebrow="Technical details"
+          title="Интеграции, ограничения и риски"
+          text="Эти детали проверяются до разработки, потому что они влияют на архитектуру, срок и стабильность проекта."
+        />
+        <div className="grid gap-3 sm:gap-4 lg:grid-cols-2">
+          <Card className="bg-[#081122]/72">
+            <h2 className="text-xl font-semibold text-white">
+              Примеры интеграций
+            </h2>
+            <div className="mt-4 grid gap-2.5">
+              {integrations.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm leading-6 text-slate-300"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </Card>
+          <Card className="bg-[#081122]/72">
+            <h2 className="text-xl font-semibold text-white">
+              Ограничения и риски
+            </h2>
+            <div className="mt-4 grid gap-2.5">
+              {risks.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm leading-6 text-slate-300"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </Card>
+        </div>
+      </InnerPageSection>
+    </>
+  );
+}
+
+export function CaseStudyDetails({
+  facts,
+  context,
+  architecture,
+  functions,
+  outcomes,
+  retrospective,
+  githubUrl,
+  mediaUrl,
+  mediaAlt,
+  evidenceNote,
+}: {
+  facts: TextItem[];
+  context: TextItem[];
+  architecture: TextItem[];
+  functions: TextItem[];
+  outcomes: TextItem[];
+  retrospective: TextItem[];
+  githubUrl: string;
+  mediaUrl?: string;
+  mediaAlt?: string;
+  evidenceNote: string;
+}) {
+  return (
+    <>
+      <TextGridSection
+        eyebrow="Project facts"
+        title="Контекст проекта"
+        text="Факты, которые можно подтвердить по проекту и открытому репозиторию."
+        items={facts}
+      />
+
+      <TextGridSection
+        eyebrow="Challenge"
+        title="Проблема, ограничения и роль в проекте"
+        text="Почему понадобилось отдельное решение и какие рамки учитывались при разработке."
+        items={context}
+      />
+
+      <InnerPageSection>
+        <InnerPageTitle
+          eyebrow="Architecture"
+          title="Как устроено решение"
+          text="Основные компоненты и путь данных без привязки к закрытым доступам и секретам окружения."
+        />
+        <div className="grid gap-3 sm:gap-4 lg:grid-cols-3">
+          {architecture.map((item, index) => (
+            <Card key={item.title} className="bg-[#081122]/72">
+              <div className="text-xs font-semibold text-emerald-300">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+              <h2 className="mt-3 text-lg font-semibold text-white">
+                {item.title}
+              </h2>
+              <p className="mt-3 text-sm leading-7 text-slate-300">
+                {item.text}
+              </p>
+            </Card>
+          ))}
+        </div>
+      </InnerPageSection>
+
+      <TextGridSection
+        eyebrow="Features"
+        title="Ключевые функции"
+        text="Функции перечислены по фактической реализации, а не как возможные будущие доработки."
+        items={functions}
+      />
+
+      <InnerPageSection>
+        <InnerPageTitle
+          eyebrow="Evidence"
+          title="Демонстрация и исходный код"
+          text={evidenceNote}
+        />
+        <Card className="relative overflow-hidden bg-[#081122]/72">
+          {mediaUrl ? (
+            <div className="overflow-hidden rounded-[20px] border border-white/10 bg-slate-950/70 p-3 sm:p-5">
+              <img
+                src={mediaUrl}
+                alt={mediaAlt ?? "Демонстрация работы проекта"}
+                loading="lazy"
+                className="mx-auto max-h-[720px] w-auto max-w-full rounded-2xl object-contain"
+              />
+            </div>
+          ) : (
+            <div className="rounded-[20px] border border-white/10 bg-white/[0.03] p-5 text-sm leading-7 text-slate-300">
+              Отдельные скриншоты интерфейса пока не опубликованы.
+            </div>
+          )}
+          <Link
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-emerald-300 transition hover:text-emerald-200"
+          >
+            Посмотреть репозиторий на GitHub
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </Card>
+      </InnerPageSection>
+
+      <TextGridSection
+        eyebrow="Outcome"
+        title="Результат и измерения"
+        text="Отделяю подтверждённый функциональный результат от показателей, которые не передавались после запуска."
+        items={outcomes}
+      />
+
+      <TextGridSection
+        eyebrow="Retrospective"
+        title="Что изменилось бы в следующей версии"
+        text="Выводы по архитектуре, эксплуатации и дальнейшему развитию проекта."
+        items={retrospective}
+      />
+    </>
   );
 }
