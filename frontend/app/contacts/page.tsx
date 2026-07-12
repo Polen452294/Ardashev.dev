@@ -10,7 +10,7 @@ import {
 } from "@/components/pages/inner-page-layout";
 import { Card } from "@/components/ui/card";
 import { GlowButton } from "@/components/ui/glow-button";
-import { allContactLinks, externalProfiles, siteContact } from "@/data/site-data";
+import { allContactLinks, siteContact } from "@/data/site-data";
 
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/contacts`;
@@ -51,21 +51,7 @@ const contactPageJsonLd = {
   description:
     "Контакты для заказа разработки Telegram ботов, Max ботов, парсеров, CRM/API-интеграций и автоматизации бизнес-процессов.",
   mainEntity: {
-    "@type": "Person",
     "@id": `${siteUrl}/#person`,
-    name: "Александр Ардашев",
-    url: siteUrl,
-    email: siteContact.email.href,
-    telephone: siteContact.phone.href.replace("tel:", ""),
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "customer support",
-      email: siteContact.email.label,
-      telephone: siteContact.phone.href.replace("tel:", ""),
-      areaServed: "RU",
-      availableLanguage: ["ru"],
-    },
-    sameAs: externalProfiles,
   },
 };
 

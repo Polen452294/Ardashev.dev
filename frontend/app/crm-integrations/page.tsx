@@ -154,14 +154,13 @@ const faq = [
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": `${pageUrl}#service`,
   name: "CRM и API-интеграции для ботов, сайтов и парсеров",
   description:
     "Интеграция Telegram ботов, Max ботов, сайтов и парсеров с CRM, API, Google Sheets, Excel, PostgreSQL и внутренними сервисами.",
   url: pageUrl,
   provider: {
-    "@type": "Person",
-    name: "Александр Ардашев",
-    url: siteUrl,
+    "@id": `${siteUrl}/#person`,
   },
   areaServed: "Россия",
   serviceType: "CRM и API-интеграции",

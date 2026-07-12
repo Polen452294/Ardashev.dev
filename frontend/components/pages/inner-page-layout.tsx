@@ -42,6 +42,7 @@ type InnerPageLayoutProps = {
   primaryHref?: string;
   secondaryText?: string;
   secondaryHref?: string;
+  breadcrumbs?: Array<{ label: string; href?: string }>;
   children: ReactNode;
 };
 
@@ -81,8 +82,14 @@ export function InnerPageLayout({
   primaryHref = "/#contact",
   secondaryText = "Смотреть кейсы",
   secondaryHref = "/cases",
+  breadcrumbs,
   children,
 }: InnerPageLayoutProps) {
+  const visibleBreadcrumbs = breadcrumbs ?? [
+    { label: "Главная", href: "/" },
+    { label: title },
+  ];
+
   return (
     <div className="min-h-screen bg-[#020817] text-white selection:bg-emerald-300 selection:text-slate-950">
       <div className="relative isolate overflow-hidden">
@@ -99,6 +106,23 @@ export function InnerPageLayout({
             className="mx-auto max-w-5xl px-6 pb-3 pt-7 sm:px-8 sm:pb-5 sm:pt-12 lg:max-w-6xl lg:px-12 lg:pb-6 lg:pt-14 xl:max-w-7xl xl:px-16 xl:pb-7 xl:pt-16 2xl:max-w-[1320px] 2xl:px-20"
             >
             <div className="max-w-4xl">
+              <nav aria-label="Хлебные крошки" className="mb-4 text-xs text-slate-400 sm:text-sm">
+                <ol className="flex flex-wrap items-center gap-2">
+                  {visibleBreadcrumbs.map((item, index) => (
+                    <li key={`${item.label}-${index}`} className="flex items-center gap-2">
+                      {index > 0 ? <span aria-hidden="true" className="text-slate-600">/</span> : null}
+                      {item.href ? (
+                        <Link href={item.href} className="transition-colors hover:text-emerald-300">
+                          {item.label}
+                        </Link>
+                      ) : (
+                        <span aria-current="page" className="text-slate-300">{item.label}</span>
+                      )}
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+
               <div className="text-[10px] font-medium uppercase tracking-[0.2em] text-emerald-300 sm:text-sm sm:tracking-[0.24em]">
                 {eyebrow}
               </div>

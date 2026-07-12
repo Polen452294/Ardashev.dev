@@ -13,7 +13,6 @@ import { SiteHeader } from "@/components/site-header";
 import { AboutSection } from "@/components/sections/about-section";
 import { HomeFaqSection } from "@/components/sections/home-faq-section";
 import { homeFaqJsonLd } from "@/data/home-faq";
-import { externalProfiles, siteContact } from "@/data/site-data";
 
 const siteUrl = "https://ardashev.dev";
 
@@ -22,65 +21,6 @@ export const metadata: Metadata = {
     "Александр Ардашев разрабатывает Telegram-ботов, Max-ботов, парсеры, CRM/API-интеграции и системы приема заявок для бизнеса.",
   alternates: {
     canonical: siteUrl,
-  },
-};
-
-const personJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": `${siteUrl}/#person`,
-  name: "Александр Ардашев",
-  url: siteUrl,
-  jobTitle: "Разработчик Telegram-ботов, Max-ботов, парсеров и CRM-интеграций",
-  email: siteContact.email.href,
-  telephone: siteContact.phone.label,
-  worksFor: {
-    "@type": "Organization",
-    "@id": `${siteUrl}/#organization`,
-  },
-  sameAs: externalProfiles,
-  knowsAbout: [
-    "Разработка Telegram-ботов",
-    "Разработка Max-ботов",
-    "Парсинг данных",
-    "CRM-интеграции",
-    "API-интеграции",
-    "Автоматизация заявок",
-    "Python",
-    "FastAPI",
-    "PostgreSQL",
-    "Docker",
-  ],
-};
-
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": `${siteUrl}/#organization`,
-  name: "Ardashev.dev",
-  url: siteUrl,
-  email: siteContact.email.href,
-  telephone: siteContact.phone.label,
-  founder: {
-    "@type": "Person",
-    "@id": `${siteUrl}/#person`,
-    name: "Александр Ардашев",
-  },
-  sameAs: externalProfiles,
-};
-
-const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": `${siteUrl}/#website`,
-  name: "Ardashev.dev",
-  url: siteUrl,
-  inLanguage: "ru-RU",
-  description:
-    "Сайт разработчика Telegram-ботов, Max-ботов, парсеров и CRM/API-интеграций.",
-  publisher: {
-    "@type": "Organization",
-    "@id": `${siteUrl}/#organization`,
   },
 };
 
@@ -212,18 +152,6 @@ const offerCatalogJsonLd = {
 export default function Page() {
   return (
     <div className="min-h-screen bg-[#020817] text-white selection:bg-emerald-300 selection:text-slate-950">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(navigationJsonLd) }}

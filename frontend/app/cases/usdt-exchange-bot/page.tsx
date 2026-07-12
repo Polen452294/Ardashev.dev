@@ -112,6 +112,9 @@ const articleJsonLd = {
   "@type": "Article",
   "@id": `${pageUrl}#article`,
   headline: "Кейс: Telegram бот для обмена USDT",
+  image: `${siteUrl}/opengraph-image`,
+  datePublished: "2026-07-11",
+  dateModified: "2026-07-12",
   description:
     "Разработка Telegram бота для обменного сервиса: оформление заявок, передача данных в обработку и автоматические напоминания клиентам.",
   url: pageUrl,
@@ -146,14 +149,13 @@ const articleJsonLd = {
   })),
 };
 
-const softwareApplicationJsonLd = {
+const projectJsonLd = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "@id": `${pageUrl}#software`,
+  "@type": "CreativeWork",
+  "@id": `${pageUrl}#project`,
   name: "Telegram бот для обмена USDT",
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Telegram",
   url: pageUrl,
+  image: `${siteUrl}/opengraph-image`,
   description:
     "Telegram бот для обменного сервиса: пошаговое оформление заявки, сбор контактных данных, передача обращения в обработку, хранение статусов и автоматические напоминания.",
   creator: {
@@ -162,22 +164,13 @@ const softwareApplicationJsonLd = {
     name: "Александр Ардашев",
     url: siteUrl,
   },
-  provider: {
+  publisher: {
     "@type": "Organization",
     "@id": `${siteUrl}/#organization`,
     name: "ardashev.dev",
     url: siteUrl,
   },
-  featureList: functions,
-  programmingLanguage: ["Python"],
-  softwareRequirements: technologies,
-  offers: {
-    "@type": "Offer",
-    url: `${siteUrl}/telegram-bots`,
-    availability: "https://schema.org/InStock",
-    priceCurrency: "RUB",
-    category: "Разработка Telegram ботов",
-  },
+  keywords: ["Telegram", "Python", ...technologies, ...functions],
 };
 
 const breadcrumbJsonLd = {
@@ -214,7 +207,7 @@ export default function UsdtExchangeBotCasePage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
       />
       <script
         type="application/ld+json"
@@ -222,6 +215,11 @@ export default function UsdtExchangeBotCasePage() {
       />
 
       <InnerPageLayout
+        breadcrumbs={[
+          { label: "Главная", href: "/" },
+          { label: "Кейсы", href: "/cases" },
+          { label: "Telegram бот для обмена USDT" },
+        ]}
         eyebrow="Case Study"
         title="Telegram бот для обмена USDT"
         description="Кейс бота для обменного сервиса: клиент выбирает направление обмена, вводит сумму, город и контактные данные, а система передает заявку в обработку и помогает не терять незавершенные обращения."

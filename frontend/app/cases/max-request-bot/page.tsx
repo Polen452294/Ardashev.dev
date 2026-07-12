@@ -101,6 +101,9 @@ const articleJsonLd = {
   "@type": "Article",
   "@id": `${pageUrl}#article`,
   headline: "Кейс: разработка MAX-бота на Python",
+  image: `${siteUrl}/opengraph-image`,
+  datePublished: "2026-07-11",
+  dateModified: "2026-07-12",
   description:
     "Демонстрационный асинхронный MAX-бот на Python с модульной архитектурой и основой для дальнейшего MVP.",
   url: pageUrl,
@@ -135,14 +138,13 @@ const articleJsonLd = {
   })),
 };
 
-const softwareApplicationJsonLd = {
+const projectJsonLd = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "@id": `${pageUrl}#software`,
+  "@type": "CreativeWork",
+  "@id": `${pageUrl}#project`,
   name: "MAX Python Bot",
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Max",
   url: pageUrl,
+  image: `${siteUrl}/opengraph-image`,
   description:
     "Демонстрационный MAX-бот на Python с API-клиентом, обработчиками, сервисным слоем, конфигурацией окружения и mock CRM.",
   creator: {
@@ -151,22 +153,13 @@ const softwareApplicationJsonLd = {
     name: "Александр Ардашев",
     url: siteUrl,
   },
-  provider: {
+  publisher: {
     "@type": "Organization",
     "@id": `${siteUrl}/#organization`,
     name: "ardashev.dev",
     url: siteUrl,
   },
-  featureList: functions,
-  programmingLanguage: ["Python"],
-  softwareRequirements: technologies,
-  offers: {
-    "@type": "Offer",
-    url: `${siteUrl}/max-bots`,
-    availability: "https://schema.org/InStock",
-    priceCurrency: "RUB",
-    category: "Разработка Max ботов",
-  },
+  keywords: ["MAX", "Python", ...technologies, ...functions],
 };
 
 const breadcrumbJsonLd = {
@@ -204,7 +197,7 @@ export default function MaxRequestBotCasePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(softwareApplicationJsonLd),
+          __html: JSON.stringify(projectJsonLd),
         }}
       />
       <script
@@ -213,6 +206,11 @@ export default function MaxRequestBotCasePage() {
       />
 
       <InnerPageLayout
+        breadcrumbs={[
+          { label: "Главная", href: "/" },
+          { label: "Кейсы", href: "/cases" },
+          { label: "MAX Python Bot" },
+        ]}
         eyebrow="Case Study"
         title="MAX Python Bot: стартовая база для MVP"
         description="Демонстрационный проект на Python, созданный для проверки MAX Bot API и модульной архитектуры. Это не клиентский кейс с коммерческими показателями, а открытая основа для будущих сценариев и интеграций."

@@ -101,6 +101,9 @@ const articleJsonLd = {
   "@type": "Article",
   "@id": `${pageUrl}#article`,
   headline: "Кейс: парсер заказов с Profi.ru",
+  image: `${siteUrl}/opengraph-image`,
+  datePublished: "2026-07-11",
+  dateModified: "2026-07-12",
   description:
     "Разработка парсера заказов с Profi.ru: сбор подходящих заявок, фильтрация, обработка данных и уведомления в Telegram.",
   url: pageUrl,
@@ -136,14 +139,13 @@ const articleJsonLd = {
   })),
 };
 
-const softwareApplicationJsonLd = {
+const projectJsonLd = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "@id": `${pageUrl}#software`,
+  "@type": "CreativeWork",
+  "@id": `${pageUrl}#project`,
   name: "Парсер заказов с Profi.ru",
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Web",
   url: pageUrl,
+  image: `${siteUrl}/opengraph-image`,
   description:
     "Парсер заказов с Profi.ru для автоматического поиска подходящих заявок, фильтрации по условиям, обработки данных и отправки уведомлений в Telegram.",
   creator: {
@@ -152,22 +154,13 @@ const softwareApplicationJsonLd = {
     name: "Александр Ардашев",
     url: siteUrl,
   },
-  provider: {
+  publisher: {
     "@type": "Organization",
     "@id": `${siteUrl}/#organization`,
     name: "ardashev.dev",
     url: siteUrl,
   },
-  featureList: functions,
-  programmingLanguage: ["Python"],
-  softwareRequirements: technologies,
-  offers: {
-    "@type": "Offer",
-    url: `${siteUrl}/parsers`,
-    availability: "https://schema.org/InStock",
-    priceCurrency: "RUB",
-    category: "Разработка парсеров",
-  },
+  keywords: ["Парсинг данных", "Python", ...technologies, ...functions],
 };
 
 const breadcrumbJsonLd = {
@@ -205,7 +198,7 @@ export default function ProfiParserBotCasePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(softwareApplicationJsonLd),
+          __html: JSON.stringify(projectJsonLd),
         }}
       />
       <script
@@ -214,6 +207,11 @@ export default function ProfiParserBotCasePage() {
       />
 
       <InnerPageLayout
+        breadcrumbs={[
+          { label: "Главная", href: "/" },
+          { label: "Кейсы", href: "/cases" },
+          { label: "Парсер заказов с Profi.ru" },
+        ]}
         eyebrow="Case Study"
         title="Парсер заказов с Profi.ru"
         description="Кейс инструмента, который помогает отслеживать новые заказы, отбирать подходящие варианты и быстрее реагировать на заявки без постоянного ручного мониторинга площадки."

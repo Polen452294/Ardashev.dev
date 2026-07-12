@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Script from "next/script";
+import { siteIdentityJsonLd } from "@/data/site-schema";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ardashev.dev"),
@@ -45,6 +46,10 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteIdentityJsonLd) }}
+        />
         {children}
 
         <Script id="yandex-metrika" strategy="afterInteractive">

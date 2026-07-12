@@ -9,7 +9,6 @@ import {
   TextGridSection,
   TwoColumnTextSection,
 } from "@/components/pages/inner-page-layout";
-import { externalProfiles } from "@/data/site-data";
 
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/about`;
@@ -116,27 +115,6 @@ const faq = [
   },
 ];
 
-const personJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": `${siteUrl}/#person`,
-  name: "Александр Ардашев",
-  url: siteUrl,
-  jobTitle: "Разработчик ботов, парсеров и CRM-интеграций",
-  description:
-    "Разработчик систем автоматизации, Telegram ботов, Max ботов, парсеров сайтов и Telegram, CRM/API-интеграций.",
-  sameAs: externalProfiles,
-  knowsAbout: [
-    "Telegram bots",
-    "Max bots",
-    "Python",
-    "CRM integrations",
-    "API integrations",
-    "Web scraping",
-    "Business automation",
-  ],
-};
-
 const profilePageJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
@@ -145,6 +123,8 @@ const profilePageJsonLd = {
   name: "О разработчике — Александр Ардашев",
   description:
     "Страница о разработчике Ardashev.dev: опыт, стек, услуги, подход к разработке и автоматизации.",
+  dateModified: "2026-07-12",
+  primaryImageOfPage: `${siteUrl}/about-photo.jpg`,
   mainEntity: {
     "@id": `${siteUrl}/#person`,
   },
@@ -185,10 +165,6 @@ const breadcrumbJsonLd = {
 export default function AboutPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }}
