@@ -11,6 +11,7 @@ const routes = [
   { path: "/sitemap", priority: 0.7 },
   { path: "/telegram-bots", priority: 0.9 },
   { path: "/max-bots", priority: 0.9 },
+  { path: "/max-bots/migration-from-telegram", priority: 0.82 },
   { path: "/parsers", priority: 0.9 },
   { path: "/crm-integrations", priority: 0.9 },
   { path: "/cases/usdt-exchange-bot", priority: 0.75 },

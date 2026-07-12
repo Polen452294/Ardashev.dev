@@ -37,6 +37,10 @@ const serviceLinks = [
     href: "/max-bots",
   },
   {
+    title: "Перенос Telegram-бота в MAX",
+    href: "/max-bots/migration-from-telegram",
+  },
+  {
     title: "Парсеры",
     href: "/parsers",
   },

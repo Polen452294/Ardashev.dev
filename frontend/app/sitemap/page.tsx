@@ -103,6 +103,12 @@ const sitemapSections = [
           "Все опубликованные проекты с задачами, стеком и результатом.",
       },
       {
+        title: "Перенос Telegram-бота в MAX",
+        href: "/max-bots/migration-from-telegram",
+        description:
+          "Аудит и адаптация сценариев, кнопок, файлов и интеграций под MAX Bot API.",
+      },
+      {
         title: "USDT Exchange Bot",
         href: "/cases/usdt-exchange-bot",
         description:
