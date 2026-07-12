@@ -14,7 +14,7 @@ const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/cases`;
 
 export const metadata: Metadata = {
-  title: "Кейсы ботов, парсеров и интеграций | ardashev.dev",
+  title: "Кейсы ботов, парсеров и интеграций",
   description:
     "Примеры разработки Telegram и Max-ботов, парсеров и систем автоматизации: задача, стек, реализация и результат.",
   alternates: { canonical: pageUrl },

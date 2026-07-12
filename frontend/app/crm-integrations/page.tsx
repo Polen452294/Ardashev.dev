@@ -14,7 +14,7 @@ const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/crm-integrations`;
 
 export const metadata: Metadata = {
-  title: "CRM и API-интеграции для ботов, сайтов и парсеров — ardashev.dev",
+  title: "Интеграция CRM и API для ботов и сайтов",
   description:
     "Интеграция Telegram ботов, Max ботов, сайтов и парсеров с CRM, API, Google Sheets, Excel, PostgreSQL и внутренними сервисами.",
   alternates: {

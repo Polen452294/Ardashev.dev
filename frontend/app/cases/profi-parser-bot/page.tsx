@@ -10,7 +10,7 @@ const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/cases/profi-parser-bot`;
 
 export const metadata: Metadata = {
-  title: "Кейс: парсер заказов с Profi.ru — ardashev.dev",
+  title: "Кейс: парсер заказов с Profi.ru",
   description:
     "Кейс разработки парсера заказов с Profi.ru: мониторинг новых заказов, фильтрация подходящих заявок и уведомления для быстрого реагирования.",
   alternates: {

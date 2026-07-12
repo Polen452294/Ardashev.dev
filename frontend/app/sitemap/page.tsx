@@ -11,11 +11,15 @@ const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/sitemap`;
 
 export const metadata: Metadata = {
-  title: "Карта сайта | ardashev.dev",
+  title: "Карта сайта",
   description:
     "Карта сайта Ardashev.dev: главная страница, услуги, кейсы, контакты и информация о разработчике.",
   alternates: {
     canonical: pageUrl,
+  },
+  robots: {
+    index: false,
+    follow: true,
   },
 };
 

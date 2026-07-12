@@ -10,7 +10,7 @@ const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/cases/usdt-exchange-bot`;
 
 export const metadata: Metadata = {
-  title: "Кейс: Telegram бот для обмена USDT — ardashev.dev",
+  title: "Кейс: Telegram-бот для обмена USDT",
   description:
   "Кейс разработки Telegram бота для обменного сервиса: прием заявок на обмен USDT, сбор данных, CRM-логика и автоматические напоминания клиентам.",
   alternates: {

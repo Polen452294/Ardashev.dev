@@ -15,7 +15,7 @@ const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/about`;
 
 export const metadata: Metadata = {
-  title: "О разработчике — Александр Ардашев | ardashev.dev",
+  title: "Александр Ардашев — разработчик ботов и парсеров",
   description:
     "О разработчике Ardashev.dev: Telegram боты, Max боты, парсеры, CRM/API-интеграции, автоматизация заявок и бизнес-процессов.",
   alternates: {

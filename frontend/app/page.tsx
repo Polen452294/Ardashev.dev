@@ -18,8 +18,6 @@ import { externalProfiles, siteContact } from "@/data/site-data";
 const siteUrl = "https://ardashev.dev";
 
 export const metadata: Metadata = {
-  title:
-    "Разработка Telegram-ботов, Max-ботов, парсеров и CRM-интеграций — ardashev.dev",
   description:
     "Александр Ардашев разрабатывает Telegram-ботов, Max-ботов, парсеры, CRM/API-интеграции и системы приема заявок для бизнеса.",
   alternates: {

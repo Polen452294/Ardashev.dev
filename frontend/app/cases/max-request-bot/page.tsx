@@ -10,7 +10,7 @@ const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/cases/max-request-bot`;
 
 export const metadata: Metadata = {
-  title: "Кейс: разработка MAX-бота на Python — ardashev.dev",
+  title: "Кейс: разработка MAX-бота на Python",
   description:
     "Демонстрационный проект MAX-бота на Python: асинхронная архитектура, API-клиент, обработчики, сервисный слой и основа для MVP.",
   alternates: {

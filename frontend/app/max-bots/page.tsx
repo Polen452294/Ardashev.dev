@@ -14,7 +14,7 @@ const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/max-bots`;
 
 export const metadata: Metadata = {
-  title: "Разработка Max ботов на заказ — ardashev.dev",
+  title: "Разработка MAX-ботов на заказ",
   description:
     "Разработка Max ботов для бизнеса: прием заявок, консультации, сценарии с кнопками, уведомления, интеграции с таблицами, CRM и внутренними сервисами.",
   alternates: {

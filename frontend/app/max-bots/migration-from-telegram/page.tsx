@@ -16,7 +16,7 @@ const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/max-bots/migration-from-telegram`;
 
 export const metadata: Metadata = {
-  title: "Перенос Telegram-бота в MAX | ardashev.dev",
+  title: "Перенос Telegram-бота в MAX",
   description:
     "Адаптация Telegram-бота под MAX: аудит сценария, перенос бизнес-логики, кнопок, уведомлений, файлов и интеграций с CRM или API.",
   alternates: { canonical: pageUrl },

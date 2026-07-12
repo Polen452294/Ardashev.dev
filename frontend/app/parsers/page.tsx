@@ -14,7 +14,7 @@ const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/parsers`;
 
 export const metadata: Metadata = {
-  title: "Разработка парсеров на заказ — ardashev.dev",
+  title: "Разработка парсеров сайтов и Telegram",
   description:
     "Разработка парсеров для сайтов, каталогов, маркетплейсов, Telegram-каналов и открытых источников с выгрузкой в Excel, Google Sheets, базу данных, CRM или Telegram бота.",
   alternates: {

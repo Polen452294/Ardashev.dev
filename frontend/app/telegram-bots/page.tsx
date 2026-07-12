@@ -14,7 +14,7 @@ const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/telegram-bots`;
 
 export const metadata: Metadata = {
-  title: "Разработка Telegram ботов на заказ — ardashev.dev",
+  title: "Разработка Telegram-ботов на заказ",
   description:
     "Разработка Telegram ботов для бизнеса: прием заявок, CRM-интеграции, уведомления, админ-панели, оплата, базы данных и запуск на сервере.",
   alternates: {

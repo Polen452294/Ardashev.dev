@@ -4,10 +4,37 @@ import type { ReactNode } from "react";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title:
-    "Разработка Telegram-ботов, Max-ботов, парсеров и CRM-интеграций — ardashev.dev",
+  metadataBase: new URL("https://ardashev.dev"),
+  title: {
+    default: "Разработка ботов, парсеров и CRM-интеграций | Ardashev.dev",
+    template: "%s | Ardashev.dev",
+  },
   description:
     "Разработка Telegram-ботов, Max-ботов, парсеров сайтов и Telegram, CRM/API-интеграций, систем приема заявок и автоматизации бизнес-процессов.",
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    siteName: "Ardashev.dev",
+    title: "Разработка ботов, парсеров и CRM-интеграций",
+    description:
+      "Telegram-боты, MAX-боты, парсеры, CRM-системы и API-интеграции для бизнеса.",
+    url: "https://ardashev.dev",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Ardashev.dev — разработка и автоматизация",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Разработка ботов, парсеров и CRM-интеграций",
+    description:
+      "Telegram-боты, MAX-боты, парсеры, CRM-системы и API-интеграции для бизнеса.",
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function RootLayout({

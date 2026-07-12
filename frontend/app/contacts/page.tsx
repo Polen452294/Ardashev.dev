@@ -16,7 +16,7 @@ const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/contacts`;
 
 export const metadata: Metadata = {
-  title: "Контакты для заказа разработки — ardashev.dev",
+  title: "Контакты — заказать бота или парсер",
   description:
     "Контакты Ardashev.dev: заказать разработку Telegram бота, Max бота, парсера, CRM/API-интеграции или автоматизации бизнес-процессов.",
   alternates: {
