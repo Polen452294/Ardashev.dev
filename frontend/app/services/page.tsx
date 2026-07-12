@@ -16,7 +16,7 @@ const pageUrl = `${siteUrl}/services`;
 export const metadata: Metadata = {
   title: "Услуги разработки и автоматизации",
   description:
-    "Telegram-боты, Max-боты, парсеры, CRM и API-интеграции для автоматизации заявок, данных и бизнес-процессов.",
+    "Telegram-боты, MAX-боты, парсеры, CRM и API-интеграции для автоматизации заявок, данных и бизнес-процессов.",
   alternates: { canonical: pageUrl },
 };
 
@@ -28,8 +28,8 @@ const serviceDetails = [
   },
   {
     href: "/max-bots",
-    audience: "Компаниям, которые используют Max или хотят добавить новый канал обращений.",
-    result: "Max-бот для заявок, консультаций, уведомлений и передачи данных.",
+    audience: "Компаниям, которые используют MAX или хотят добавить новый канал обращений.",
+    result: "MAX-бот для заявок, консультаций, уведомлений и передачи данных.",
   },
   {
     href: "/parsers",
@@ -46,7 +46,7 @@ const serviceDetails = [
 const comparisonItems = [
   {
     title: "Нужно принимать обращения",
-    text: "Подойдет Telegram-бот или Max-бот с понятным сценарием и передачей заявки менеджеру.",
+    text: "Подойдет Telegram-бот или MAX-бот с понятным сценарием и передачей заявки менеджеру.",
   },
   {
     title: "Нужно собирать данные",
@@ -80,7 +80,7 @@ export default function ServicesPage() {
       />
 
       <InnerPageLayout
-        eyebrow="Services"
+        eyebrow="Услуги"
         title="Услуги разработки и автоматизации"
         description="Разрабатываю ботов, парсеры и интеграции под конкретный процесс: от первого обращения клиента до передачи данных в CRM, таблицу или внутреннюю систему."
         primaryText="Обсудить задачу"
@@ -90,7 +90,7 @@ export default function ServicesPage() {
       >
         <InnerPageSection>
           <InnerPageTitle
-            eyebrow="Directions"
+            eyebrow="Направления"
             title="Основные направления"
             text="Выберите страницу услуги, чтобы посмотреть задачи, функции, примеры и формат разработки подробнее."
           />
@@ -150,7 +150,7 @@ export default function ServicesPage() {
 
         <InnerPageSection>
           <InnerPageTitle
-            eyebrow="Choice"
+            eyebrow="Выбор решения"
             title="Как выбрать направление"
             text="Если задача затрагивает несколько систем, решение можно объединить в один проект."
           />

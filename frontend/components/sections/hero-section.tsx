@@ -46,23 +46,12 @@ export function HeroSection() {
       >
         <div className="order-1 max-w-[175px] min-[390px]:max-w-[190px] sm:contents">
           <h1 className="text-[31px] font-semibold leading-[1.06] tracking-tight text-white min-[390px]:text-[34px] sm:max-w-[820px] sm:text-[52px] sm:leading-[1.03] md:text-6xl lg:text-[74px] min-[1024px]:max-[1440px]:max-w-[720px] min-[1024px]:max-[1440px]:text-[48px]">
-            <span className="sm:hidden">
-              Разработка
-              <br />
-              ботов в
-              <br />
-              Telegram /
-              <br />
-              Max,
-              <br />
-              CRM и
-              <br />
-              парсеров
-            </span>
-
-            <span className="hidden sm:block">
-              Разработка ботов в Telegram / Max, CRM и парсеров
-            </span>
+            <span className="block sm:inline">Разработка</span>{" "}
+            <span className="block sm:inline">ботов в</span>{" "}
+            <span className="block sm:inline">Telegram /</span>{" "}
+            <span className="block sm:inline">MAX,</span>{" "}
+            <span className="block sm:inline">CRM и</span>{" "}
+            <span className="block sm:inline">парсеров</span>
           </h1>
 
           <div className="mt-4 text-base font-medium tracking-wide text-emerald-300 sm:hidden">
@@ -94,7 +83,7 @@ export function HeroSection() {
           </div>
 
           <p className="mt-6 max-w-[720px] text-sm leading-7 text-slate-300 sm:mt-6 sm:text-base sm:leading-8 md:text-lg min-[1024px]:max-[1440px]:max-w-[640px]">
-            Создаю Telegram-ботов, Max-ботов, парсеры и CRM/API-интеграции,
+            Создаю Telegram-ботов, MAX-ботов, парсеры и CRM/API-интеграции,
             которые помогают бизнесу принимать заявки, собирать данные,
             уведомлять менеджеров и уменьшать ручную рутину.
           </p>

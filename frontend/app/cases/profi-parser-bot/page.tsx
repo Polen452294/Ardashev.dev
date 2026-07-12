@@ -85,8 +85,8 @@ const relatedServices = [
     href: "/parsers",
   },
   {
-    title: "Разработка Telegram ботов",
-    text: "Если результаты парсинга нужно отправлять в Telegram бота или уведомлять менеджеров.",
+    title: "Разработка Telegram-ботов",
+    text: "Если результаты парсинга нужно отправлять в Telegram-бота или уведомлять менеджеров.",
     href: "/telegram-bots",
   },
   {
@@ -212,7 +212,7 @@ export default function ProfiParserBotCasePage() {
           { label: "Кейсы", href: "/cases" },
           { label: "Парсер заказов с Profi.ru" },
         ]}
-        eyebrow="Case Study"
+        eyebrow="Кейс"
         title="Парсер заказов с Profi.ru"
         description="Кейс инструмента, который помогает отслеживать новые заказы, отбирать подходящие варианты и быстрее реагировать на заявки без постоянного ручного мониторинга площадки."
         primaryText="Создать заказ"

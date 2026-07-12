@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | Ardashev.dev",
   },
   description:
-    "Разработка Telegram-ботов, Max-ботов, парсеров сайтов и Telegram, CRM/API-интеграций, систем приема заявок и автоматизации бизнес-процессов.",
+    "Разработка Telegram-ботов, MAX-ботов, парсеров сайтов и Telegram, CRM/API-интеграций, систем приема заявок и автоматизации бизнес-процессов.",
   openGraph: {
     type: "website",
     locale: "ru_RU",

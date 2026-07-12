@@ -44,7 +44,7 @@ export function BotUseCasesSection() {
       className="mx-auto max-w-5xl px-6 py-5 sm:px-10 sm:py-7 lg:max-w-6xl lg:px-10 lg:py-9 xl:max-w-7xl xl:px-16 xl:py-10 2xl:max-w-[1320px] 2xl:px-20 2xl:py-12"
     >
       <SectionTitle
-        eyebrow="Use Cases"
+        eyebrow="Сценарии использования"
         title="Кому подходят чат-боты и что они могут автоматизировать"
         text="Чат-бот — это не просто кнопки в мессенджере. Это удобный способ принимать заявки, общаться с клиентами и связывать разные сервисы в одну понятную систему."
       />
@@ -109,7 +109,7 @@ export function BotUseCasesSection() {
               <div className="text-[13px] leading-6 text-slate-200 sm:text-sm sm:leading-7">
                 Такой бот можно запустить как простой MVP, а затем расширять:
                 добавить CRM, админ-панель, аналитику, AI-функции или поддержку
-                нескольких площадок — Telegram, Max и VK.
+                нескольких площадок — Telegram, MAX и VK.
               </div>
             </div>
           </div>

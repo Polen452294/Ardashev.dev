@@ -12,7 +12,7 @@ const pageUrl = `${siteUrl}/cases/usdt-exchange-bot`;
 export const metadata: Metadata = {
   title: "Кейс: Telegram-бот для обмена USDT",
   description:
-  "Кейс разработки Telegram бота для обменного сервиса: прием заявок на обмен USDT, сбор данных, CRM-логика и автоматические напоминания клиентам.",
+  "Кейс разработки Telegram-бота для обменного сервиса: прием заявок на обмен USDT, сбор данных, CRM-логика и автоматические напоминания клиентам.",
   alternates: {
     canonical: pageUrl,
   },
@@ -91,7 +91,7 @@ const technologies = [
 
 const relatedServices = [
   {
-    title: "Разработка Telegram ботов",
+    title: "Разработка Telegram-ботов",
     text: "Если нужно принимать заявки, собирать данные клиентов и автоматизировать сценарии внутри Telegram.",
     href: "/telegram-bots",
   },
@@ -101,8 +101,8 @@ const relatedServices = [
     href: "/crm-integrations",
   },
   {
-    title: "Разработка Max ботов",
-    text: "Если похожий сценарий приема заявок нужно реализовать в Max.",
+    title: "Разработка MAX-ботов",
+    text: "Если похожий сценарий приема заявок нужно реализовать в MAX.",
     href: "/max-bots",
   },
 ];
@@ -111,12 +111,12 @@ const articleJsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
   "@id": `${pageUrl}#article`,
-  headline: "Кейс: Telegram бот для обмена USDT",
+  headline: "Кейс: Telegram-бот для обмена USDT",
   image: `${siteUrl}/opengraph-image`,
   datePublished: "2026-07-11",
   dateModified: "2026-07-12",
   description:
-    "Разработка Telegram бота для обменного сервиса: оформление заявок, передача данных в обработку и автоматические напоминания клиентам.",
+    "Разработка Telegram-бота для обменного сервиса: оформление заявок, передача данных в обработку и автоматические напоминания клиентам.",
   url: pageUrl,
   inLanguage: "ru-RU",
   author: {
@@ -136,8 +136,8 @@ const articleJsonLd = {
     "@id": pageUrl,
   },
   about: [
-    "разработка Telegram ботов",
-    "Telegram бот для заявок",
+    "разработка Telegram-ботов",
+    "Telegram-бот для заявок",
     "CRM-интеграции",
     "автоматизация заявок",
     "бот для обмена USDT",
@@ -153,11 +153,11 @@ const projectJsonLd = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
   "@id": `${pageUrl}#project`,
-  name: "Telegram бот для обмена USDT",
+  name: "Telegram-бот для обмена USDT",
   url: pageUrl,
   image: `${siteUrl}/opengraph-image`,
   description:
-    "Telegram бот для обменного сервиса: пошаговое оформление заявки, сбор контактных данных, передача обращения в обработку, хранение статусов и автоматические напоминания.",
+    "Telegram-бот для обменного сервиса: пошаговое оформление заявки, сбор контактных данных, передача обращения в обработку, хранение статусов и автоматические напоминания.",
   creator: {
     "@type": "Person",
     "@id": `${siteUrl}/#person`,
@@ -192,7 +192,7 @@ const breadcrumbJsonLd = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Telegram бот для обмена USDT",
+      name: "Telegram-бот для обмена USDT",
       item: pageUrl,
     },
   ],
@@ -218,10 +218,10 @@ export default function UsdtExchangeBotCasePage() {
         breadcrumbs={[
           { label: "Главная", href: "/" },
           { label: "Кейсы", href: "/cases" },
-          { label: "Telegram бот для обмена USDT" },
+          { label: "Telegram-бот для обмена USDT" },
         ]}
-        eyebrow="Case Study"
-        title="Telegram бот для обмена USDT"
+        eyebrow="Кейс"
+        title="Telegram-бот для обмена USDT"
         description="Кейс бота для обменного сервиса: клиент выбирает направление обмена, вводит сумму, город и контактные данные, а система передает заявку в обработку и помогает не терять незавершенные обращения."
         primaryText="Создать заказ"
         secondaryText="Открыть GitHub"

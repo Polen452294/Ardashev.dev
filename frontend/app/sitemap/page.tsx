@@ -32,7 +32,7 @@ const sitemapSections = [
         title: "Главная",
         href: "/",
         description:
-          "Разработка Telegram ботов, Max ботов, парсеров и CRM/API-интеграций.",
+          "Разработка Telegram-ботов, MAX-ботов, парсеров и CRM/API-интеграций.",
       },
       {
         title: "О разработчике",
@@ -71,16 +71,16 @@ const sitemapSections = [
           "Все направления разработки и помощь с выбором подходящего решения.",
       },
       {
-        title: "Разработка Telegram ботов",
+        title: "Разработка Telegram-ботов",
         href: "/telegram-bots",
         description:
-          "Telegram боты для заявок, записи, консультаций, уведомлений, CRM и оплаты.",
+          "Telegram-боты для заявок, записи, консультаций, уведомлений, CRM и оплаты.",
       },
       {
-        title: "Разработка Max ботов",
+        title: "Разработка MAX-ботов",
         href: "/max-bots",
         description:
-          "Max боты для заявок, консультаций, поддержки и переноса логики из Telegram.",
+          "MAX-боты для заявок, консультаций, поддержки и переноса логики из Telegram.",
       },
       {
         title: "Парсеры сайтов и Telegram",
@@ -116,13 +116,13 @@ const sitemapSections = [
         title: "USDT Exchange Bot",
         href: "/cases/usdt-exchange-bot",
         description:
-          "Telegram бот для обменных заявок, статусов, уведомлений и обработки обращений.",
+          "Telegram-бот для обменных заявок, статусов, уведомлений и обработки обращений.",
       },
       {
-        title: "Max Request Bot",
+        title: "MAX Request Bot",
         href: "/cases/max-request-bot",
         description:
-          "Max бот для приема заявок, уведомлений и автоматизации первичной обработки.",
+          "MAX-бот для приема заявок, уведомлений и автоматизации первичной обработки.",
       },
       {
         title: "Profi Parser Bot",
@@ -182,7 +182,7 @@ export default function SitemapPage() {
       />
 
       <InnerPageLayout
-        eyebrow="Sitemap"
+        eyebrow="Карта сайта"
         title="Карта сайта"
         description="Все основные страницы Ardashev.dev в одном месте: услуги, кейсы, контакты и информация о разработчике."
         primaryText="Создать заказ"
@@ -192,7 +192,7 @@ export default function SitemapPage() {
       >
         <InnerPageSection>
           <InnerPageTitle
-            eyebrow="Navigation"
+            eyebrow="Навигация"
             title="Основные разделы сайта"
             text="Эта страница помогает быстрее найти нужную услугу, кейс или контактный раздел."
           />

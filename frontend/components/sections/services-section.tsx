@@ -11,9 +11,9 @@ export function ServicesSection() {
       className="mx-auto max-w-5xl px-6 py-5 sm:px-8 sm:py-7 lg:max-w-6xl lg:px-12 lg:py-9 xl:max-w-7xl xl:px-16 xl:py-10 2xl:max-w-[1320px] 2xl:px-20 2xl:py-12"
     >
       <SectionTitle
-        eyebrow="Services"
+        eyebrow="Услуги"
         title="Основные услуги"
-        text="Отдельные направления, под которые можно заказать разработку: боты для Telegram и Max, парсеры данных, CRM и API-интеграции."
+        text="Отдельные направления, под которые можно заказать разработку: боты для Telegram и MAX, парсеры данных, CRM и API-интеграции."
       />
 
       <div className="grid grid-cols-2 gap-2.5 sm:gap-6 xl:grid-cols-4">

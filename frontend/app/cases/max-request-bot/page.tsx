@@ -71,7 +71,7 @@ const functions = [
 
 const technologies = [
   "Python",
-  "Max API",
+  "MAX API",
   "Сценарии с кнопками",
   "Обработка заявок",
   "Интеграции",
@@ -80,17 +80,17 @@ const technologies = [
 
 const relatedServices = [
   {
-    title: "Разработка Max ботов",
-    text: "Если нужно принимать заявки, консультации и обращения внутри Max.",
+    title: "Разработка MAX-ботов",
+    text: "Если нужно принимать заявки, консультации и обращения внутри MAX.",
     href: "/max-bots",
   },
   {
     title: "CRM и API-интеграции",
-    text: "Если заявки из Max нужно автоматически передавать в CRM, таблицу или внутренний сервис.",
+    text: "Если заявки из MAX нужно автоматически передавать в CRM, таблицу или внутренний сервис.",
     href: "/crm-integrations",
   },
   {
-    title: "Разработка Telegram ботов",
+    title: "Разработка Telegram-ботов",
     text: "Если похожий сценарий нужно реализовать в Telegram или перенести логику между мессенджерами.",
     href: "/telegram-bots",
   },
@@ -125,8 +125,8 @@ const articleJsonLd = {
     "@id": pageUrl,
   },
   about: [
-    "разработка Max ботов",
-    "Max бот для заявок",
+    "разработка MAX-ботов",
+    "MAX-бот для заявок",
     "автоматизация обращений",
     "бот для консультаций",
     "CRM-интеграции",
@@ -211,7 +211,7 @@ export default function MaxRequestBotCasePage() {
           { label: "Кейсы", href: "/cases" },
           { label: "MAX Python Bot" },
         ]}
-        eyebrow="Case Study"
+        eyebrow="Кейс"
         title="MAX Python Bot: стартовая база для MVP"
         description="Демонстрационный проект на Python, созданный для проверки MAX Bot API и модульной архитектуры. Это не клиентский кейс с коммерческими показателями, а открытая основа для будущих сценариев и интеграций."
         primaryText="Создать заказ"
@@ -234,7 +234,7 @@ export default function MaxRequestBotCasePage() {
         <RelatedLinksSection items={relatedServices} />
 
         <CtaSection
-          title="Нужен похожий Max бот?"
+          title="Нужен похожий MAX-бот?"
           text="Опишите, какие заявки или обращения должен принимать бот. Я помогу выбрать сценарий, структуру и способ передачи данных."
           buttonText="Создать заказ"
         />

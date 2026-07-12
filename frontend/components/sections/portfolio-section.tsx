@@ -11,7 +11,7 @@ export function PortfolioSection() {
     >
       <div id="portfolio" className="absolute top-8 sm:top-10" />
       <SectionTitle
-        eyebrow="Portfolio"
+        eyebrow="Портфолио"
         title="Проекты и кейсы"
         text="Примеры решений, которые помогают автоматизировать процессы, упростить работу с обращениями и выстроить удобные сценарии для бизнеса."
       />

@@ -18,7 +18,7 @@ const pageUrl = `${siteUrl}/contacts`;
 export const metadata: Metadata = {
   title: "Контакты — заказать бота или парсер",
   description:
-    "Контакты Ardashev.dev: заказать разработку Telegram бота, Max бота, парсера, CRM/API-интеграции или автоматизации бизнес-процессов.",
+    "Контакты Ardashev.dev: заказать разработку Telegram-бота, MAX-бота, парсера, CRM/API-интеграции или автоматизации бизнес-процессов.",
   alternates: {
     canonical: pageUrl,
   },
@@ -38,7 +38,7 @@ const faq = [
   {
     question: "Какие проекты можно обсудить?",
     answer:
-      "Telegram боты, Max боты, парсеры сайтов и Telegram, CRM/API-интеграции, автоматизация заявок, уведомления, таблицы, базы данных и серверный запуск.",
+      "Telegram-боты, MAX-боты, парсеры сайтов и Telegram, CRM/API-интеграции, автоматизация заявок, уведомления, таблицы, базы данных и серверный запуск.",
   },
 ];
 
@@ -49,7 +49,7 @@ const contactPageJsonLd = {
   url: pageUrl,
   name: "Контакты Ardashev.dev",
   description:
-    "Контакты для заказа разработки Telegram ботов, Max ботов, парсеров, CRM/API-интеграций и автоматизации бизнес-процессов.",
+    "Контакты для заказа разработки Telegram-ботов, MAX-ботов, парсеров, CRM/API-интеграций и автоматизации бизнес-процессов.",
   mainEntity: {
     "@id": `${siteUrl}/#person`,
   },
@@ -104,9 +104,9 @@ export default function ContactsPage() {
       />
 
       <InnerPageLayout
-        eyebrow="Contacts"
+        eyebrow="Контакты"
         title="Контакты для заказа разработки"
-        description="Напишите удобным способом, если нужен Telegram бот, Max бот, парсер, CRM/API-интеграция или автоматизация бизнес-процесса."
+        description="Напишите удобным способом, если нужен Telegram-бот, MAX-бот, парсер, CRM/API-интеграция или автоматизация бизнес-процесса."
         primaryText="Написать в Telegram"
         primaryHref={siteContact.telegram.href}
         secondaryText="Посмотреть услуги"
@@ -114,7 +114,7 @@ export default function ContactsPage() {
       >
         <InnerPageSection>
           <InnerPageTitle
-            eyebrow="Contact"
+            eyebrow="Связаться"
             title="Как со мной связаться"
             text="Лучше всего коротко описать задачу, желаемый результат, сроки и сервисы, с которыми нужно сделать интеграцию."
           />
@@ -206,7 +206,7 @@ export default function ContactsPage() {
 
         <CtaSection
           title="Готовы обсудить проект?"
-          text="Напишите в Telegram, Max или на email. Можно начать с короткого описания идеи без полноценного технического задания."
+          text="Напишите в Telegram, MAX или на email. Можно начать с короткого описания идеи без полноценного технического задания."
           buttonText="Создать заказ"
         />
       </InnerPageLayout>

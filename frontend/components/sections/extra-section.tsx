@@ -47,7 +47,7 @@ export function ExtraSection() {
     <section className="mx-auto max-w-5xl px-6 py-5 sm:px-8 sm:py-7 lg:max-w-6xl lg:px-12 lg:py-9 xl:max-w-7xl xl:px-16 xl:py-10 2xl:max-w-[1320px] 2xl:px-20 2xl:py-12"
     >
       <SectionTitle
-        eyebrow="Extra Value"
+        eyebrow="Дополнительные возможности"
         title="Что вы получаете на выходе"
         text="Не просто код, а инструмент, который помогает упрощать процессы и готовить проект к дальнейшему росту."
       />

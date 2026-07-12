@@ -101,7 +101,7 @@ export function TrustSection() {
       />
 
       <SectionTitle
-        eyebrow="Reviews & Reputation"
+        eyebrow="Отзывы и репутация"
         title="Гарантии качества и отзывы"
         text="До начала работы можно заранее ознакомиться с отзывами, посмотреть профиль на Profi.ru и убедиться, что личность подтверждена платформой."
       />

@@ -33,7 +33,7 @@ const serviceLinks = [
     href: "/telegram-bots",
   },
   {
-    title: "Max-боты",
+    title: "MAX-боты",
     href: "/max-bots",
   },
   {
@@ -60,7 +60,7 @@ const caseLinks = [
     href: "/cases/usdt-exchange-bot",
   },
   {
-    title: "Max Request Bot",
+    title: "MAX Request Bot",
     href: "/cases/max-request-bot",
   },
   {
@@ -97,7 +97,7 @@ export function FooterSection() {
             </Link>
 
             <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-400 sm:text-[15px]">
-              Разработка Telegram-ботов, Max-ботов, парсеров сайтов и Telegram,
+              Разработка Telegram-ботов, MAX-ботов, парсеров сайтов и Telegram,
               CRM/API-интеграций и систем приема заявок для бизнеса.
             </p>
 
@@ -190,7 +190,7 @@ export function FooterSection() {
         </div>
 
         <div className="mt-10 flex flex-col gap-3 border-t border-white/5 pt-6 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
-          <div>Telegram bots • Max bots • Parsers • CRM/API</div>
+          <div>Telegram-боты • MAX-боты • Парсеры • CRM/API</div>
           <div>© {new Date().getFullYear()} Ardashev.dev</div>
         </div>
       </div>

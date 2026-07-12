@@ -16,11 +16,11 @@ const pageUrl = `${siteUrl}/cases`;
 export const metadata: Metadata = {
   title: "Кейсы ботов, парсеров и интеграций",
   description:
-    "Примеры разработки Telegram и Max-ботов, парсеров и систем автоматизации: задача, стек, реализация и результат.",
+    "Примеры разработки Telegram и MAX-ботов, парсеров и систем автоматизации: задача, стек, реализация и результат.",
   alternates: { canonical: pageUrl },
 };
 
-const caseCategories = ["Боты", "Max", "Парсеры", "CRM и интеграции"];
+const caseCategories = ["Боты", "MAX", "Парсеры", "CRM и интеграции"];
 
 const itemListJsonLd = {
   "@context": "https://schema.org",
@@ -45,7 +45,7 @@ export default function CasesPage() {
       />
 
       <InnerPageLayout
-        eyebrow="Cases"
+        eyebrow="Кейсы"
         title="Кейсы разработки и автоматизации"
         description="Примеры проектов с разными задачами: прием заявок в мессенджерах, автоматизация общения и мониторинг новых заказов."
         primaryText="Обсудить похожую задачу"
@@ -55,7 +55,7 @@ export default function CasesPage() {
       >
         <InnerPageSection>
           <InnerPageTitle
-            eyebrow="Portfolio"
+            eyebrow="Портфолио"
             title="Реализованные проекты"
             text="В каждой карточке указаны задача, техническая основа и подтвержденный результат без выдуманных показателей."
           />

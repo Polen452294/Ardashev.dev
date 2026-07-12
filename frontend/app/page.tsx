@@ -18,7 +18,7 @@ const siteUrl = "https://ardashev.dev";
 
 export const metadata: Metadata = {
   description:
-    "Александр Ардашев разрабатывает Telegram-ботов, Max-ботов, парсеры, CRM/API-интеграции и системы приема заявок для бизнеса.",
+    "Александр Ардашев разрабатывает Telegram-ботов, MAX-ботов, парсеры, CRM/API-интеграции и системы приема заявок для бизнеса.",
   alternates: {
     canonical: siteUrl,
   },
@@ -57,7 +57,7 @@ const navigationJsonLd = {
     {
       "@type": "SiteNavigationElement",
       position: 5,
-      name: "Разработка Max-ботов",
+      name: "Разработка MAX-ботов",
       url: `${siteUrl}/max-bots`,
     },
     {
@@ -81,7 +81,7 @@ const navigationJsonLd = {
     {
       "@type": "SiteNavigationElement",
       position: 9,
-      name: "Кейс: Max-бот для приема заявок",
+      name: "Кейс: MAX-бот для приема заявок",
       url: `${siteUrl}/cases/max-request-bot`,
     },
     {
@@ -124,7 +124,7 @@ const offerCatalogJsonLd = {
       itemOffered: {
         "@type": "Service",
         "@id": `${siteUrl}/max-bots#service`,
-        name: "Разработка Max-ботов",
+        name: "Разработка MAX-ботов",
         url: `${siteUrl}/max-bots`,
       },
     },

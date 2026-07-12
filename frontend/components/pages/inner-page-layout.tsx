@@ -291,7 +291,7 @@ export function TagGridSection({
     }
 
     if (normalized.includes("перенос")) {
-      return "Позволяет адаптировать уже готовую логику Telegram под Max или другой канал общения с клиентами.";
+      return "Позволяет адаптировать уже готовую логику Telegram под MAX или другой канал общения с клиентами.";
     }
 
     if (normalized.includes("мониторинг") || normalized.includes("цен")) {
@@ -335,7 +335,7 @@ export function TagGridSection({
     }
 
     if (normalized.includes("бота и crm")) {
-      return "Связывает Telegram или Max с CRM, чтобы заявки и контакты автоматически попадали к менеджерам.";
+      return "Связывает Telegram или MAX с CRM, чтобы заявки и контакты автоматически попадали к менеджерам.";
     }
 
     if (normalized.includes("парсера и crm")) {
@@ -562,11 +562,11 @@ const getStackDescription = (item: string) => {
   }
 
   if (normalized.includes("aiogram")) {
-    return "Фреймворк для разработки Telegram ботов и сценариев общения.";
+    return "Фреймворк для разработки Telegram-ботов и сценариев общения.";
   }
 
   if (normalized.includes("max api")) {
-    return "API для работы с ботами и сценариями внутри Max.";
+    return "API для работы с ботами и сценариями внутри MAX.";
   }
 
   if (normalized.includes("vk api")) {
@@ -776,7 +776,7 @@ export function CaseLinksSection({
 }) {
   return (
     <InnerPageSection id="portfolio">
-      <InnerPageTitle eyebrow="Cases" title={title} text={text} />
+      <InnerPageTitle eyebrow="Кейсы" title={title} text={text} />
 
       <div className="grid gap-2.5 sm:gap-5 lg:grid-cols-2">
         {items.map((item) => (
@@ -809,7 +809,7 @@ export function RelatedLinksSection({ items }: { items: LinkItem[] }) {
   return (
     <InnerPageSection>
       <InnerPageTitle
-        eyebrow="Services"
+        eyebrow="Услуги"
         title="Что может понадобиться вместе с этой задачей"
         text="Дополнительные направления, которые часто используются вместе с этой услугой."
       />
@@ -841,7 +841,7 @@ export function FaqSection({ items }: { items: FaqItem[] }) {
   return (
     <InnerPageSection>
       <InnerPageTitle
-        eyebrow="FAQ"
+        eyebrow="Вопросы и ответы"
         title="Частые вопросы"
         text="Короткие ответы на вопросы, которые обычно появляются перед началом разработки."
       />
@@ -875,7 +875,7 @@ export function CtaSection({
   return (
     <InnerPageSection className="pb-8 sm:pb-10">
       <InnerPageTitle
-        eyebrow="Contact"
+        eyebrow="Связаться"
         title="Создать заказ"
         text="Свяжитесь удобным способом и коротко опишите задачу. Даже если пока нет точного ТЗ, можно начать с идеи и желаемого результата."
       />
@@ -927,7 +927,7 @@ export function ServiceCommercialDetails({
   return (
     <>
       <TextGridSection
-        eyebrow="For business"
+        eyebrow="Для бизнеса"
         title="Кому подходит и какие проблемы решает"
         text="Сначала определяем не набор функций, а процесс, который нужно упростить или автоматизировать."
         items={[...audience, ...problems]}
@@ -935,7 +935,7 @@ export function ServiceCommercialDetails({
 
       <InnerPageSection>
         <InnerPageTitle
-          eyebrow="Scope"
+          eyebrow="Состав работ"
           title="Что нужно для старта и что будет в результате"
           text="До начала разработки фиксируем входные данные и состав готового решения."
         />
@@ -975,7 +975,7 @@ export function ServiceCommercialDetails({
 
       <InnerPageSection>
         <InnerPageTitle
-          eyebrow="Process"
+          eyebrow="Процесс"
           title="Как проходит разработка"
           text="Работа разбивается на проверяемые этапы, чтобы замечания появлялись до запуска, а не после него."
         />
@@ -998,7 +998,7 @@ export function ServiceCommercialDetails({
 
       <InnerPageSection>
         <InnerPageTitle
-          eyebrow="Terms"
+          eyebrow="Условия"
           title="Срок, стоимость и поддержка"
           text="Предварительная оценка уточняется после короткого разбора задачи и обязательных функций."
         />
@@ -1022,7 +1022,7 @@ export function ServiceCommercialDetails({
 
       <InnerPageSection>
         <InnerPageTitle
-          eyebrow="Technical details"
+          eyebrow="Технические детали"
           title="Интеграции, ограничения и риски"
           text="Эти детали проверяются до разработки, потому что они влияют на архитектуру, срок и стабильность проекта."
         />
@@ -1089,14 +1089,14 @@ export function CaseStudyDetails({
   return (
     <>
       <TextGridSection
-        eyebrow="Project facts"
+        eyebrow="О проекте"
         title="Контекст проекта"
         text="Факты, которые можно подтвердить по проекту и открытому репозиторию."
         items={facts}
       />
 
       <TextGridSection
-        eyebrow="Challenge"
+        eyebrow="Задача"
         title="Проблема, ограничения и роль в проекте"
         text="Почему понадобилось отдельное решение и какие рамки учитывались при разработке."
         items={context}
@@ -1104,7 +1104,7 @@ export function CaseStudyDetails({
 
       <InnerPageSection>
         <InnerPageTitle
-          eyebrow="Architecture"
+          eyebrow="Архитектура"
           title="Как устроено решение"
           text="Основные компоненты и путь данных без привязки к закрытым доступам и секретам окружения."
         />
@@ -1126,7 +1126,7 @@ export function CaseStudyDetails({
       </InnerPageSection>
 
       <TextGridSection
-        eyebrow="Features"
+        eyebrow="Функции"
         title="Ключевые функции"
         text="Функции перечислены по фактической реализации, а не как возможные будущие доработки."
         items={functions}
@@ -1134,7 +1134,7 @@ export function CaseStudyDetails({
 
       <InnerPageSection>
         <InnerPageTitle
-          eyebrow="Evidence"
+          eyebrow="Подтверждение"
           title="Демонстрация и исходный код"
           text={evidenceNote}
         />
@@ -1166,14 +1166,14 @@ export function CaseStudyDetails({
       </InnerPageSection>
 
       <TextGridSection
-        eyebrow="Outcome"
+        eyebrow="Результат"
         title="Результат и измерения"
         text="Отделяю подтверждённый функциональный результат от показателей, которые не передавались после запуска."
         items={outcomes}
       />
 
       <TextGridSection
-        eyebrow="Retrospective"
+        eyebrow="Выводы"
         title="Что изменилось бы в следующей версии"
         text="Выводы по архитектуре, эксплуатации и дальнейшему развитию проекта."
         items={retrospective}

@@ -16,7 +16,7 @@ const pageUrl = `${siteUrl}/parsers`;
 export const metadata: Metadata = {
   title: "Разработка парсеров сайтов и Telegram",
   description:
-    "Разработка парсеров для сайтов, каталогов, маркетплейсов, Telegram-каналов и открытых источников с выгрузкой в Excel, Google Sheets, базу данных, CRM или Telegram бота.",
+    "Разработка парсеров для сайтов, каталогов, маркетплейсов, Telegram-каналов и открытых источников с выгрузкой в Excel, Google Sheets, базу данных, CRM или Telegram-бота.",
   alternates: {
     canonical: pageUrl,
   },
@@ -110,13 +110,13 @@ const relatedServices = [
     href: "/crm-integrations",
   },
   {
-    title: "Разработка Telegram ботов",
-    text: "Если парсер должен отправлять уведомления, отчеты или найденные заявки в Telegram бота.",
+    title: "Разработка Telegram-ботов",
+    text: "Если парсер должен отправлять уведомления, отчеты или найденные заявки в Telegram-бота.",
     href: "/telegram-bots",
   },
   {
-    title: "Разработка Max ботов",
-    text: "Если результаты парсинга нужно передавать в Max или использовать в сценарии Max бота.",
+    title: "Разработка MAX-ботов",
+    text: "Если результаты парсинга нужно передавать в MAX или использовать в сценарии MAX-бота.",
     href: "/max-bots",
   },
 ];
@@ -130,7 +130,7 @@ const faq = [
   {
     question: "Куда можно выгружать результаты парсинга?",
     answer:
-      "Результаты можно сохранять в Excel, Google Sheets, PostgreSQL, CRM, внутренний сервис или отправлять уведомлениями в Telegram бота.",
+      "Результаты можно сохранять в Excel, Google Sheets, PostgreSQL, CRM, внутренний сервис или отправлять уведомлениями в Telegram-бота.",
   },
   {
     question: "Можно ли сделать регулярный парсинг по расписанию?",
@@ -156,7 +156,7 @@ const serviceJsonLd = {
     "Парсер данных для бизнеса",
   ],
   description:
-    "Разработка парсеров для сайтов, каталогов, маркетплейсов, Telegram-каналов и открытых источников с выгрузкой в Excel, Google Sheets, базу данных, CRM или Telegram бота.",
+    "Разработка парсеров для сайтов, каталогов, маркетплейсов, Telegram-каналов и открытых источников с выгрузкой в Excel, Google Sheets, базу данных, CRM или Telegram-бота.",
   url: pageUrl,
   provider: {
     "@type": "Person",
@@ -255,9 +255,9 @@ export default function ParsersPage() {
       />
 
       <InnerPageLayout
-        eyebrow="Parsers"
+        eyebrow="Парсеры"
         title="Разработка парсеров на заказ"
-        description="Разрабатываю парсеры для сбора данных с сайтов, каталогов, маркетплейсов, Telegram-каналов и открытых источников. Результаты можно выгружать в Excel, Google Sheets, базу данных, CRM или отправлять в Telegram бота."
+        description="Разрабатываю парсеры для сбора данных с сайтов, каталогов, маркетплейсов, Telegram-каналов и открытых источников. Результаты можно выгружать в Excel, Google Sheets, базу данных, CRM или отправлять в Telegram-бота."
         primaryText="Создать заказ"
         secondaryText="Посмотреть кейсы"
       >

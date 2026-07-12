@@ -17,10 +17,10 @@ export const siteContact = {
     text: "Быстрый способ обсудить задачу и уточнить детали проекта.",
   },
   max: {
-    title: "Max",
-    label: "Написать в Max",
+    title: "MAX",
+    label: "Написать в MAX",
     href: "https://max.ru/u/f9LHodD0cOLjnaroqIXC9x50AYUTb-v1MgisAQs3JGzrycVAMO3inOzXILw",
-    text: "Удобный вариант связи через Max для рабочих сообщений.",
+    text: "Удобный вариант связи через MAX для рабочих сообщений.",
   },
   email: {
     title: "Email",
@@ -59,8 +59,8 @@ export const services = [
     href: "/telegram-bots",
   },
   {
-    title: "Разработка Max-ботов",
-    text: "Разрабатываю ботов для Max: прием обращений, сценарии с кнопками, консультационные заявки, уведомления и интеграции с таблицами или CRM.",
+    title: "Разработка MAX-ботов",
+    text: "Разрабатываю ботов для MAX: прием обращений, сценарии с кнопками, консультационные заявки, уведомления и интеграции с таблицами или CRM.",
     icon: MessageCircleMore,
     href: "/max-bots",
   },
@@ -89,7 +89,7 @@ export const portfolio = [
     demoGif: "/demo/usdt-bot-demo.gif",
   },
   {
-    title: "Max Python Bot",
+    title: "MAX Python Bot",
     stack: "MAX Bot API, Python, asyncio, модульная архитектура",
     text: "Демонстрационный асинхронный MAX-бот с разделением API-клиента, обработчиков, конфигурации и сервисной логики. Проект служит открытой стартовой базой для MVP и интеграций.",
     result: "Подготовлена запускаемая и расширяемая основа MAX-проекта; клиентские показатели не заявляются.",
@@ -147,7 +147,7 @@ export const techStack = [
   "Next.js",
   "Tailwind",
   "Telegram API",
-  "Max API",
+  "MAX API",
   "VK API",
   "CRM API",
   "AI-интеграции",

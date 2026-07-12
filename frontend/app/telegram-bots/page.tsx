@@ -16,7 +16,7 @@ const pageUrl = `${siteUrl}/telegram-bots`;
 export const metadata: Metadata = {
   title: "Разработка Telegram-ботов на заказ",
   description:
-    "Разработка Telegram ботов для бизнеса: прием заявок, CRM-интеграции, уведомления, админ-панели, оплата, базы данных и запуск на сервере.",
+    "Разработка Telegram-ботов для бизнеса: прием заявок, CRM-интеграции, уведомления, админ-панели, оплата, базы данных и запуск на сервере.",
   alternates: {
     canonical: pageUrl,
   },
@@ -34,7 +34,7 @@ const tasks = [
 const includes = [
   "Разбор задачи и структуры будущего бота",
   "Проектирование сценария общения с пользователем",
-  "Разработка Telegram бота на Python",
+  "Разработка Telegram-бота на Python",
   "Подключение базы данных при необходимости",
   "Интеграция с CRM, API, таблицами или внешними сервисами",
   "Тестирование, запуск и помощь после публикации",
@@ -97,7 +97,7 @@ const risks = [
 
 const caseStudies = [
   {
-    title: "Telegram бот для обмена USDT",
+    title: "Telegram-бот для обмена USDT",
     text: "Кейс бота для обменного сервиса: оформление заявок, сбор данных, CRM-логика и автоматические напоминания клиентам.",
     href: "/cases/usdt-exchange-bot",
   },
@@ -106,12 +106,12 @@ const caseStudies = [
 const relatedServices = [
   {
     title: "CRM и API-интеграции",
-    text: "Если Telegram бот должен передавать заявки в CRM, таблицы, базу данных или внешний сервис.",
+    text: "Если Telegram-бот должен передавать заявки в CRM, таблицы, базу данных или внешний сервис.",
     href: "/crm-integrations",
   },
   {
-    title: "Разработка Max ботов",
-    text: "Если нужно сделать похожий сценарий приема заявок не только в Telegram, но и в Max.",
+    title: "Разработка MAX-ботов",
+    text: "Если нужно сделать похожий сценарий приема заявок не только в Telegram, но и в MAX.",
     href: "/max-bots",
   },
   {
@@ -123,22 +123,22 @@ const relatedServices = [
 
 const faq = [
   {
-    question: "Сколько стоит разработка Telegram бота?",
+    question: "Сколько стоит разработка Telegram-бота?",
     answer:
       "Стоимость зависит от сценария, количества экранов, интеграций, базы данных, админ-панели и дополнительных функций. Обычно сначала можно сделать минимальную рабочую версию, а затем постепенно расширять проект.",
   },
   {
-    question: "Можно ли подключить Telegram бота к CRM?",
+    question: "Можно ли подключить Telegram-бота к CRM?",
     answer:
-      "Да. Telegram бот может передавать заявки, контакты, статусы, комментарии и другие данные в CRM, Google Sheets, Excel, базу данных или внутренний API.",
+      "Да. Telegram-бот может передавать заявки, контакты, статусы, комментарии и другие данные в CRM, Google Sheets, Excel, базу данных или внутренний API.",
   },
   {
-    question: "Можно ли доработать уже готового Telegram бота?",
+    question: "Можно ли доработать уже готового Telegram-бота?",
     answer:
       "Да, если есть доступ к коду и понятно, на каком стеке написан проект. Можно добавить новые функции, исправить ошибки, подключить CRM или перенести бота на сервер.",
   },
   {
-    question: "Сколько времени занимает разработка Telegram бота?",
+    question: "Сколько времени занимает разработка Telegram-бота?",
     answer:
       "Простой бот для заявок можно сделать быстрее, сложный бот с CRM, оплатой, базой данных и админ-функциями требует больше времени. Сроки зависят от объема логики и интеграций.",
   },
@@ -148,15 +148,15 @@ const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": `${pageUrl}#service`,
-  name: "Разработка Telegram ботов на заказ",
+  name: "Разработка Telegram-ботов на заказ",
   alternateName: [
-    "Создание Telegram ботов",
-    "Telegram бот для бизнеса",
-    "Telegram бот для заявок",
-    "Telegram бот с CRM",
+    "Создание Telegram-ботов",
+    "Telegram-бот для бизнеса",
+    "Telegram-бот для заявок",
+    "Telegram-бот с CRM",
   ],
   description:
-    "Разработка Telegram ботов для бизнеса: прием заявок, CRM-интеграции, уведомления, админ-панели, оплата, базы данных и запуск на сервере.",
+    "Разработка Telegram-ботов для бизнеса: прием заявок, CRM-интеграции, уведомления, админ-панели, оплата, базы данных и запуск на сервере.",
   url: pageUrl,
   provider: {
     "@type": "Person",
@@ -172,23 +172,23 @@ const serviceJsonLd = {
     "@type": "BusinessAudience",
     audienceType: "Бизнес",
   },
-  serviceType: "Разработка Telegram ботов",
+  serviceType: "Разработка Telegram-ботов",
   category: "Боты, автоматизация заявок и CRM-интеграции",
   offers: {
     "@type": "Offer",
     url: `${siteUrl}/contacts`,
     availability: "https://schema.org/InStock",
     priceCurrency: "RUB",
-    category: "Разработка Telegram ботов",
+    category: "Разработка Telegram-ботов",
     itemOffered: {
       "@type": "Service",
-      name: "Разработка Telegram бота под задачу бизнеса",
+      name: "Разработка Telegram-бота под задачу бизнеса",
       url: pageUrl,
     },
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Что входит в разработку Telegram бота",
+    name: "Что входит в разработку Telegram-бота",
     itemListElement: includes.map((item) => ({
       "@type": "Offer",
       itemOffered: {
@@ -232,7 +232,7 @@ const breadcrumbJsonLd = {
     {
       "@type": "ListItem",
       position: 2,
-      name: "Разработка Telegram ботов",
+      name: "Разработка Telegram-ботов",
       item: pageUrl,
     },
   ],
@@ -255,14 +255,14 @@ export default function TelegramBotsPage() {
       />
 
       <InnerPageLayout
-        eyebrow="Telegram Bots"
-        title="Разработка Telegram ботов на заказ"
-        description="Разрабатываю Telegram ботов для бизнеса: прием заявок, уведомления менеджерам, интеграции с CRM, Google Sheets, Excel, базами данных, оплатой и внешними API."
+        eyebrow="Telegram-боты"
+        title="Разработка Telegram-ботов на заказ"
+        description="Разрабатываю Telegram-ботов для бизнеса: прием заявок, уведомления менеджерам, интеграции с CRM, Google Sheets, Excel, базами данных, оплатой и внешними API."
         primaryText="Создать заказ"
         secondaryText="Посмотреть кейсы"
       >
         <TwoColumnTextSection
-          leftTitle="Какие задачи решает Telegram бот"
+          leftTitle="Какие задачи решает Telegram-бот"
           leftItems={tasks}
           rightTitle="Что входит в разработку"
           rightItems={includes}
@@ -282,14 +282,14 @@ export default function TelegramBotsPage() {
         />
 
         <TextGridSection
-          eyebrow="Examples of use"
-          title="Примеры Telegram ботов"
+          eyebrow="Примеры использования"
+          title="Примеры Telegram-ботов"
           text="Самые частые сценарии, с которых обычно начинается разработка бота для бизнеса."
           items={examples}
         />
 
         <CaseLinksSection
-          title="Кейсы по разработке Telegram ботов"
+          title="Кейсы по разработке Telegram-ботов"
           text="Пример проекта, где бот помогает принимать заявки, хранить данные и возвращать клиентов к незавершенному сценарию."
           items={caseStudies}
         />
@@ -299,7 +299,7 @@ export default function TelegramBotsPage() {
         <FaqSection items={faq} />
 
         <CtaSection
-          title="Нужен Telegram бот для заявок или CRM?"
+          title="Нужен Telegram-бот для заявок или CRM?"
           text="Напишите, какую задачу должен решать бот. Я помогу определить минимальную рабочую версию, структуру сценария и варианты интеграций."
           buttonText="Создать заказ"
         />

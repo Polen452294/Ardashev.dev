@@ -169,7 +169,7 @@ export default function MigrationFromTelegramPage() {
       ))}
 
       <InnerPageLayout
-        eyebrow="MAX Migration"
+        eyebrow="Перенос в MAX"
         title="Перенос Telegram-бота в MAX"
         description="Перенос начинается не с переписывания всего проекта, а с разбора текущего бота. Бизнес-логику и интеграции часто можно сохранить, а работу с сообщениями, кнопками и файлами адаптировать под MAX Bot API."
         primaryText="Оценить перенос"
@@ -186,7 +186,7 @@ export default function MigrationFromTelegramPage() {
 
         <InnerPageSection>
           <InnerPageTitle
-            eyebrow="Process"
+            eyebrow="Процесс"
             title="Как проходит перенос"
             text="Сначала определяется объем повторного использования кода. Это снижает риск потерять рабочие функции при переходе на другую платформу."
           />
@@ -207,7 +207,7 @@ export default function MigrationFromTelegramPage() {
 
         <InnerPageSection>
           <InnerPageTitle
-            eyebrow="Estimate"
+            eyebrow="Оценка"
             title="От чего зависят срок и стоимость"
             text="Точная оценка без просмотра текущего бота будет неточной. На объем работ сильнее всего влияют следующие детали."
           />
