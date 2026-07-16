@@ -18,6 +18,10 @@ const navigationLinks = [
     href: "/contacts",
   },
   {
+    title: "База знаний",
+    href: "/blog",
+  },
+  {
     title: "Карта сайта",
     href: "/sitemap",
   },

@@ -16,6 +16,10 @@ const navLinks = [
     href: "/cases",
   },
   {
+    title: "Статьи",
+    href: "/blog",
+  },
+  {
     title: "Что входит в заказ",
     href: "/#process",
   },
@@ -44,7 +48,9 @@ export function SiteHeader() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="whitespace-nowrap text-[14px] font-medium text-slate-400 transition hover:text-emerald-300 xl:text-[15px]"
+                  className={`whitespace-nowrap text-[14px] font-medium text-slate-400 transition hover:text-emerald-300 xl:text-[15px] ${
+                    link.href === "/blog" ? "hidden xl:inline" : ""
+                  }`}
                 >
                   {link.title}
                 </Link>

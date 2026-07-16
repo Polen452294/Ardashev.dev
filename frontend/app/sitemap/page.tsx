@@ -6,6 +6,7 @@ import {
   InnerPageTitle,
 } from "@/components/pages/inner-page-layout";
 import { Card } from "@/components/ui/card";
+import { blogPosts } from "@/data/blog-posts";
 
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/sitemap`;
@@ -13,7 +14,7 @@ const pageUrl = `${siteUrl}/sitemap`;
 export const metadata: Metadata = {
   title: "Карта сайта",
   description:
-    "Карта сайта Ardashev.dev: главная страница, услуги, кейсы, контакты и информация о разработчике.",
+    "Карта сайта Ardashev.dev: главная страница, услуги, кейсы, статьи, контакты и информация о разработчике.",
   alternates: {
     canonical: pageUrl,
   },
@@ -94,6 +95,23 @@ const sitemapSections = [
         description:
           "Связка ботов, сайтов, таблиц, CRM, баз данных и внешних сервисов.",
       },
+    ],
+  },
+  {
+    title: "База знаний",
+    text: "Практические материалы о подготовке, оценке и разработке Telegram-ботов.",
+    links: [
+      {
+        title: "Все статьи",
+        href: "/blog",
+        description:
+          "Раздел с материалами о ботах, интеграциях и автоматизации.",
+      },
+      ...blogPosts.map((post) => ({
+        title: post.shortTitle,
+        href: `/blog/${post.slug}`,
+        description: post.excerpt,
+      })),
     ],
   },
   {
@@ -184,7 +202,7 @@ export default function SitemapPage() {
       <InnerPageLayout
         eyebrow="Карта сайта"
         title="Карта сайта"
-        description="Все основные страницы Ardashev.dev в одном месте: услуги, кейсы, контакты и информация о разработчике."
+        description="Все основные страницы Ardashev.dev в одном месте: услуги, кейсы, статьи, контакты и информация о разработчике."
         primaryText="Создать заказ"
         primaryHref="/#contact"
         secondaryText="На главную"

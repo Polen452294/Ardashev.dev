@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KnowledgeLinksSection } from "@/components/blog/knowledge-links-section";
 import {
   CaseLinksSection,
   CtaSection,
@@ -9,6 +10,7 @@ import {
   TextGridSection,
   TwoColumnTextSection,
 } from "@/components/pages/inner-page-layout";
+import { blogPosts } from "@/data/blog-posts";
 
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/telegram-bots`;
@@ -295,6 +297,8 @@ export default function TelegramBotsPage() {
         />
 
         <RelatedLinksSection items={relatedServices} />
+
+        <KnowledgeLinksSection items={blogPosts} />
 
         <FaqSection items={faq} />
 

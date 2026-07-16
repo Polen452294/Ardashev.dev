@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "@/data/blog-posts";
 
 const siteUrl = "https://ardashev.dev";
 
@@ -16,6 +17,8 @@ const routes = [
   "/cases/usdt-exchange-bot",
   "/cases/max-request-bot",
   "/cases/profi-parser-bot",
+  "/blog",
+  ...blogPosts.map((post) => `/blog/${post.slug}`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
