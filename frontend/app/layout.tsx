@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Script from "next/script";
+import { YandexMetrikaGoals } from "@/components/analytics/yandex-metrika-goals";
 import { siteIdentityJsonLd } from "@/data/site-schema";
 
 export const metadata: Metadata = {
@@ -51,6 +52,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteIdentityJsonLd) }}
         />
         {children}
+        <YandexMetrikaGoals />
 
         <Script id="yandex-metrika" strategy="afterInteractive">
           {`
