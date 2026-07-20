@@ -54,17 +54,12 @@ export default function RootLayout({
         {children}
         <YandexMetrikaGoals />
 
-        <Script id="yandex-metrika" strategy="afterInteractive">
+        <Script id="yandex-metrika-bootstrap" strategy="afterInteractive">
           {`
-            (function(m,e,t,r,i,k,a){
-              m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-              m[i].l=1*new Date();
-              for (var j = 0; j < document.scripts.length; j++) {
-                if (document.scripts[j].src === r) { return; }
-              }
-              k=e.createElement(t),a=e.getElementsByTagName(t)[0],
-              k.async=1,k.src=r,a.parentNode.insertBefore(k,a);
-            })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=108437647', 'ym');
+            window.ym = window.ym || function() {
+              (window.ym.a = window.ym.a || []).push(arguments);
+            };
+            window.ym.l = 1 * new Date();
 
             ym(108437647, 'init', {
               ssr: true,
@@ -78,6 +73,11 @@ export default function RootLayout({
             });
           `}
         </Script>
+        <Script
+          id="yandex-metrika"
+          src="https://mc.yandex.ru/metrika/tag.js?id=108437647"
+          strategy="lazyOnload"
+        />
 
         <noscript>
           <div>

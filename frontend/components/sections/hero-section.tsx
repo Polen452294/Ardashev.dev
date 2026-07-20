@@ -1,49 +1,13 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { HeroPreview } from "@/components/sections/hero-preview";
 import { GlowButton } from "@/components/ui/glow-button";
 
 export function HeroSection() {
-  const previewRef = useRef<HTMLDivElement>(null);
-  const [canLoadVideo, setCanLoadVideo] = useState(false);
-
-  useEffect(() => {
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const connection = (navigator as Navigator & {
-      connection?: { saveData?: boolean; effectiveType?: string };
-    }).connection;
-    const slowConnection = connection?.saveData || ["slow-2g", "2g"].includes(connection?.effectiveType ?? "");
-
-    if (reducedMotion || slowConnection || !previewRef.current) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setCanLoadVideo(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "200px" }
-    );
-
-    observer.observe(previewRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section
       id="hero"
       className="relative mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_145px] items-start gap-3 px-5 pb-4 pt-5 sm:grid-cols-[1.05fr_0.95fr] sm:items-center sm:gap-2 sm:px-8 sm:pb-7 sm:pt-14 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14 lg:px-12 xl:px-16 min-[390px]:grid-cols-[minmax(0,1fr)_158px] min-[1024px]:max-[1440px]:max-w-[1040px] min-[1024px]:max-[1440px]:gap-8 min-[1024px]:max-[1440px]:px-14"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="contents lg:relative lg:z-10 lg:block"
-      >
+      <div className="contents lg:relative lg:z-10 lg:block">
         <div className="order-1 max-w-[175px] min-[390px]:max-w-[190px] sm:contents">
           <h1 className="text-[31px] font-semibold leading-[1.06] tracking-tight text-white min-[390px]:text-[34px] sm:max-w-[820px] sm:text-[52px] sm:leading-[1.03] md:text-6xl lg:text-[74px] min-[1024px]:max-[1440px]:max-w-[720px] min-[1024px]:max-[1440px]:text-[48px]">
             <span className="block sm:inline">Разработка</span>{" "}
@@ -95,14 +59,9 @@ export function HeroSection() {
             </GlowButton>
           </div>
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.96 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-        className="order-2 relative ml-auto mt-1 flex w-full max-w-[145px] items-start justify-end sm:mx-auto sm:mt-0 sm:max-w-xl sm:justify-center lg:mt-0 lg:justify-end min-[390px]:max-w-[158px] min-[1024px]:max-[1440px]:max-w-[400px]"
-      >
+      <div className="order-2 relative ml-auto mt-1 flex w-full max-w-[145px] items-start justify-end sm:mx-auto sm:mt-0 sm:max-w-xl sm:justify-center lg:mt-0 lg:justify-end min-[390px]:max-w-[158px] min-[1024px]:max-[1440px]:max-w-[400px]">
         <div className="pointer-events-none absolute -inset-4 z-0 translate-x-3 rounded-[32px] bg-emerald-400/10 blur-2xl sm:-inset-6 sm:translate-x-20 sm:rounded-[42px] sm:blur-3xl" />
 
         <div className="relative z-10 flex w-full max-w-[140px] flex-col rounded-[20px] border border-white/10 bg-[#081122]/80 p-2 shadow-[0_0_90px_rgba(52,211,153,0.14)] sm:max-w-[330px] sm:rounded-[40px] sm:p-4 min-[390px]:max-w-[155px] min-[1024px]:max-[1440px]:max-w-[315px]">
@@ -117,28 +76,10 @@ export function HeroSection() {
               </div>
             </div>
 
-            <div ref={previewRef} className="mt-1 overflow-hidden rounded-[14px] bg-[#020617] sm:rounded-[28px]">
-              <video
-                autoPlay={canLoadVideo}
-                muted
-                loop
-                playsInline
-                preload="none"
-                poster="/demo/bot-preview-poster-v2.webp"
-                aria-label="Пример работы Telegram-бота"
-                className="block h-auto w-full rounded-[14px] sm:rounded-[28px]"
-              >
-                {canLoadVideo ? (
-                  <>
-                    <source src="/demo/bot-preview-v2.webm" type="video/webm" />
-                    <source src="/demo/bot-preview-v2.mp4" type="video/mp4" />
-                  </>
-                ) : null}
-              </video>
-            </div>
+            <HeroPreview />
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

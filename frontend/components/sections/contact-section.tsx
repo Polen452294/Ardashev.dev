@@ -1,12 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
-import { motion } from "framer-motion";
 import { contactLinks } from "@/data/site-data";
 
 export function ContactSection() {
   const [copied, setCopied] = useState<string | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !cardRef.current
+    ) {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 },
+    );
+
+    observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   const copyToClipboard = async (value: string, title: string) => {
     try {
@@ -41,12 +65,11 @@ export function ContactSection() {
         </p>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative mt-6 overflow-hidden rounded-[32px] border border-white/10 bg-[#081122]/70 p-4 shadow-[0_0_60px_rgba(52,211,153,0.08)] backdrop-blur-xl sm:mt-10 sm:p-7"
+      <div
+        ref={cardRef}
+        className={`relative mt-6 overflow-hidden rounded-[32px] border border-white/10 bg-[#081122]/70 p-4 shadow-[0_0_60px_rgba(52,211,153,0.08)] backdrop-blur-xl transition-[opacity,transform] duration-[600ms] ease-out sm:mt-10 sm:p-7 ${
+          isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+        }`}
       >
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-400/10 blur-[110px]" />
 
@@ -114,7 +137,7 @@ export function ContactSection() {
             })}
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
