@@ -1,4 +1,5 @@
 import type { RequestFormState, RequestItem, RequestStatus } from "@/types/request";
+import type { AnalyticsSummary } from "@/types/analytics";
 import { getAdminToken } from "@/lib/auth";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
@@ -78,6 +79,27 @@ export async function updateRequestStatus(
       localStorage.removeItem("admin_token");
     }
     throw new Error("Failed to fetch requests");
+  }
+
+  return response.json();
+}
+
+export async function getAnalyticsSummary(
+  days = 30,
+): Promise<AnalyticsSummary> {
+  const token = getAdminToken();
+  const response = await fetch(
+    `${API_URL}/api/v1/analytics/summary?days=${days}`,
+    {
+      cache: "no-store",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch analytics");
   }
 
   return response.json();

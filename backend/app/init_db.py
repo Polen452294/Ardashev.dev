@@ -1,4 +1,5 @@
 from app.core.database import Base, engine
+from app.models.page_view import PageView
 from app.models.request import Request
 
 

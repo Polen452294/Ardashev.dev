@@ -2,16 +2,25 @@
 
 import { useEffect, useState } from "react";
 import { AlertCircle, Database, LogOut, RefreshCcw } from "lucide-react";
-import { getRequests, updateRequestStatus } from "@/lib/api";
+import {
+  getAnalyticsSummary,
+  getRequests,
+  updateRequestStatus,
+} from "@/lib/api";
 import { getAdminToken, isAdminAuthenticated, removeAdminToken } from "@/lib/auth";
+import type { AnalyticsSummary } from "@/types/analytics";
 import type { RequestItem, RequestStatus } from "@/types/request";
+import { AnalyticsSummaryPanel } from "./analytics-summary";
 import { RequestAdminCard } from "./request-admin-card";
 import { AdminLoginForm } from "./admin-login-form";
 
 export default function AdminPage() {
   const [requests, setRequests] = useState<RequestItem[]>([]);
+  const [analytics, setAnalytics] = useState<AnalyticsSummary | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isAnalyticsLoading, setIsAnalyticsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const [analyticsError, setAnalyticsError] = useState("");
   const [updatingIds, setUpdatingIds] = useState<number[]>([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -31,6 +40,24 @@ export default function AdminPage() {
     }
   }
 
+  async function loadAnalytics() {
+    setIsAnalyticsLoading(true);
+    setAnalyticsError("");
+
+    try {
+      setAnalytics(await getAnalyticsSummary());
+    } catch {
+      setAnalyticsError("Не удалось загрузить собственную статистику.");
+    } finally {
+      setIsAnalyticsLoading(false);
+    }
+  }
+
+  function refreshDashboard() {
+    void loadRequests();
+    void loadAnalytics();
+  }
+
   async function handleStatusChange(requestId: number, status: RequestStatus) {
     setUpdatingIds((prev) => [...prev, requestId]);
 
@@ -47,13 +74,13 @@ export default function AdminPage() {
   }
 
   async function handleLoginSuccess() {
-  setIsAuthenticated(true);
-  await loadRequests();
+    setIsAuthenticated(true);
   }
 
   function handleLogout() {
     removeAdminToken();
     setRequests([]);
+    setAnalytics(null);
     setIsAuthenticated(false);
     setErrorMessage("");
   }
@@ -69,7 +96,7 @@ export default function AdminPage() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      loadRequests();
+      refreshDashboard();
     }
   }, [isAuthenticated]);
 
@@ -102,18 +129,19 @@ export default function AdminPage() {
             </div>
 
             <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
-              Заявки с сайта
+              Панель сайта
             </h1>
 
             <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300 md:text-base">
-              Здесь отображаются все заявки, отправленные через форму на сайте.
+              Обезличенная статистика посещений и заявки, отправленные через
+              форму.
             </p>
           </div>
 
           <div className="flex flex-wrap gap-3">
             <button
               type="button"
-              onClick={loadRequests}
+              onClick={refreshDashboard}
               className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white transition hover:border-emerald-300/30 hover:bg-white/[0.08] active:scale-95"
             >
               <RefreshCcw className="h-4 w-4 text-emerald-300" />
@@ -129,6 +157,21 @@ export default function AdminPage() {
               Выйти
             </button>
           </div>
+        </div>
+
+        <AnalyticsSummaryPanel
+          data={analytics}
+          isLoading={isAnalyticsLoading}
+          errorMessage={analyticsError}
+        />
+
+        <div className="mb-5">
+          <div className="text-xs uppercase tracking-[0.24em] text-emerald-300">
+            Обращения
+          </div>
+          <h2 className="mt-2 text-2xl font-semibold text-white">
+            Заявки с сайта
+          </h2>
         </div>
 
         {isLoading && (

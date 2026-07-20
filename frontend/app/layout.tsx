@@ -2,8 +2,11 @@ import "./globals.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Script from "next/script";
+import { SiteAnalytics } from "@/components/analytics/site-analytics";
 import { YandexMetrikaGoals } from "@/components/analytics/yandex-metrika-goals";
 import { siteIdentityJsonLd } from "@/data/site-schema";
+
+const gaMeasurementId = "G-GW0QGLSCK9";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ardashev.dev"),
@@ -52,9 +55,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteIdentityJsonLd) }}
         />
         {children}
+        <SiteAnalytics gaMeasurementId={gaMeasurementId} />
         <YandexMetrikaGoals />
 
-        <Script id="yandex-metrika-bootstrap" strategy="afterInteractive">
+        <Script id="yandex-metrika-bootstrap" strategy="beforeInteractive">
           {`
             window.ym = window.ym || function() {
               (window.ym.a = window.ym.a || []).push(arguments);
@@ -76,8 +80,30 @@ export default function RootLayout({
         <Script
           id="yandex-metrika"
           src="https://mc.yandex.ru/metrika/tag.js?id=108437647"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
+
+        {gaMeasurementId ? (
+          <>
+            <Script id="google-analytics-bootstrap" strategy="beforeInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = window.gtag || function() {
+                  window.dataLayer.push(arguments);
+                };
+                gtag('js', new Date());
+                gtag('config', '${gaMeasurementId}', {
+                  send_page_view: false
+                });
+              `}
+            </Script>
+            <Script
+              id="google-analytics"
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+              strategy="afterInteractive"
+            />
+          </>
+        ) : null}
 
         <noscript>
           <div>

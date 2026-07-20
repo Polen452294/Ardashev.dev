@@ -12,17 +12,6 @@ type MetrikaGoal =
   | "open_case"
   | "open_profi";
 
-declare global {
-  interface Window {
-    ym?: (
-      counterId: number,
-      method: "reachGoal",
-      goal: MetrikaGoal,
-      params?: Record<string, string>,
-    ) => void;
-  }
-}
-
 function isDomain(hostname: string, domain: string) {
   return hostname === domain || hostname.endsWith(`.${domain}`);
 }
