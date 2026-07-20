@@ -8,6 +8,15 @@ type RouteContext = {
   params: Promise<{ path: string[] }>;
 };
 
+const FORWARDED_REQUEST_HEADERS = [
+  "accept",
+  "accept-language",
+  "authorization",
+  "content-type",
+  "user-agent",
+  "x-analytics-source",
+] as const;
+
 async function proxyRequest(request: NextRequest, context: RouteContext) {
   const { path } = await context.params;
 
@@ -20,9 +29,16 @@ async function proxyRequest(request: NextRequest, context: RouteContext) {
   );
   target.search = request.nextUrl.search;
 
-  const headers = new Headers(request.headers);
-  headers.delete("host");
-  headers.delete("content-length");
+  // Forward only application headers. Passing browser/Nginx hop-by-hop headers
+  // (for example `connection`) to Node's fetch can make Undici reject the
+  // internal request before it ever reaches FastAPI.
+  const headers = new Headers();
+  for (const name of FORWARDED_REQUEST_HEADERS) {
+    const value = request.headers.get(name);
+    if (value) {
+      headers.set(name, value);
+    }
+  }
   headers.set("x-forwarded-host", request.nextUrl.host);
   headers.set("x-forwarded-proto", request.nextUrl.protocol.replace(":", ""));
 
@@ -48,7 +64,12 @@ async function proxyRequest(request: NextRequest, context: RouteContext) {
       status: response.status,
       headers: responseHeaders,
     });
-  } catch {
+  } catch (error) {
+    console.error("Failed to proxy API request", {
+      method: request.method,
+      path: request.nextUrl.pathname,
+      error,
+    });
     return Response.json(
       { detail: "Backend service is unavailable" },
       { status: 502 },
