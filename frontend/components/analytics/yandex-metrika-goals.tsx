@@ -16,8 +16,9 @@ function isDomain(hostname: string, domain: string) {
   return hostname === domain || hostname.endsWith(`.${domain}`);
 }
 
-function reachGoal(goal: MetrikaGoal, params?: Record<string, string>) {
+function trackGoal(goal: MetrikaGoal, params?: Record<string, string>) {
   window.ym?.(counterId, "reachGoal", goal, params);
+  window.gtag?.("event", goal, params ?? {});
 }
 
 export function YandexMetrikaGoals() {
@@ -43,27 +44,27 @@ export function YandexMetrikaGoals() {
       }
 
       if (isDomain(url.hostname, "t.me")) {
-        reachGoal("click_telegram");
+        trackGoal("click_telegram");
         return;
       }
 
       if (isDomain(url.hostname, "max.ru")) {
-        reachGoal("click_max");
+        trackGoal("click_max");
         return;
       }
 
       if (url.protocol === "mailto:") {
-        reachGoal("copy_email");
+        trackGoal("copy_email");
         return;
       }
 
       if (url.protocol === "tel:") {
-        reachGoal("click_phone");
+        trackGoal("click_phone");
         return;
       }
 
       if (isDomain(url.hostname, "profi.ru")) {
-        reachGoal("open_profi");
+        trackGoal("open_profi");
         return;
       }
 
@@ -71,7 +72,7 @@ export function YandexMetrikaGoals() {
         url.origin === window.location.origin &&
         /^\/cases\/[^/]+\/?$/.test(url.pathname)
       ) {
-        reachGoal("open_case", { case_url: url.pathname });
+        trackGoal("open_case", { case_url: url.pathname });
       }
     }
 

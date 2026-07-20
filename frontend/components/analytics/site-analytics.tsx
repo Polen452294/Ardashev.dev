@@ -3,10 +3,12 @@
 import { Suspense, useEffect, useRef } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "").replace(/\/$/, "");
 const SESSION_STORAGE_KEY = "ardashev_analytics_session";
 const SESSION_DURATION_MS = 30 * 60 * 1000;
 const YANDEX_COUNTER_ID = 108437647;
+const UUID_PATTERN =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 let fallbackSessionId: string | null = null;
 
 type StoredSession = {
@@ -18,8 +20,34 @@ type SiteAnalyticsProps = {
   gaMeasurementId?: string;
 };
 
+function persistSession(id: string, expiresAt: number) {
+  const secure = window.location.protocol === "https:" ? "; Secure" : "";
+  document.cookie = `${SESSION_STORAGE_KEY}=${id}; Max-Age=${
+    SESSION_DURATION_MS / 1000
+  }; Path=/; SameSite=Lax${secure}`;
+
+  try {
+    localStorage.setItem(
+      SESSION_STORAGE_KEY,
+      JSON.stringify({ id, expiresAt }),
+    );
+  } catch {
+    // Cookies or the in-memory fallback still keep the current session stable.
+  }
+}
+
 function getSessionId() {
   const now = Date.now();
+  const cookieSession = document.cookie
+    .split(";")
+    .map((item) => item.trim())
+    .find((item) => item.startsWith(`${SESSION_STORAGE_KEY}=`))
+    ?.slice(SESSION_STORAGE_KEY.length + 1);
+
+  if (cookieSession && UUID_PATTERN.test(cookieSession)) {
+    persistSession(cookieSession, now + SESSION_DURATION_MS);
+    return cookieSession;
+  }
 
   try {
     const stored = localStorage.getItem(SESSION_STORAGE_KEY);
@@ -30,15 +58,10 @@ function getSessionId() {
       if (
         typeof session.id === "string" &&
         typeof session.expiresAt === "number" &&
-        session.expiresAt > now
+        session.expiresAt > now &&
+        UUID_PATTERN.test(session.id)
       ) {
-        localStorage.setItem(
-          SESSION_STORAGE_KEY,
-          JSON.stringify({
-            id: session.id,
-            expiresAt: now + SESSION_DURATION_MS,
-          }),
-        );
+        persistSession(session.id, now + SESSION_DURATION_MS);
         return session.id;
       }
     }
@@ -48,15 +71,7 @@ function getSessionId() {
 
   const id = fallbackSessionId ?? crypto.randomUUID();
   fallbackSessionId = id;
-
-  try {
-    localStorage.setItem(
-      SESSION_STORAGE_KEY,
-      JSON.stringify({ id, expiresAt: now + SESSION_DURATION_MS }),
-    );
-  } catch {
-    // The in-memory ID still lets this page view be counted.
-  }
+  persistSession(id, now + SESSION_DURATION_MS);
 
   return id;
 }

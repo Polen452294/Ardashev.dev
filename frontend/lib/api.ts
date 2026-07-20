@@ -2,7 +2,7 @@ import type { RequestFormState, RequestItem, RequestStatus } from "@/types/reque
 import type { AnalyticsSummary } from "@/types/analytics";
 import { getAdminToken } from "@/lib/auth";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "").replace(/\/$/, "");
 
 export async function createRequest(data: RequestFormState) {
   const response = await fetch(`${API_URL}/api/v1/requests`, {

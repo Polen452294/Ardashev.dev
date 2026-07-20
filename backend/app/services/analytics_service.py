@@ -65,7 +65,7 @@ class AnalyticsService:
         if is_probable_bot(user_agent):
             return False
 
-        duplicate_after = datetime.now(timezone.utc) - timedelta(seconds=3)
+        duplicate_after = datetime.now(timezone.utc) - timedelta(seconds=30)
         duplicate = await self.session.scalar(
             select(PageView.id)
             .where(
