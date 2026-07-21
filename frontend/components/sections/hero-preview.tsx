@@ -37,7 +37,7 @@ export function HeroPreview() {
     let timeoutHandle: number | undefined;
 
     const enableVideo = () => setCanLoadVideo(true);
-    const scheduleVideo = () => {
+    const scheduleWhenIdle = () => {
       if (idleWindow.requestIdleCallback) {
         idleHandle = idleWindow.requestIdleCallback(enableVideo, {
           timeout: 2500,
@@ -46,6 +46,14 @@ export function HeroPreview() {
       }
 
       timeoutHandle = window.setTimeout(enableVideo, 1500);
+    };
+
+    const scheduleVideo = () => {
+      const mobileDelay = window.matchMedia("(max-width: 639px)").matches
+        ? 5000
+        : 500;
+
+      timeoutHandle = window.setTimeout(scheduleWhenIdle, mobileDelay);
     };
 
     if (document.readyState === "complete") {

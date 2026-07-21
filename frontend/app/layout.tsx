@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Script from "next/script";
+import { AnalyticsScriptLoader } from "@/components/analytics/analytics-script-loader";
 import { SiteAnalytics } from "@/components/analytics/site-analytics";
 import { YandexMetrikaGoals } from "@/components/analytics/yandex-metrika-goals";
 import { siteIdentityJsonLd } from "@/data/site-schema";
@@ -57,6 +58,7 @@ export default function RootLayout({
         {children}
         <SiteAnalytics gaMeasurementId={gaMeasurementId} />
         <YandexMetrikaGoals />
+        <AnalyticsScriptLoader gaMeasurementId={gaMeasurementId} />
 
         <Script id="yandex-metrika-bootstrap" strategy="beforeInteractive">
           {`
@@ -77,32 +79,19 @@ export default function RootLayout({
             });
           `}
         </Script>
-        <Script
-          id="yandex-metrika"
-          src="https://mc.yandex.ru/metrika/tag.js?id=108437647"
-          strategy="afterInteractive"
-        />
-
         {gaMeasurementId ? (
-          <>
-            <Script id="google-analytics-bootstrap" strategy="beforeInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                window.gtag = window.gtag || function() {
-                  window.dataLayer.push(arguments);
-                };
-                gtag('js', new Date());
-                gtag('config', '${gaMeasurementId}', {
-                  send_page_view: false
-                });
-              `}
-            </Script>
-            <Script
-              id="google-analytics"
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
-              strategy="afterInteractive"
-            />
-          </>
+          <Script id="google-analytics-bootstrap" strategy="beforeInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              window.gtag = window.gtag || function() {
+                window.dataLayer.push(arguments);
+              };
+              gtag('js', new Date());
+              gtag('config', '${gaMeasurementId}', {
+                send_page_view: false
+              });
+            `}
+          </Script>
         ) : null}
 
         <noscript>

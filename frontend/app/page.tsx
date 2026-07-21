@@ -170,7 +170,7 @@ export default function Page() {
 
         <SiteHeader />
 
-        <main id="top">
+        <main id="top" className="home-content">
           <HeroSection />
           <AboutSection />
           <BotUseCasesSection />
