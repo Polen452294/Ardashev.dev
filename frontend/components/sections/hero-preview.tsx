@@ -1,19 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
-
-type IdleWindow = Window & {
-  requestIdleCallback?: (
-    callback: () => void,
-    options?: { timeout: number },
-  ) => number;
-  cancelIdleCallback?: (handle: number) => void;
-};
+import { useEffect, useRef, useState } from "react";
 
 export function HeroPreview() {
   const [canLoadVideo, setCanLoadVideo] = useState(false);
   const [isVideoReady, setIsVideoReady] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const reducedMotion = window.matchMedia(
@@ -24,36 +17,29 @@ export function HeroPreview() {
         connection?: { saveData?: boolean; effectiveType?: string };
       }
     ).connection;
-    const slowConnection =
-      connection?.saveData ||
-      ["slow-2g", "2g"].includes(connection?.effectiveType ?? "");
+    const saveData = connection?.saveData;
 
-    if (reducedMotion || slowConnection) {
+    if (reducedMotion || saveData) {
       return;
     }
 
-    const idleWindow = window as IdleWindow;
-    let idleHandle: number | undefined;
     let timeoutHandle: number | undefined;
+    let enabled = false;
 
-    const enableVideo = () => setCanLoadVideo(true);
-    const scheduleWhenIdle = () => {
-      if (idleWindow.requestIdleCallback) {
-        idleHandle = idleWindow.requestIdleCallback(enableVideo, {
-          timeout: 2500,
-        });
+    const enableVideo = () => {
+      if (enabled) {
         return;
       }
 
-      timeoutHandle = window.setTimeout(enableVideo, 1500);
+      enabled = true;
+      setCanLoadVideo(true);
     };
-
     const scheduleVideo = () => {
       const mobileDelay = window.matchMedia("(max-width: 639px)").matches
-        ? 5000
-        : 500;
+        ? 1200
+        : 300;
 
-      timeoutHandle = window.setTimeout(scheduleWhenIdle, mobileDelay);
+      timeoutHandle = window.setTimeout(enableVideo, mobileDelay);
     };
 
     if (document.readyState === "complete") {
@@ -62,18 +48,37 @@ export function HeroPreview() {
       window.addEventListener("load", scheduleVideo, { once: true });
     }
 
+    window.addEventListener("pointerdown", enableVideo, {
+      once: true,
+      passive: true,
+    });
+    window.addEventListener("scroll", enableVideo, {
+      once: true,
+      passive: true,
+    });
+    window.addEventListener("keydown", enableVideo, { once: true });
+
     return () => {
       window.removeEventListener("load", scheduleVideo);
-
-      if (idleHandle !== undefined) {
-        idleWindow.cancelIdleCallback?.(idleHandle);
-      }
+      window.removeEventListener("pointerdown", enableVideo);
+      window.removeEventListener("scroll", enableVideo);
+      window.removeEventListener("keydown", enableVideo);
 
       if (timeoutHandle !== undefined) {
         window.clearTimeout(timeoutHandle);
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (!canLoadVideo || !videoRef.current) {
+      return;
+    }
+
+    void videoRef.current.play().catch(() => {
+      // The poster remains visible if this browser blocks muted autoplay.
+    });
+  }, [canLoadVideo]);
 
   return (
     <div className="relative mt-1 aspect-[480/982] overflow-hidden rounded-[14px] bg-[#020617] sm:rounded-[28px]">
@@ -91,13 +96,15 @@ export function HeroPreview() {
 
       {canLoadVideo ? (
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
-          preload="none"
+          preload="metadata"
           aria-label="Пример работы Telegram-бота"
-          onLoadedData={() => setIsVideoReady(true)}
+          onPlaying={() => setIsVideoReady(true)}
+          onError={() => setCanLoadVideo(false)}
           className={`absolute inset-0 block h-full w-full rounded-[14px] object-cover sm:rounded-[28px] ${
             isVideoReady ? "opacity-100" : "opacity-0"
           }`}
