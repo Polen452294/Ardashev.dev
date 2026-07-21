@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 export function HeroPreview() {
   const [canLoadVideo, setCanLoadVideo] = useState(false);
   const [isVideoReady, setIsVideoReady] = useState(false);
+  const [useDesktopVideo, setUseDesktopVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -32,6 +33,7 @@ export function HeroPreview() {
       }
 
       enabled = true;
+      setUseDesktopVideo(window.matchMedia("(min-width: 1024px)").matches);
       setCanLoadVideo(true);
     };
     const scheduleVideo = () => {
@@ -109,8 +111,22 @@ export function HeroPreview() {
             isVideoReady ? "opacity-100" : "opacity-0"
           }`}
         >
-          <source src="/demo/bot-preview-v2.webm" type="video/webm" />
-          <source src="/demo/bot-preview-v2.mp4" type="video/mp4" />
+          <source
+            src={
+              useDesktopVideo
+                ? "/demo/bot-preview-desktop-30.webm"
+                : "/demo/bot-preview-v2.webm"
+            }
+            type="video/webm"
+          />
+          <source
+            src={
+              useDesktopVideo
+                ? "/demo/bot-preview-desktop-30.mp4"
+                : "/demo/bot-preview-v2.mp4"
+            }
+            type="video/mp4"
+          />
         </video>
       ) : null}
     </div>
