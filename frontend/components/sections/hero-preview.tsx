@@ -102,8 +102,8 @@ export function HeroPreview() {
             isVideoReady ? "opacity-100" : "opacity-0"
           }`}
         >
-          <source src="/demo/bot-preview-v3.webm" type="video/webm" />
-          <source src="/demo/bot-preview-v3.mp4" type="video/mp4" />
+          <source src="/demo/bot-preview-v2.webm" type="video/webm" />
+          <source src="/demo/bot-preview-v2.mp4" type="video/mp4" />
         </video>
       ) : null}
     </div>
