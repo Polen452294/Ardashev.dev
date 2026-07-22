@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withPageSocialMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowUpRight, CheckCircle2, Layers3 } from "lucide-react";
 import {
@@ -13,12 +14,12 @@ import { portfolio } from "@/data/site-data";
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/cases`;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageSocialMetadata({
   title: "Кейсы ботов, парсеров и интеграций",
   description:
     "Примеры разработки Telegram и Max-ботов, парсеров и систем автоматизации: задача, стек, реализация и результат.",
   alternates: { canonical: pageUrl },
-};
+}, pageUrl);
 
 const caseCategories = ["Боты", "Max", "Парсеры", "CRM и интеграции"];
 
@@ -36,12 +37,38 @@ const itemListJsonLd = {
   })),
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Главная",
+      item: siteUrl,
+      url: siteUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Кейсы",
+      item: pageUrl,
+      url: pageUrl,
+    },
+  ],
+};
+
 export default function CasesPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <InnerPageLayout

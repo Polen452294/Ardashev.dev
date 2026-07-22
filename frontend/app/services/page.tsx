@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withPageSocialMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import {
@@ -13,12 +14,12 @@ import { services } from "@/data/site-data";
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/services`;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageSocialMetadata({
   title: "Услуги разработки и автоматизации",
   description:
     "Telegram-боты, Max-боты, парсеры, CRM и API-интеграции для автоматизации заявок, данных и бизнес-процессов.",
   alternates: { canonical: pageUrl },
-};
+}, pageUrl);
 
 const serviceDetails = [
   {
@@ -71,12 +72,38 @@ const itemListJsonLd = {
   })),
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Главная",
+      item: siteUrl,
+      url: siteUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Услуги",
+      item: pageUrl,
+      url: pageUrl,
+    },
+  ],
+};
+
 export default function ServicesPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <InnerPageLayout

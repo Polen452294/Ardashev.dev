@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withPageSocialMetadata } from "@/lib/seo";
 import Image from "next/image";
 import {
   CaseLinksSection,
@@ -16,14 +17,14 @@ import { Card } from "@/components/ui/card";
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/about`;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageSocialMetadata({
   title: "Александр Ардашев — разработчик ботов и парсеров",
   description:
     "О разработчике Ardashev.dev: Telegram-боты, Max-боты, парсеры, CRM/API-интеграции, автоматизация заявок и бизнес-процессов.",
   alternates: {
     canonical: pageUrl,
   },
-};
+}, pageUrl);
 
 const workAreas = [
   "Разработка Telegram-ботов для приема заявок, консультаций, уведомлений и автоматизации общения с клиентами",
@@ -192,12 +193,14 @@ const breadcrumbJsonLd = {
       position: 1,
       name: "Главная",
       item: siteUrl,
+      url: siteUrl,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "О разработчике",
       item: pageUrl,
+      url: pageUrl,
     },
   ],
 };

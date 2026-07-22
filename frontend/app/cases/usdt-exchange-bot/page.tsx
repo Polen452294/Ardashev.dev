@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withPageSocialMetadata } from "@/lib/seo";
 import {
   CaseStudyDetails,
   CtaSection,
@@ -9,14 +10,14 @@ import {
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/cases/usdt-exchange-bot`;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageSocialMetadata({
   title: "Кейс: Telegram-бот для обмена USDT",
   description:
   "Кейс разработки Telegram-бота для обменного сервиса: прием заявок на обмен USDT, сбор данных, CRM-логика и автоматические напоминания клиентам.",
   alternates: {
     canonical: pageUrl,
   },
-};
+}, pageUrl, "article");
 
 const facts = [
   {
@@ -182,18 +183,21 @@ const breadcrumbJsonLd = {
       position: 1,
       name: "Главная",
       item: siteUrl,
+      url: siteUrl,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Кейсы",
       item: `${siteUrl}/cases`,
+      url: `${siteUrl}/cases`,
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Telegram-бот для обмена USDT",
       item: pageUrl,
+      url: pageUrl,
     },
   ],
 };

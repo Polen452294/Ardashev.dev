@@ -21,6 +21,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "article",
+    locale: "ru_RU",
+    siteName: "Ardashev.dev",
     url: pageUrl,
     title: post.title,
     description: post.description,

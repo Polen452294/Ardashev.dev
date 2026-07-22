@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withPageSocialMetadata } from "@/lib/seo";
 import { KnowledgeLinksSection } from "@/components/blog/knowledge-links-section";
 import {
   CaseLinksSection,
@@ -15,14 +16,14 @@ import { blogPosts } from "@/data/blog-posts";
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/telegram-bots`;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageSocialMetadata({
   title: "Разработка Telegram-ботов на заказ",
   description:
     "Разработка Telegram-ботов для бизнеса: прием заявок, CRM-интеграции, уведомления, админ-панели, оплата, базы данных и запуск на сервере.",
   alternates: {
     canonical: pageUrl,
   },
-};
+}, pageUrl);
 
 const tasks = [
   "Принимать заявки от клиентов через понятный сценарий с кнопками",
@@ -230,12 +231,14 @@ const breadcrumbJsonLd = {
       position: 1,
       name: "Главная",
       item: siteUrl,
+      url: siteUrl,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Разработка Telegram-ботов",
       item: pageUrl,
+      url: pageUrl,
     },
   ],
 };

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withPageSocialMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Mail, MessageCircle, Phone, ShieldCheck } from "lucide-react";
 import {
@@ -15,14 +16,14 @@ import { allContactLinks, siteContact } from "@/data/site-data";
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/contacts`;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageSocialMetadata({
   title: "Контакты — заказать бота или парсер",
   description:
     "Контакты Ardashev.dev: заказать разработку Telegram-бота, Max-бота, парсера, CRM/API-интеграции или автоматизации бизнес-процессов.",
   alternates: {
     canonical: pageUrl,
   },
-};
+}, pageUrl);
 
 const faq = [
   {
@@ -77,12 +78,14 @@ const breadcrumbJsonLd = {
       position: 1,
       name: "Главная",
       item: siteUrl,
+      url: siteUrl,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Контакты",
       item: pageUrl,
+      url: pageUrl,
     },
   ],
 };

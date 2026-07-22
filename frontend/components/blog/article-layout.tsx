@@ -66,18 +66,21 @@ export function ArticleLayout({
         position: 1,
         name: "Главная",
         item: siteUrl,
+        url: siteUrl,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "База знаний",
         item: `${siteUrl}/blog`,
+        url: `${siteUrl}/blog`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: post.title,
         item: pageUrl,
+        url: pageUrl,
       },
     ],
   };

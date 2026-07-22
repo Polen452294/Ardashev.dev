@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withPageSocialMetadata } from "@/lib/seo";
 import {
   CaseLinksSection,
   CtaSection,
@@ -13,14 +14,14 @@ import {
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/parsers`;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageSocialMetadata({
   title: "Разработка парсеров сайтов и Telegram",
   description:
     "Разработка парсеров для сайтов, каталогов, маркетплейсов, Telegram-каналов и открытых источников с выгрузкой в Excel, Google Sheets, базу данных, CRM или Telegram-бота.",
   alternates: {
     canonical: pageUrl,
   },
-};
+}, pageUrl);
 
 const dataTypes = [
   "Товары, цены, характеристики и остатки",
@@ -228,12 +229,14 @@ const breadcrumbJsonLd = {
       position: 1,
       name: "Главная",
       item: siteUrl,
+      url: siteUrl,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Разработка парсеров",
       item: pageUrl,
+      url: pageUrl,
     },
   ],
 };

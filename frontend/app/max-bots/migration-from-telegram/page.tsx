@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withPageSocialMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowUpRight, CheckCircle2, CircleAlert } from "lucide-react";
 import {
@@ -15,12 +16,12 @@ import { Card } from "@/components/ui/card";
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/max-bots/migration-from-telegram`;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageSocialMetadata({
   title: "Перенос Telegram-бота в Max",
   description:
     "Адаптация Telegram-бота под Max: аудит сценария, перенос бизнес-логики, кнопок, уведомлений, файлов и интеграций с CRM или API.",
   alternates: { canonical: pageUrl },
-};
+}, pageUrl);
 
 const canTransfer = [
   "Сценарий диалога и последовательность вопросов",
@@ -141,18 +142,20 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Главная", item: siteUrl },
+    { "@type": "ListItem", position: 1, name: "Главная", item: siteUrl, url: siteUrl },
     {
       "@type": "ListItem",
       position: 2,
       name: "Разработка Max-ботов",
       item: `${siteUrl}/max-bots`,
+      url: `${siteUrl}/max-bots`,
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Перенос Telegram-бота в Max",
       item: pageUrl,
+      url: pageUrl,
     },
   ],
 };

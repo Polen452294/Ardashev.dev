@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withPageSocialMetadata } from "@/lib/seo";
 import {
   CaseStudyDetails,
   CtaSection,
@@ -9,14 +10,14 @@ import {
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/cases/profi-parser-bot`;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageSocialMetadata({
   title: "Кейс: парсер заказов с Profi.ru",
   description:
     "Кейс разработки парсера заказов с Profi.ru: мониторинг новых заказов, фильтрация подходящих заявок и уведомления для быстрого реагирования.",
   alternates: {
     canonical: pageUrl,
   },
-};
+}, pageUrl, "article");
 
 const facts = [
   { title: "Тип проекта", text: "Python-приложение для мониторинга новых заказов на динамической веб-странице и отправки релевантных карточек в Telegram." },
@@ -172,18 +173,21 @@ const breadcrumbJsonLd = {
       position: 1,
       name: "Главная",
       item: siteUrl,
+      url: siteUrl,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Кейсы",
       item: `${siteUrl}/cases`,
+      url: `${siteUrl}/cases`,
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Парсер заказов с Profi.ru",
       item: pageUrl,
+      url: pageUrl,
     },
   ],
 };

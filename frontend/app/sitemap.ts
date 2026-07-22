@@ -3,7 +3,7 @@ import { blogPosts } from "@/data/blog-posts";
 
 const siteUrl = "https://ardashev.dev";
 
-const routes = [
+const staticRoutes = [
   "",
   "/about",
   "/contacts",
@@ -17,12 +17,29 @@ const routes = [
   "/cases/usdt-exchange-bot",
   "/cases/max-request-bot",
   "/cases/profi-parser-bot",
-  "/blog",
-  ...blogPosts.map((post) => `/blog/${post.slug}`),
 ];
 
+// Update this value only when static page content or metadata changes.
+const staticLastModified = "2026-07-22";
+
+const blogLastModified = blogPosts.reduce(
+  (latest, post) => (post.updatedAt > latest ? post.updatedAt : latest),
+  blogPosts[0]?.updatedAt ?? staticLastModified,
+);
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((path) => ({
-    url: `${siteUrl}${path}`,
-  }));
+  return [
+    ...staticRoutes.map((path) => ({
+      url: `${siteUrl}${path}`,
+      lastModified: staticLastModified,
+    })),
+    {
+      url: `${siteUrl}/blog`,
+      lastModified: blogLastModified,
+    },
+    ...blogPosts.map((post) => ({
+      url: `${siteUrl}/blog/${post.slug}`,
+      lastModified: post.updatedAt,
+    })),
+  ];
 }

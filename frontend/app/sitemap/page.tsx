@@ -177,12 +177,14 @@ const breadcrumbJsonLd = {
       position: 1,
       name: "Главная",
       item: siteUrl,
+      url: siteUrl,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Карта сайта",
       item: pageUrl,
+      url: pageUrl,
     },
   ],
 };

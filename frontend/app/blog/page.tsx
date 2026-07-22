@@ -21,6 +21,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
+    locale: "ru_RU",
+    siteName: "Ardashev.dev",
     url: pageUrl,
     title: "База знаний о ботах и автоматизации",
     description:
@@ -62,12 +64,14 @@ const breadcrumbJsonLd = {
       position: 1,
       name: "Главная",
       item: siteUrl,
+      url: siteUrl,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "База знаний",
       item: pageUrl,
+      url: pageUrl,
     },
   ],
 };

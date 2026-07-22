@@ -12,7 +12,7 @@ export const siteIdentityJsonLd = {
       url: siteUrl,
       image: `${siteUrl}/about-photo.jpg`,
       jobTitle: "Разработчик Telegram-ботов, Max-ботов, парсеров и CRM-интеграций",
-      email: siteContact.email.href,
+      email: siteContact.email.label,
       telephone: siteContact.phone.label,
       contactPoint: {
         "@type": "ContactPoint",
@@ -39,7 +39,7 @@ export const siteIdentityJsonLd = {
       name: "Ardashev.dev",
       url: siteUrl,
       logo: `${siteUrl}/icon.svg`,
-      email: siteContact.email.href,
+      email: siteContact.email.label,
       telephone: siteContact.phone.label,
       founder: { "@id": `${siteUrl}/#person` },
       areaServed: { "@type": "Country", name: "Россия" },

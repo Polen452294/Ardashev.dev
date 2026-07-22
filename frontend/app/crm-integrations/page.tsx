@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withPageSocialMetadata } from "@/lib/seo";
 import {
   CaseLinksSection,
   CtaSection,
@@ -13,14 +14,14 @@ import {
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/crm-integrations`;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageSocialMetadata({
   title: "Интеграция CRM и API для ботов и сайтов",
   description:
     "Интеграция Telegram-ботов, Max-ботов, сайтов и парсеров с CRM, API, Google Sheets, Excel, PostgreSQL и внутренними сервисами.",
   alternates: {
     canonical: pageUrl,
   },
-};
+}, pageUrl);
 
 const scenarios = [
   "Telegram-бот передает заявку в CRM",
@@ -188,12 +189,14 @@ const breadcrumbJsonLd = {
       position: 1,
       name: "Главная",
       item: siteUrl,
+      url: siteUrl,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "CRM и API-интеграции",
       item: pageUrl,
+      url: pageUrl,
     },
   ],
 };

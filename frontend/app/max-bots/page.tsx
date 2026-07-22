@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withPageSocialMetadata } from "@/lib/seo";
 import {
   CaseLinksSection,
   CtaSection,
@@ -13,14 +14,14 @@ import {
 const siteUrl = "https://ardashev.dev";
 const pageUrl = `${siteUrl}/max-bots`;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageSocialMetadata({
   title: "Разработка Max-ботов на заказ",
   description:
     "Разработка Max-ботов для бизнеса: прием заявок, консультации, сценарии с кнопками, уведомления, интеграции с таблицами, CRM и внутренними сервисами.",
   alternates: {
     canonical: pageUrl,
   },
-};
+}, pageUrl);
 
 const tasks = [
   "Принимать заявки и обращения через Max",
@@ -233,12 +234,14 @@ const breadcrumbJsonLd = {
       position: 1,
       name: "Главная",
       item: siteUrl,
+      url: siteUrl,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Разработка Max-ботов",
       item: pageUrl,
+      url: pageUrl,
     },
   ],
 };
